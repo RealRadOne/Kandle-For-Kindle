@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5c82b96ea45a4a18dce97c53"},"BookID":"B0001","Points":{"$numberLong":"1234"},"Name":"Abstract2"}
+{"_id":{"$oid":"5c82b985a45a4a18dce97c54"},"BookID":"B0002","Name":"Abstract3","Points":{"$numberLong":"140"}}
+{"_id":{"$oid":"5c82bb58a45a4a18dce97c56"},"BookID":"B0003","Points":{"$numberLong":"180"},"Name":"Abstract4"}

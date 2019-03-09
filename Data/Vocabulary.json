@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5c82c014bde79178cbc1ee79"},"UserID":"U0001","WordID":"W0002"}
+{"_id":{"$oid":"5c82c014bde79178cbc1ee7a"},"UserID":"U0002","WordID":"W0005"}
+{"_id":{"$oid":"5c82c014bde79178cbc1ee7b"},"UserID":"U0003","WordID":"W0008"}
+{"_id":{"$oid":"5c82c014bde79178cbc1ee7c"},"UserID":"U0004","WordID":"W0002"}
+{"_id":{"$oid":"5c82c015bde79178cbc1ee7d"},"UserID":"U0005","WordID":"W0005"}
