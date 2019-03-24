@@ -3,6 +3,7 @@ import java.io.PrintWriter;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import DAO.*;
+import Model.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
