@@ -22,8 +22,9 @@ public static DBObject toDBObject(Goal g)
 
 		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
 		builder.append("_id",g.getGoalId());
-                builder.append("UserID",g.getUserId());
-                builder.append("Date",g.getDate());
+        builder.append("UserID",g.getUserId());
+        builder.append("Date",g.getDate());
+        builder.append("BookID",g.getBookId());
 		return builder.get();
  }
  public static Goal toGoal(DBObject doc)throws NullPointerException
@@ -31,6 +32,7 @@ public static DBObject toDBObject(Goal g)
 		Goal g= new Goal();
                 g.setUserId((String)doc.get("UserId"));
                 g.setDate((Date)doc.get("Date"));
+                g.setBookId((String)doc.get("BookID"));
                 ObjectId id = (ObjectId) doc.get("_id");
 		g.setGoalId(id.toString());
 		return g;

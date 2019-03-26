@@ -18,6 +18,7 @@ public class Goal
     private Date Date;
     private String GoalID;
     private String UserID;
+    private String BookID;
 public Date getDate()
 {
             return Date;
@@ -41,5 +42,13 @@ public String getUserId()
 public void setUserId(String UserID) 
 {
 		this.UserID = UserID;
+}
+public String getBookId() 
+{
+		return BookID;
+}
+public void setBookId(String UserID) 
+{
+		this.BookID = BookID;
 }
 }
