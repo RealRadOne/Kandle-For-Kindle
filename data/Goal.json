@@ -1,0 +1,8 @@
+{"_id":{"$oid":"5c99caee1a3a57b26ce9a8f2"},"GoalID":null,"UserID":"89563","Date":{"$date":{"$numberLong":"1553582982823"}}}
+{"_id":{"$oid":"5c99cb741a3a574b1417e69d"},"GoalID":null,"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553582960426"}}}
+{"_id":{"$oid":"5c99cb891a3a57ab78a60b01"},"GoalID":null,"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553582982823"}}}
+{"_id":{"$oid":"5c99cba11a3a574bbcf1c8a3"},"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553583006529"}}}
+{"_id":{"$oid":"5c99cbfb1a3a57e01074dd23"},"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553583096530"}}}
+{"_id":{"$oid":"5c99cc151a3a57d0e81feb13"},"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553583123513"}}}
+{"_id":{"$oid":"5c99cc6a1a3a575dd0623b16"},"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553583208333"}}}
+{"_id":{"$oid":"5c99cc8e1a3a574cf867828f"},"UserID":"NARNIA1123","Date":{"$date":{"$numberLong":"1553583244059"}}}

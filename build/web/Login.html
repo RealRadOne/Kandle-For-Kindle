@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #000000;
+}
+.Login {
+  border-radius: 5px;
+  background-color: #64d8cb; 
+  padding: 20px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 60%;
+  width: 60%;  
+}
+label {
+  font-size: 30px;
+  font-family: monospace;
+  color: #ffffff;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=text] {
+  font-size: 17px;
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border: 3px solid #555;
+}
+input[type=password] {
+  font-size: 17px;
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+input[type=submit]{
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font-family: monospace;
+  font-size: 25px;
+  padding: 14px 80px;
+  cursor: pointer;
+  margin: 20px 30px;
+  border-radius: 5px;
+  position: absolute;
+  top: 75%;
+  left: 47%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="Login">
+  <form action="Login" method="post">
+    <div class="Username">
+        <div class="Key">
+            <label for="username">USERNAME:</label>
+        </div>
+        <div class="Value">
+            <input type="text" id="username" name="username" placeholder="Your username...">
+        </div>
+    </div>
+    <div class="Password">
+        <div class="Key">
+            <label for="password">PASSWORD:</label>
+        </div>
+        <div class="Value">
+            <input type="password" id="password" name="password" placeholder="Your password...">
+        </div>
+    </div>
+    <div class="Submit">
+        <input type="submit" value="LOGIN">
+    </div>
+  </form>
+</div>
+</body>
+</html>

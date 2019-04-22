@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5c95c48e49990f246ca797ae"},"QuizID":"NARNIA1123","Question":"What do you infer from the book","Ans":{"$numberInt":"4"},"Option1":null,"Option2":null,"Option3":null,"Option4":null}
+{"_id":{"$oid":"5c95c97949990f29d0ab3533"},"QuizID":"NARNIA1123","Question":"What do you infer from the book","Ans":{"$numberInt":"4"},"Option1":null,"Option2":null,"Option3":null,"Option4":null}
+{"_id":{"$oid":"5c95c9f749990f2f983f73b1"},"QuizID":"NARNIA1123","Question":"What do you infer from the book","Ans":{"$numberInt":"4"},"Option1":null,"Option2":null,"Option3":null,"Option4":null}
+{"_id":{"$oid":"5c95ca6149990f36544dc9e7"},"QuizID":"NARNIA1123","QuestionID":"5c95ca6149990f36544dc9e7","Question":"What do you infer from the book","Ans":{"$numberInt":"4"},"Option1":"Here is to Never Growing","Option2":null,"Option3":null,"Option4":null}
