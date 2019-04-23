@@ -8,10 +8,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 public class CallGetWords extends HttpServlet {
      private static final long serialVersionUID = 1L;
      public CallGetWords(){
