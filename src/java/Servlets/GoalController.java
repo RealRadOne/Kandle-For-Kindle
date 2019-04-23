@@ -43,9 +43,11 @@ public class GoalController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String Values[] = request.getParameterValues("bookid"); 
         String Dates[]=request.getParameterValues("d1");
+        HttpSession session=request.getSession(false); 
+        String UserID=(String)session.getAttribute("userID");
         for(int i=0;i<Values.length;i++){
             Goal g=new Goal();
-            g.setUserId("U0001");
+            g.setUserId(UserID);
             g.setBookId(Values[i]);
             Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(Dates[i]);  
             g.setDate(date1);
