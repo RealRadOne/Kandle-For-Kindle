@@ -22,7 +22,8 @@ public class CallGetWords extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 {
     List<Dictionary>list=new ArrayList<Dictionary>();
-    String UserID="U0002";
+    HttpSession session=request.getSession(false); 
+    String UserID=(String)session.getAttribute("userID");
     /*dictionary d=new dictionary("1","hello","ahahahah");
     dictionary d2=new dictionary("2","helo","ahhahah");
     dictionary d3=new dictionary("3","hllo","ahahaah");*/
