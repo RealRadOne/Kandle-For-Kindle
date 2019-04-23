@@ -23,7 +23,7 @@ public class UserConverter
  {
 		User u = new User();
 		u.setLevel((String) doc.get("Level"));
-		u.setKindlePoints((String)doc.get("KindlePoints"));
+		u.setKindlePoints((Double)doc.get("KindlePoints"));
 		ObjectId id = (ObjectId) doc.get("_id");
 		u.setUserId(id.toString());
 		return u;

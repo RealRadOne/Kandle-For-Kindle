@@ -22,8 +22,7 @@ public class QuestionTester
    q.setQuizID("NARNIA1123");
    q.setQuestion("What do you infer from the book");
    q.setAns(4);
-   MongoClient mongo = new MongoClient("localhost", 27017);
-   QuestionDAO qDAO = new QuestionDAO(mongo);
+   QuestionDAO qDAO = new QuestionDAO();
    //Create
    qDAO.createQuestion(q);
    System.out.println("Question Added Successfully with id="+q.getQuizID()+","+q.getQuestion()+","+q.getAns()+","+q.getOption1());

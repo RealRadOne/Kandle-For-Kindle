@@ -1,5 +1,6 @@
 package DAO;
 import Model.*;
+import Connect.*;
 import Converter.*;
 import com.mongodb.BasicDBObject;
 import java.util.List;
@@ -20,9 +21,11 @@ public class AuthorDAO
 {
   private DBCollection col;
 
-	public AuthorDAO(MongoClient mongo)
+	public AuthorDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Author");
+            Connection con=Connection.getConnection();
+            this.col=con.mongo.getDB("Kandle").getCollection("Author");
+		//this.col = mongo.getDB("Kandle").getCollection("Author");
 	}
         //Creating the DB Entry
         public Author createAuthor(Author a) 
@@ -57,6 +60,26 @@ public class AuthorDAO
        {
 		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(a.getId())).get();
 		this.col.remove(query);
+       }
+       public int checkStatus(Author as)
+       {
+           DBObject query = new BasicDBObject();
+           query.put("userName",as.getName());
+	   DBObject data = this.col.findOne(query);
+           try
+           {
+           if((String)data.get("authorName")!=null && ((String)data.get("password")).equals((String)data.get("password")))
+           {System.out.println("Name and password match");return(1);}
+           if((String)data.get("userName")==null)
+           {System.out.println("User Does Not exist");return(-1);}
+           }
+           catch(NullPointerException e)
+           {
+              System.out.println(e);
+              System.out.println("User does not exist");
+              return(-1);
+           }
+           return(0);
        }
 }
 

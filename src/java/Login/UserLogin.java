@@ -20,11 +20,10 @@ public class UserLogin extends HttpServlet
         PrintWriter out = response.getWriter();
         String un = request.getParameter("userID");
         String pwd = request.getParameter("userpassword");
-        MongoClient mongo = new MongoClient("localhost", 27017);
-        UserDAO userDAO = new UserDAO(mongo);
+        UserDAO userDAO = new UserDAO();
         User user=new User();
-        user.setUserID(un);
-        user.setUserPassword(pwd);
+        user.setUserId(un);
+        user.setPassword(pwd);
         int status=userDAO.checkStatus(user);
         if (status==1)
         {

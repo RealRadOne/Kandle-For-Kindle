@@ -14,9 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import Model.*;
 import Converter.*;
 import DAO.*;
-import Listener.*;
 import Utility.*;
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 /**
  *
@@ -40,7 +39,7 @@ public class Addbook extends HttpServlet {
             throws ServletException, IOException {
         String s=request.getParameter("q");
         Book b=Getbooks.Getthisbook(s);
-        String objJSON = new Gson().toJson(b);
+        //String objJSON = new Gson().toJson(b);
         /*Book b=new Book();
 b.setName("Saranya");
 b.setKindlePoints(20);
@@ -49,7 +48,7 @@ b.setAuthor("AUGUTHA");*/
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //out.print("{\"name\":\""+b.getName()+"\",\"points\":"+b.getKindlePoints()+"\"}");
-            out.print(objJSON);
+            //out.print(objJSON);
             
         }
          

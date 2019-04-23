@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package DAO;
-
+import Connect.*;
 import Converter.QuestionConverter;
 import Model.Question;
 import com.mongodb.BasicDBObject;
@@ -25,9 +25,10 @@ public class QuestionDAO
 {
  private DBCollection col;
 
-	public QuestionDAO(MongoClient mongo)
+	public QuestionDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Question");
+                Connection con=Connection.getConnection();
+		this.col = con.mongo.getDB("Kandle").getCollection("Question");
 	}
         //Creating the DB Entry
         public Question createQuestion(Question q) 

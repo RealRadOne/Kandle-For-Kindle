@@ -1,6 +1,6 @@
 package Signup;
-import DAO.UserDAO;
-import Model.User;
+import DAO.*;
+import Model.*;
 import com.mongodb.MongoClient;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,7 +26,7 @@ public class AuthorSignup extends HttpServlet
         Author author=new Author();
         author.setAuthorID(un);
         author.setName(name);
-        author.setEmailID(email);
+        author.setEmail(email);
         author.setPassword(pwd);
         AuthorDAO authorDAO=new AuthorDAO();
         int status=authorDAO.checkStatus(author);

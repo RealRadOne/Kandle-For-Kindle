@@ -8,7 +8,6 @@ package Servlets;
 import Model.*;
 import Converter.*;
 import DAO.*;
-import Listener.*;
 import Utility.*;
 import com.mongodb.MongoClient;
 import java.io.IOException;
@@ -22,7 +21,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Singleton.*;
 
 /**
  *
@@ -51,8 +49,7 @@ public class GoalController extends HttpServlet {
             g.setBookId(Values[i]);
             Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(Dates[i]);  
             g.setDate(date1);
-            MongoClient mongo = Connection.getClient();
-            GoalDAO gDAO = new GoalDAO(mongo);
+            GoalDAO gDAO = new GoalDAO();
             gDAO.createGoal(g);
         }
         

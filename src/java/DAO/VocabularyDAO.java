@@ -1,5 +1,6 @@
 package DAO;
 import Model.*;
+import Connect.*;
 import Converter.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -18,9 +19,10 @@ public class VocabularyDAO
 {
   private DBCollection col;
 
-	public VocabularyDAO(MongoClient mongo)
+	public VocabularyDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Vocabulary");
+                Connection con=Connection.getConnection();
+	        con.mongo.getDB("Kandle").getCollection("Vocabulary");
 	}
         //Creating the DB Entry
         public Vocabulary createVocabulary(Vocabulary v) 

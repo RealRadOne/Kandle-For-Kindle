@@ -1,5 +1,6 @@
 package DAO;
 import Model.*;
+import Connect.*;
 import Converter.*;
 import com.mongodb.BasicDBObject;
 import java.util.List;
@@ -19,9 +20,10 @@ public class BookDAO
 {
   private DBCollection col;
 
-	public BookDAO(MongoClient mongo)
+	public BookDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Book");
+                Connection con=Connection.getConnection();
+		this.col = con.mongo.getDB("Kandle").getCollection("Book");
 	}
         //Creating the DB Entry
         public Book createBook(Book b) 

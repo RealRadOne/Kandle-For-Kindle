@@ -17,8 +17,7 @@ Book b=new Book();
 b.setName("Shriya");
 b.setKindlePoints(200);
 b.setAuthor("AUGUTHA");
- MongoClient mongo = new MongoClient("localhost", 27017);
- BookDAO bocDAO = new BookDAO(mongo);
+ BookDAO bocDAO = new BookDAO();
    //Create
  bocDAO.createBook(b);
  System.out.println("Book Added Successfully with id="+b.getBookId()+","+b.getKindlePoints()+","+b.getName()+b.getAuthor());

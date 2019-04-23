@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Utility;
-import Singleton.*;
 import Converter.BookConverter;
 import Converter.DictionaryConverter;
 import DAO.*;
@@ -27,17 +26,13 @@ public class Getbooks
     
     public static List<Book> GetBooks(String str) 
        {
-           
-                // List<Dictionary> data = new ArrayList<Dictionary>();
-                 MongoClient mongo = Connection.getClient();
-                 BookDAO vocDAO = new BookDAO(mongo);
+                 BookDAO vocDAO = new BookDAO();
                  List<Book> lists=vocDAO.GetBooks(str);
                  return lists;
        }
     public static Book Getthisbook(String str)
     {
-        MongoClient mongo = Connection.getClient();
-                 BookDAO vocDAO = new BookDAO(mongo);
+                 BookDAO vocDAO = new BookDAO();
                  Book b=vocDAO.GetthisBook(str);
                  return b;
         

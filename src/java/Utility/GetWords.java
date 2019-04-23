@@ -5,7 +5,6 @@
  */
 package Utility;
 import Converter.DictionaryConverter;
-import Singleton.*;
 import DAO.*;
 import Model.*;
 import com.mongodb.DBObject;
@@ -22,14 +21,13 @@ public class GetWords
     public static List<Dictionary> getWords (String UserID)
     {
     List<Dictionary> data = new ArrayList<Dictionary>();
-     MongoClient mongo = Connection.getClient();
-     VocabularyDAO vocDAO = new VocabularyDAO(mongo);
+     VocabularyDAO vocDAO = new VocabularyDAO();
      List<Vocabulary> lists=vocDAO.readVocabulary(UserID);
      for(Vocabulary us:lists)
    {
        Dictionary d=new Dictionary();
        d.setWordId(us.getWordId());
-       DictionaryDAO dictDAO = new DictionaryDAO(mongo);
+       DictionaryDAO dictDAO = new DictionaryDAO();
        List<Dictionary> listed=dictDAO.readWords(d);
        for(Dictionary obj:listed)
        {

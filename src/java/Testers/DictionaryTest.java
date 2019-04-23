@@ -22,8 +22,8 @@ public static void main(String[] args) throws UnknownHostException
    d.setWordId("NASCENT11234");
    d.setWord("Damn");
    d.setMeaning("Does Not Work");
-   MongoClient mongo = new MongoClient("localhost", 27017);
-   DictionaryDAO dictDAO = new DictionaryDAO(mongo);
+   //MongoClient mongo = new MongoClient("localhost", 27017);
+   DictionaryDAO dictDAO = new DictionaryDAO();
    //Create
    dictDAO.createDictionary(d);
    System.out.println("Word Added Successfully with id="+d.getWordId()+","+d.getWord()+","+d.getMeaning());

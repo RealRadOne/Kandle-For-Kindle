@@ -22,8 +22,7 @@ public class GoalTester
    g.setUserId("NARNIA1123");
    g.setDate(new Date());
    g.setBookId("123");
-   MongoClient mongo = new MongoClient("localhost", 27017);
-   GoalDAO gDAO = new GoalDAO(mongo);
+   GoalDAO gDAO = new GoalDAO();
    //Create
    gDAO.createGoal(g);
    System.out.println("Question Added Successfully with id="+g.getGoalId()+","+g.getDate()+","+g.getUserId());

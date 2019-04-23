@@ -22,8 +22,7 @@ public class QuizTester
    q.setAuthorID("ASPX1123");
    q.setBookID("NARNS123");
    q.setQuizName("RUNNAER");
-   MongoClient mongo = new MongoClient("localhost", 27017);
-   QuizDAO qDAO = new QuizDAO(mongo);
+   QuizDAO qDAO = new QuizDAO();
    //Create
    qDAO.createQuiz(q);
    System.out.println("Quiz Added Successfully with id="+q.getQuizID()+","+q.getAuthorID()+","+q.getBookID()+","+q.getQuizName());

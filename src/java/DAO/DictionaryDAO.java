@@ -1,4 +1,5 @@
 package DAO;
+import Connect.Connection;
 import Model.*;
 import Converter.*;
 import java.util.List;
@@ -18,9 +19,10 @@ public class DictionaryDAO
 {
   private DBCollection col;
 
-	public DictionaryDAO(MongoClient mongo)
+	public DictionaryDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Dictionary");
+                Connection con=Connection.getConnection();
+		this.col = con.mongo.getDB("Kandle").getCollection("Dictionary");
 	}
         //Creating the DB Entry
         public Dictionary createDictionary(Dictionary d) 

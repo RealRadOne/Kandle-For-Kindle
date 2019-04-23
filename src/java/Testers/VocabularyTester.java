@@ -17,8 +17,7 @@ public class VocabularyTester
  Vocabulary v=new Vocabulary();
  v.setUserId("ASFXIO");
  v.setWordId("NASCENT123");
- MongoClient mongo = new MongoClient("localhost", 27017);
- VocabularyDAO vocDAO = new VocabularyDAO(mongo);
+ VocabularyDAO vocDAO = new VocabularyDAO();
    //Create
  vocDAO.createVocabulary(v);
  System.out.println("Word Added Successfully with id="+v.getId());

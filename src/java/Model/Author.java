@@ -14,6 +14,8 @@ public class Author
 private String ID;
 private String AuthorID;
 private String Name;
+private String Password;
+private String Email;
         public String getId(){
             return ID;
         }
@@ -31,5 +33,17 @@ private String Name;
 	}
 	public void setName(String Name) {
 		this.Name =Name;
+	}
+        public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String Email) {
+		this.Email =Email;
+	}
+        public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String Password) {
+		this.Password =Password;
 	}
 }

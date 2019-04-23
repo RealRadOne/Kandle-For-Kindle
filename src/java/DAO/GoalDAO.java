@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package DAO;
+import Connect.Connection;
 import Model.Goal;
 import Converter.GoalConverter;
 import com.mongodb.BasicDBObjectBuilder;
@@ -25,9 +26,10 @@ public class GoalDAO
    //Convert User Object to MongoDBObject
    private DBCollection col;
 
-	public GoalDAO(MongoClient mongo)
+	public GoalDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Goal");
+                Connection con=Connection.getConnection();
+		this.col = con.mongo.getDB("Kandle").getCollection("Goal");
 	}
         //Creating the DB Entry
         public Goal createGoal(Goal g) 

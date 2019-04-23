@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package DAO;
-
+import Connect.*;
 import Converter.BookConverter;
 import Converter.QuizConverter;
 import Model.Quiz;
@@ -22,9 +22,10 @@ public class QuizDAO
 {
    private DBCollection col;
 
-	public QuizDAO(MongoClient mongo)
+	public QuizDAO()
         {
-		this.col = mongo.getDB("Kandle").getCollection("Quiz");
+                Connection con=Connection.getConnection();
+		this.col = con.mongo.getDB("Kandle").getCollection("Quiz");
 	}
         //Creating the DB Entry
         public Quiz createQuiz(Quiz q) 

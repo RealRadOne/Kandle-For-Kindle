@@ -5,11 +5,20 @@ package Model;
  */
 public class User 
 {
+        private String userName;
         private String UserID;
 	private String Level;
-	private String KindlePoints;
-        
-	
+	private Double KindlePoints;
+        private String password;
+	private String Email;
+        public String getuserName()
+        {
+            return userName;
+        }
+        public void setuserName(String userName)
+        {
+            this.userName=userName;
+        }
 	public String getUserId() {
 		return UserID;
 	}
@@ -23,10 +32,26 @@ public class User
         {
 		this.Level = Level;
 	}
-	public String getKindlePoints() {
+	public Double getKindlePoints() {
 		return KindlePoints;
 	}
-	public void setKindlePoints(String KindlePoints) {
+	public void setKindlePoints(Double KindlePoints) {
 		this.KindlePoints = KindlePoints;
-	}       
+	}  
+        public String getPassword()
+        {
+            return password;
+        }
+        public void setPassword(String password)
+        {
+            this.password=password;
+        }
+         public String getEmail()
+        {
+            return Email;
+        }
+        public void setEmail(String Email)
+        {
+            this.Email=Email;
+        }
 }

@@ -20,11 +20,10 @@ public class AuthorLogin extends HttpServlet
         PrintWriter out = response.getWriter();
         String un = request.getParameter("authorID");
         String pwd = request.getParameter("authorpassword");
-        MongoClient mongo = new MongoClient("localhost", 27017);
-        AuthorDAO authorDAO = new AuthorDAO(mongo);
+        AuthorDAO authorDAO = new AuthorDAO();
         Author author=new Author();
         author.setAuthorID(un);
-        author.setAuthorPassword(pwd);
+        author.setPassword(pwd);
         int status=authorDAO.checkStatus(author);
         if (status==1)
         {

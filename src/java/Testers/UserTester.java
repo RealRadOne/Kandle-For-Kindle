@@ -3,7 +3,6 @@ import java.net.UnknownHostException;
 import Converter.*;
 import Model.*;
 import DAO.*;
-import Listener.*;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -23,10 +22,9 @@ public class UserTester
  {
    User u = new User();
    u.setLevel("Beginner");
-   u.setKindlePoints("200");
+   u.setKindlePoints(200.00);
    //u.setUserId("USER4390");
-   MongoClient mongo = new MongoClient("localhost", 27017);
-   UserDAO userDAO = new UserDAO(mongo);
+   UserDAO userDAO = new UserDAO();
    //Create
    userDAO.createUser(u);
    System.out.println("User Added Successfully with id="+u.getUserId());

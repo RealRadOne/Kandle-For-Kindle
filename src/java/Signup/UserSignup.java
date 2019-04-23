@@ -25,8 +25,8 @@ public class UserSignup extends HttpServlet
         MongoClient mongo = new MongoClient("localhost", 27017);
         User user=new User();
         user.setUserId(un);
-        user.setUserName(name);
-        user.setEmailId(email);
+        user.setuserName(name);
+        user.setEmail(email);
         user.setPassword(pwd);
         UserDAO userDAO=new UserDAO();
         int status=userDAO.checkStatus(user);
