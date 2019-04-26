@@ -5,8 +5,8 @@
  */
 package Testers;
 import java.util.List;
-import DAO.GoalDAO;
-import Model.Goal;
+import DAO.GoalbbDAO;
+import Model.*;
 import com.mongodb.MongoClient;
 import java.net.UnknownHostException;
 import java.util.Date;
@@ -18,21 +18,22 @@ public class GoalTester
 {
      public static void main(String[] args) throws UnknownHostException 
  {
-   Goal g=new Goal();
-   g.setUserId("NARNIA1123");
+   GoalbyBook g=new GoalbyBook();
+   g.setUserId("NARNIA11123");
    g.setDate(new Date());
-   g.setBookId("123");
-   GoalDAO gDAO = new GoalDAO();
+   g.setBookID("126663");
+   GoalbbDAO gDAO = new GoalbbDAO();
    //Create
    gDAO.createGoal(g);
-   System.out.println("Question Added Successfully with id="+g.getGoalId()+","+g.getDate()+","+g.getUserId());
+   System.out.println("Question Added Successfully with id="+g.getGoalId()+","+g.getDate()+","+g.getUserId()+","+g.getBookID());
    g.setUserId("89563");
    gDAO.updateGoal(g);
    System.out.println("Goal Updated Successfully with id="+g.getGoalId()+","+g.getDate()+","+g.getUserId()); 
    List<Goal> list=gDAO.readUserwise("NARNIA1123");
    for(Goal us:list)
    {
-       System.out.println(us.getGoalId()+","+us.getDate()+","+us.getUserId());
+       GoalbyBook g1=(GoalbyBook) us;
+       System.out.println(g1.getGoalId()+","+g1.getDate()+","+g1.getBookID());
    }
  }
 }

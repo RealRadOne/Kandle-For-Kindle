@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import Interfaces.*;
 
 /**
  *
@@ -43,15 +44,8 @@ public class GoalController extends HttpServlet {
         String Dates[]=request.getParameterValues("d1");
         HttpSession session=request.getSession(false); 
         String UserID=(String)session.getAttribute("userID");
-        for(int i=0;i<Values.length;i++){
-            Goal g=new Goal();
-            g.setUserId(UserID);
-            g.setBookId(Values[i]);
-            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(Dates[i]);  
-            g.setDate(date1);
-            GoalDAO gDAO = new GoalDAO();
-            gDAO.createGoal(g);
-        }
+        GoalbyBOOK gbb=new GoalbyBOOK();
+        gbb.SetGoal(Values, Dates, "U0008");
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

@@ -15,10 +15,17 @@ import java.util.Calendar;
  */
 public class Goal 
 {
+
+    
     private Date Date;
     private String GoalID;
     private String UserID;
-    private String BookID;
+    /*public Goal(Date Date, String GoalID, String UserID) {
+        this.Date = Date;
+        this.GoalID = GoalID;
+        this.UserID = UserID;
+    }*/
+    
 public Date getDate()
 {
             return Date;
@@ -43,12 +50,5 @@ public void setUserId(String UserID)
 {
 		this.UserID = UserID;
 }
-public String getBookId() 
-{
-		return BookID;
-}
-public void setBookId(String BookID) 
-{
-		this.BookID = BookID;
-}
+
 }

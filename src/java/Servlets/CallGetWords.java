@@ -20,20 +20,13 @@ public class CallGetWords extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
 {
     List<Dictionary>list=new ArrayList<Dictionary>();
-    HttpSession session=request.getSession(false); 
-    String UserID=(String)session.getAttribute("userID");
-    /*dictionary d=new dictionary("1","hello","ahahahah");
-    dictionary d2=new dictionary("2","helo","ahhahah");
-    dictionary d3=new dictionary("3","hllo","ahahaah");*/
+    //HttpSession session=request.getSession(false); 
+    request.getSession().setAttribute("userID","u0001");
+    String UserID=(String)request.getSession().getAttribute("userID");
     list=GetWords.getWords(UserID);
-            
-   /* list.add(d);
-    list.add(d2);
-    list.add(d3);*/
-   // request.setAttribute(errorString, conn);
    request.setAttribute("WordListak",list);
    request.getSession().setAttribute("Words", list);
-   response.sendRedirect("wordlistview.jsp");
+   response.sendRedirect("WordList.jsp");
     //System.out.println("Success");
     try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
