@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 public class AuthorSignup extends HttpServlet 
 {
     private static final long serialVersionUID = 1L;
+    @Override
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
     {
         response.setContentType("text/html");
@@ -33,15 +35,16 @@ public class AuthorSignup extends HttpServlet
         if (status==-1)
         {
             authorDAO.createAuthor(author);
-            response.sendRedirect("login.html");
+            response.sendRedirect("AuthorSuccessfulSignup.jsp");
         }
         else
         {
-            RequestDispatcher rd = request.getRequestDispatcher("index.html");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('This username already exists. Please type another username.');");
-            out.println("</script>");
-            rd.include(request, response);
+            response.sendRedirect("AuthorUnsuccessfulSignup1.jsp");
         }
+    }
+    @Override
+    protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+    {
+        doPost(request,response);
     }
 }
