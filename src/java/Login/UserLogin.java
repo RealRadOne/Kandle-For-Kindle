@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 public class UserLogin extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
+    @Override
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
     {
         response.setContentType("text/html");
@@ -29,23 +30,20 @@ public class UserLogin extends HttpServlet
         {
             HttpSession session = request.getSession(true);
             session.setAttribute("user", un);
-            response.sendRedirect("home.jsp"); // Instead of home.jsp, the webpage which should open for successful login should open
+            response.sendRedirect("UserSuccessfulLogin.jsp");
         } 
         else if (status==-1)
         {
-            RequestDispatcher rd = request.getRequestDispatcher("index.html");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Username does not exist');");
-            out.println("</script>");
-            rd.include(request, response);
+            response.sendRedirect("UserUnsuccessfulLogin1.jsp");
         }
         else 
         {
-            RequestDispatcher rd = request.getRequestDispatcher("index.html");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Username or password is incorrect');");
-            out.println("</script>");
-            rd.include(request, response);
+            response.sendRedirect("UserUnsuccessfulLogin2.jsp");
         }
+    }
+    @Override
+    protected void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+    {
+        doPost(request,response);
     }
 }
