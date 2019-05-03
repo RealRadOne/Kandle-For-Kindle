@@ -13,25 +13,20 @@
         <servlet-name>GoalController</servlet-name>
         <servlet-class>Servlets.GoalController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AddItems</servlet-name>
-        <servlet-class>Servlets.AddItems</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>AjaxHelper</servlet-name>
         <url-pattern>/AjaxHelper</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>Addbook</servlet-name>
+        <url-pattern>/Addbook</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GoalController</servlet-name>
         <url-pattern>/GoalController</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddItems</servlet-name>
-        <url-pattern>/AddItems</url-pattern>
-    </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>Signup.html</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>WordTester</servlet-name>
@@ -53,4 +48,40 @@
         <servlet-name>CallGetWords</servlet-name>
         <servlet-class>Servlets.CallGetWords</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>CallGetWords</servlet-name>
+        <url-pattern>/CallGetWords</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AuthorSignup</servlet-name>
+        <servlet-class>Signup.AuthorSignup</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorSignup</servlet-name>
+        <url-pattern>/AuthorSignup</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserSignup</servlet-name>
+        <servlet-class>Signup.UserSignup</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserSignup</servlet-name>
+        <url-pattern>/UserSignup</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AuthorLogin</servlet-name>
+        <servlet-class>Login.AuthorLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthorLogin</servlet-name>
+        <url-pattern>/AuthorLogin</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserLogin</servlet-name>
+        <servlet-class>Login.UserLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserLogin</servlet-name>
+        <url-pattern>/UserLogin</url-pattern>
+    </servlet-mapping>
 </web-app>
