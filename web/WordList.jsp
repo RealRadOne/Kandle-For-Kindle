@@ -9,8 +9,8 @@
 	<%@page import="java.util.List"%>
 	<%@page contentType="text/html" pageEncoding="UTF-8"%>
 	<%@page import="java.util.*" %>
-	<%@page import="classes.dictionary" %>
-	<%@page import="Servlets.WordList" %>
+	<%@page import="Model.Dictionary" %>
+	<%@page import="Servlets.CallGetWords" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%
 	    
@@ -87,217 +87,111 @@
 	  z-index: 1;
 	}
 	.text1{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+	  margin-top: 9px;
   word-wrap: break-word;
   font-family: monospace;
 }
-.text1[data-len="14"]{
-  font-size: calc(2vw * 14/14);
-}
-.text1[data-len="13"]{
-  font-size: calc(2vw * 14/13);
-}
-.text1[data-len="12"]{
-  font-size: calc(2vw * 14/12);
-}
-.text1[data-len="11"]{
-  font-size: calc(2vw * 14/11);
-}
-.text1[data-len="10"]{
-  font-size: calc(2vw * 14/10);
-}
-.text1[data-len="9"]{
-  font-size: calc(2vw * 14/9);
-}
-.text1[data-len="8"]{
-  font-size: calc(2vw * 14/8);
-}
-.text1[data-len="7"]{
-  font-size: calc(2vw * 14/7);
-}
-.text1[data-len="6"]{
-  font-size: calc(2vw * 14/6);
-}
-.text1[data-len="5"]{
-  font-size: calc(2vw * 14/5);
-}
-.text1[data-len="4"]{
-  font-size: calc(2vw * 14/4);
-}
-.text1[data-len="3"]{
-  font-size: calc(2vw * 14/3);
-}
-.text1[data-len="2"]{
-  font-size: calc(2vw * 14/2);
-}
-.text1[data-len="1"]{
-  font-size: calc(2vw * 14);
-}
-.text2{
-  word-wrap: break-word;
-  font-family: monospace;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.text2[data-len="50"]{
-  font-size: calc(2vw * 30/50);
-}
-.text2[data-len="49"]{
-  font-size: calc(2vw * 30/49);
-}
-.text2[data-len="48"]{
-  font-size: calc(2vw * 30/48);
-}
-.text2[data-len="47"]{
-  font-size: calc(2vw * 30/47);
-}
-.text2[data-len="46"]{
-  font-size: calc(2vw * 30/46);
-}
-.text2[data-len="45"]{
-  font-size: calc(2vw * 30/45);
-}
-.text2[data-len="44"]{
-  font-size: calc(2vw * 30/44);
-}
-.text2[data-len="43"]{
-  font-size: calc(2vw * 30/43);
-}
-.text2[data-len="42"]{
-  font-size: calc(2vw * 30/42);
-}
-.text2[data-len="41"]{
-  font-size: calc(2vw * 30/41);
-}
-.text2[data-len="40"]{
-  font-size: calc(2vw * 30/40);
-}
-.text2[data-len="39"]{
-  font-size: calc(2vw * 30/39);
-}
-.text2[data-len="38"]{
-  font-size: calc(2vw * 30/38);
-}
-.text2[data-len="37"]{
-  font-size: calc(2vw * 30/37);
-}
-.text2[data-len="36"]{
-  font-size: calc(2vw * 30/36);
-}
-.text2[data-len="35"]{
-  font-size: calc(2vw * 30/35);
-}
-.text2[data-len="34"]{
-  font-size: calc(2vw * 30/34);
-}
-.text2[data-len="33"]{
-  font-size: calc(2vw * 30/33);
-}
-.text2[data-len="32"]{
-  font-size: calc(2vw * 30/32);
-}
-.text2[data-len="31"]{
-  font-size: calc(2vw * 30/31);
-}
-.text2[data-len="30"]{
-  font-size: calc(2vw * 30/30);
-}
-.text2[data-len="29"]{
-  font-size: calc(2vw * 30/29);
-}
-.text2[data-len="28"]{
-  font-size: calc(2vw * 30/28);
-}
-.text2[data-len="27"]{
-  font-size: calc(2vw * 30/27);
-}
-.text2[data-len="26"]{
-  font-size: calc(2vw * 30/26);
-}
-.text2[data-len="25"]{
-  font-size: calc(2vw * 30/25);
-}
-.text2[data-len="24"]{
-  font-size: calc(2vw * 30/24);
-}
-.text2[data-len="23"]{
-  font-size: calc(2vw * 30/23);
-}
-.text2[data-len="22"]{
-  font-size: calc(2vw * 30/22);
-}
-.text2[data-len="21"]{
-  font-size: calc(2vw * 30/21);
-}
-.text2[data-len="20"]{
-  font-size: calc(2vw * 30/20);
-}
-.text2[data-len="19"]{
-  font-size: calc(2vw * 30/19);
-}
-.text2[data-len="18"]{
-  font-size: calc(2vw * 30/18);
-}
-.text2[data-len="17"]{
-  font-size: calc(2vw * 30/17);
-}
-.text2[data-len="16"]{
-  font-size: calc(2vw * 30/16);
-}
-.text2[data-len="15"]{
-  font-size: calc(2vw * 30/15);
-}
-.text2[data-len="14"]{
-  font-size: calc(2vw * 30/14);
-}
-.text2[data-len="13"]{
-  font-size: calc(2vw * 30/13);
-}
-.text2[data-len="12"]{
-  font-size: calc(2vw * 30/12);
-}
-.text2[data-len="11"]{
-  font-size: calc(2vw * 30/11);
-}
-.text2[data-len="10"]{
-  font-size: calc(2vw * 30/10);
-}
-.text2[data-len="9"]{
-  font-size: calc(2vw * 30/9);
-}
-.text2[data-len="8"]{
-  font-size: calc(2vw * 30/8);
-}
-.text2[data-len="7"]{
-  font-size: calc(2vw * 30/7);
-}
-.text2[data-len="6"]{
-  font-size: calc(2vw * 30/6);
-}
-.text2[data-len="5"]{
-  font-size: calc(2vw * 30/5);
-}
-.text2[data-len="4"]{
-  font-size: calc(2vw * 30/4);
-}
-.text2[data-len="3"]{
-  font-size: calc(2vw * 30/3);
-}
-.text2[data-len="2"]{
-  font-size: calc(2vw * 30/2);
-}
-.text2[data-len="1"]{
-  font-size: calc(2vw * 30);
-}
+	.text1[data-len="16"]{
+	  font-size: calc(2vw * 1);
+	}
+	.text1[data-len="15"]{
+	  font-size: calc(2vw * 16/15);
+	}
+	.text1[data-len="14"]{
+	  font-size: calc(2vw * 16/14);
+	}
+	.text1[data-len="13"]{
+	  font-size: calc(2vw * 16/13);
+	}
+	.text1[data-len="12"]{
+	  font-size: calc(2vw * 16/12);
+	}
+	.text1[data-len="11"]{
+	  font-size: calc(2vw * 16/11);
+	}
+	.text1[data-len="10"]{
+	  font-size: calc(2vw * 16/10);
+	}
+	.text1[data-len="9"]{
+	  font-size: calc(2vw * 16/9);
+	}
+	.text1[data-len="8"]{
+	  font-size: calc(2vw * 16/8);
+	}
+	.text1[data-len="7"]{
+	  font-size: calc(2vw * 16/7);
+	}
+	.text1[data-len="6"]{
+	  font-size: calc(2vw * 16/6);
+	}
+	.text1[data-len="5"]{
+	  font-size: calc(2vw * 16/5);
+	}
+	.text1[data-len="4"]{
+	  font-size: calc(2vw * 16/4);
+	}
+	.text1[data-len="3"]{
+	  font-size: calc(2vw * 16/3);
+	}
+	.text1[data-len="2"]{
+	  font-size: calc(2vw * 16/2);
+	}
+	.text1[data-len="1"]{
+	  font-size: calc(2vw * 16);
+	}
+	.text2{
+	  margin-top: 0.5px;
+	  word-wrap: break-word;
+	  font-family: monospace;
+	}
+	.text2[data-len="16"]{
+	  font-size: calc(2vw * 1);
+	}
+	.text2[data-len="15"]{
+	  font-size: calc(2vw * 16/15);
+	}
+	.text2[data-len="14"]{
+	  font-size: calc(2vw * 16/14);
+	}
+	.text2[data-len="13"]{
+	  font-size: calc(2vw * 16/13);
+	}
+	.text2[data-len="12"]{
+	  font-size: calc(2vw * 16/12);
+	}
+	.text2[data-len="11"]{
+	  font-size: calc(2vw * 16/11);
+	}
+	.text2[data-len="10"]{
+	  font-size: calc(2vw * 16/10);
+	}
+	.text2[data-len="9"]{
+	  font-size: calc(2vw * 16/9);
+	}
+	.text2[data-len="8"]{
+	  font-size: calc(2vw * 16/8);
+	}
+	.text2[data-len="7"]{
+	  font-size: calc(2vw * 16/7);
+	}
+	.text2[data-len="6"]{
+	  font-size: calc(2vw * 16/6);
+	}
+	.text2[data-len="5"]{
+	  font-size: calc(2vw * 16/5);
+	}
+	.text2[data-len="4"]{
+	  font-size: calc(2vw * 16/4);
+	}
+	.text2[data-len="3"]{
+	  font-size: calc(2vw * 16/3);
+	}
+	.text2[data-len="2"]{
+	  font-size: calc(2vw * 16/2);
+	}
+	.text2[data-len="1"]{
+	  font-size: calc(2vw * 16);
+	}
 	
                #f1{
    background-color: #c0cfdb;
@@ -316,8 +210,8 @@
   onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Read A Book</a>
-  <a href="wordlistview.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
-  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Set Goal</a>
+  <a href="CallGetWords" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
+  <a href="SetGoal.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Set Goal</a>
   <a href="index.html" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Home</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
@@ -329,9 +223,9 @@
 <%
 //PrintWriter out = response.getWriter();
 int i=1;
-List<dictionary>list=new ArrayList<dictionary>();
+List<Dictionary>list=new ArrayList<Dictionary>();
     try{
-        list=(List<dictionary>)session.getAttribute("Words");
+        list=(List<Dictionary>)session.getAttribute("Words");
                 //(List<dictionary>)request.getAttribute("WordListak");
      }
     catch(NullPointerException a){
@@ -393,17 +287,17 @@ i=1;
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-var els1 = document.getElementsByClassName("text1"),
-  l = els1.length;
+var els = document.getElementsByClassName("text1"),
+  l = els.length;
 for (var i = 0; i < l; i++) {
-  els1[i].dataset.len = els1[i].firstChild.nodeValue.length;
-  console.log(els1[i].dataset.len);
+  els[i].dataset.len = els[i].firstChild.nodeValue.length;
+  console.log(els[i].dataset.len);
 }
-var els2 = document.getElementsByClassName("text2"),
-  l = els2.length;
+var els = document.getElementsByClassName("text2"),
+  l = els.length;
 for (var i = 0; i < l; i++) {
-  els2[i].dataset.len = els2[i].firstChild.nodeValue.length;
-  console.log(els2[i].dataset.len);
+  els[i].dataset.len = els[i].firstChild.nodeValue.length;
+  console.log(els[i].dataset.len);
 }
 </script>
 </html>

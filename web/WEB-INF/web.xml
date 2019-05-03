@@ -13,20 +13,25 @@
         <servlet-name>GoalController</servlet-name>
         <servlet-class>Servlets.GoalController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddItems</servlet-name>
+        <servlet-class>Servlets.AddItems</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AjaxHelper</servlet-name>
         <url-pattern>/AjaxHelper</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Addbook</servlet-name>
-        <url-pattern>/Addbook</url-pattern>
-    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>GoalController</servlet-name>
         <url-pattern>/GoalController</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddItems</servlet-name>
+        <url-pattern>/AddItems</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>Input.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>WordTester</servlet-name>
@@ -48,8 +53,4 @@
         <servlet-name>CallGetWords</servlet-name>
         <servlet-class>Servlets.CallGetWords</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>CallGetWords</servlet-name>
-        <url-pattern>/CallGetWords</url-pattern>
-    </servlet-mapping>
 </web-app>

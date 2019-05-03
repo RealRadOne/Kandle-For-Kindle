@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : SetGoalba
+    Created on : 2 May, 2019, 5:38:14 PM
+    Author     : Akanksha
+--%>
 
 <%@page import="Model.*;" %>
 <%@page import="java.util.*" %>
@@ -19,7 +23,7 @@
     padding: 5px;
     
     transition-duration: all 0.1s ease-out;
-    margin-top: -100px;
+    margin-top: 0px;
     margin-left: 45px;
     background-color: #c2cad6;
     width:450px;
@@ -27,6 +31,18 @@
     border:1px solid black;
     z-index: 1;
     
+}
+#evc22{
+     padding: 5px;
+    
+    transition-duration: all 0.1s ease-out;
+    margin-top: 0px;
+    margin-left: 45px;
+    background-color: #c2cad6;
+    width:100px;
+    height:25px;
+    border:1px solid black;
+    z-index: 1;
 }
 #evc:hover{
     transition: all 0.2s ease-in;
@@ -54,7 +70,7 @@
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(72, 80, 84, 0.2);
-  width:675px;
+  width:575px;
   height:125px;
   text-align: center;
   font-family: arial;
@@ -145,10 +161,11 @@ form{
    border-radius: 5px;
    width:100px;
    height:40px;
-   right: 20px;
+   right: 360px;
+   
    background: #d61b08;
    border:none;
-   margin-top: 65px;
+   margin-top: 0px;
    color:white;
    position: absolute;
    font-size: 20px;
@@ -235,26 +252,51 @@ table,td,tr{
 }
 .cont{
     position:absolute;
-    margin-top: 5px;
-    margin-left:90px;
+    margin-top: 0px;
+    margin-left:110px;
 }
 #date1{
-    margin-left:393px;
+    margin-left:250px;
     margin-top:22px;
+}
+#num{
+    margin-left:180px;
+    margin-top:20px;
+    width:100px;
+    height:20px;
 }
   </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
   <title>Set Goal</title>
   
  
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+ 
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script type="text/javascript">
-    function submit_me(){
-        
-    }
+    $(document).ready(function(){
+  $("#form1").submit(function(){
+   
+  $.ajax({
+type: $("#form1").attr('method'),
+url: $("#form1").attr('action'),
+data: $("#form1").serialize(),
+success: function (data) {
+var result=data;
+alert("Goal is set");
+ document.location.reload(true);
+//$('#result').attr("value",result);
+}
+});
+return false;
+});   
+});   
+
  function func(x)
 {
    document.getElementById("evc").value=x.value;
@@ -276,7 +318,7 @@ if(x.value!=""){
     }
   }
  
-  xmlhttp.open("GET","AjaxHelper?q="+x.value,true);
+  xmlhttp.open("GET","AjaxHelper?q="+x.value+"&type=AUTHOR",true);
   xmlhttp.send();
   }
 }
@@ -297,7 +339,7 @@ app.controller("myCtrl", function($scope,$http) {
             alert("Please fill the field");
         else{
            $http({
-            url : 'Addbook?q='+document.getElementById("evc").value,
+            url : 'AddItems?q='+document.getElementById("evc").value+"&type=AUTHOR",
             method : "GET"
             
         }).then(function(response) {
@@ -325,13 +367,21 @@ app.controller("myCtrl", function($scope,$http) {
 <div class="top-head">
   <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
   <h1 class="title">SET GOAL </h1>
-  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
+  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
   onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Read A Book</a>
-  <a href="WordList" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
-  <a href="SetGoal.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Set Goal</a>
+  <a href="CallGetWords" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
+  <div class="w3-dropdown-click">
+    <button class="w3-button w3-large w3-padding-16 w3-border w3-black" onclick="myDropFunc()">Goals <i class="fa fa-caret-down"></i></button>
+    <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+      <a href="SetGoalbb.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for books</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for authors</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for genres</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
+    </div>
+  </div>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Account Settings</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
@@ -341,8 +391,9 @@ app.controller("myCtrl", function($scope,$http) {
  <form action="GoalController" method="post" id="form1" name="form1">
      
         <button type="submit" class="finals" >SET GOAL </button>
-        <input type="text" name="evc" placeholder="Search Book" id="evc" onkeyup="fun(this)" autocomplete="off" >
-        <button  id="test1" type="button" ng-click="addItem()" class="button">Add Book</button>
+        <input type="text" name="evc" placeholder="Search Author" id="evc" onkeyup="fun(this)" autocomplete="off" >
+        <button  id="test1" type="button" ng-click="addItem()" class="button">Add Author</button>
+        <input  type="hidden" name="type" id="type" value="AUTHOR" readonly>
         <div id="ev" name="ev"></div>
      
  
@@ -354,18 +405,22 @@ app.controller("myCtrl", function($scope,$http) {
                     <img src="Assets/user.jpg" class="bimg">
                     <table class="cont">
                         <tr>
-                            <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>
+                            <td align="left" class="head1">Author Name:</td> <td align="left">{{x.Name}}</td>
                         </tr>
-                        <tr>
-                            <td align="left" class="head1">Book Author:</td> <td align="left">{{x.author}}</td>
-                        </tr>
-                        <tr>
+                        <!--tr>
+                            <td align="left" class="head1">Enter num of books:</td> <td <input type="date" id="evc22" name="num" placeholder="num of books" required="required"></td>
+                        </tr-->
+                        <!--tr>
                             <td align="left" class="head1">Book Points:</td> <td  align="left">{{x.KindlePoints}}</td>
-                        </tr>
+                        </tr-->
+                        
                     </table>
-                    <p style="position:absolute; margin-left:489px; margin-top:-2px; font-weight: bold; color:white">Enter End Date</p>
+                    <p style="position:absolute; margin-left:365px; margin-top:-2px; font-weight: bold; color:white">Enter End Date</p>
                     <input type="date"  placeholder="END DATE" id="date1" name="d1"  required="required">
-                    <input  type="hidden" name="bookid" id="bookid" value={{x.BookID}} readonly>
+                    <br>
+                    <p style="position:absolute; margin-left:365px; margin-top:-2px; font-weight: bold; color:white">Enter Num of Books</p>
+                    <input type="text"  placeholder="num of books" id="num" name="num"  required="required">
+                    <input  type="hidden" name="Authorid" id="bookid" value={{x.AuthorID}} readonly>
                     <Button id="close" ng-click="removeItem($index)">Delete &#10799;</button>
                   </div>
             </li>
@@ -384,7 +439,19 @@ app.controller("myCtrl", function($scope,$http) {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
 </script>
   </body>
   
   </html>
+

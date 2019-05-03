@@ -4,65 +4,64 @@
  * and open the template in the editor.
  */
 package Servlets;
-import java.util.List;
-import java.util.ArrayList;
-import Model.*;
-import Converter.*;
-import DAO.*;
-import Listener.*;
-import Utility.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import Model.*;
+import Converter.*;
+import DAO.*;
+import Utility.*;
+import com.google.gson.Gson;
+//import com.google.gson.Gson;
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 /**
  *
  * @author Akanksha
  */
-public class AjaxHelper extends HttpServlet {
-public AjaxHelper(){
-         super();
-}
+public class AddItems extends HttpServlet {
 
     /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
+    
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String s=request.getParameter("q");
         String type=request.getParameter("type");
-        if(type.equalsIgnoreCase("BOOK"))
-        {
-            List<Book> l=new ArrayList<Book>();
-            l=Getbooks.GetBooks(s); 
-            request.getSession().setAttribute("Books", l);
-            response.sendRedirect("gbook.jsp");
+        System.out.println(s);
+        String objJSON="";
+        if(type.equalsIgnoreCase("BOOK")){
+            Book b=Getbooks.Getthisbook(s);
+            objJSON = new Gson().toJson(b);
         }
-        if(type.equalsIgnoreCase("AUTHOR"))
-        {
-            List<Author> l=new ArrayList<Author>();
-            l=Getauthors.GetAuthors(s); 
-            request.getSession().setAttribute("Authors", l);
-            response.sendRedirect("gauthor.jsp");
+        if(type.equalsIgnoreCase("AUTHOR")){
+            Author b=Getauthors.Getthisauthor(s);
+            objJSON = new Gson().toJson(b);
         }
-        if(type.equalsIgnoreCase("GENRE"))
-        {
-            List<Author> l=new ArrayList<Author>();
-            l=Getauthors.GetAuthors(s); 
-            request.getSession().setAttribute("Authors", l);
-            response.sendRedirect("ggenre.jsp");
+        /*Book b=new Book();
+b.setName("Saranya");
+b.setKindlePoints(20);
+b.setAuthor("AUGUTHA");*/
+        //request.getSession().setAttribute("book",b);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            //out.print("{\"name\":\""+b.getName()+"\",\"points\":"+b.getKindlePoints()+"\"}");
+            out.print(objJSON);
+            
         }
-        
-       
-       // processRequest(request, response);
+         
     }
 
     /**
@@ -76,8 +75,7 @@ public AjaxHelper(){
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        doGet(request,response);
+       doGet(request, response);
     }
 
     /**

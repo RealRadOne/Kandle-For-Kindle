@@ -40,12 +40,31 @@ public class GoalController extends HttpServlet {
             throws ServletException, IOException, ParseException {
         
         response.setContentType("text/html;charset=UTF-8");
+         HttpSession session=request.getSession(false);
+        String type=request.getParameter("type");
+        System.out.println(type);
+        if(type.equalsIgnoreCase("BOOK")){
+            
         String Values[] = request.getParameterValues("bookid"); 
         String Dates[]=request.getParameterValues("d1");
-        HttpSession session=request.getSession(false); 
         String UserID=(String)session.getAttribute("userID");
         GoalbyBOOK gbb=new GoalbyBOOK();
         gbb.SetGoal(Values, Dates, "U0008");
+        }
+        else if(type.equalsIgnoreCase("AUTHOR")){
+             String Values[] = request.getParameterValues("Authorid"); 
+        String Dates[]=request.getParameterValues("d1");
+        String UserID=(String)session.getAttribute("userID");
+        String num[]=request.getParameterValues("num");
+        for(int i=0;i<Values.length;i++){
+            Values[i]=Values[i]+" "+num[i];
+        }
+        GoalbyAUTHOR gba=new GoalbyAUTHOR();
+        gba.SetGoal(Values, Dates, "U0008");
+        }
+        
+        
+        
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -55,7 +74,7 @@ public class GoalController extends HttpServlet {
             out.println("<title>Servlet GoalController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet GoalController at " + Values[0] + "</h1>");
+            out.println("<h1>Servlet GoalController at  </h1>");
             out.println("</body>");
             out.println("</html>");
         }
