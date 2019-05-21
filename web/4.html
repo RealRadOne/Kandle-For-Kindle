@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+  background-color: black;
+}
+.all{
+  padding-top: 70px;
+  padding-left: 50px;
+  padding-bottom: 70px;
+  padding-right: 50px;
+}
+.flip-card {
+  background-color: transparent;
+  width: 480px;
+  height: 80px;
+  perspective: 1000px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 35px;
+  margin-left: 70px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  font-size: 170%;
+  font-weight: bold;
+ 
+  color: black;
+  z-index: 2;
+  padding-top: 10px;
+}
+
+.flip-card-back {
+  font-size: 130%;
+  font-weight: lighter;
+  background-color: #a7b0bc;
+  color: black;
+  padding-top: 10px;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.text1{
+  margin-top: 9px;
+}
+#f1{
+   background-color: #c0cfdb;
+}
+#f2{
+   background-color: #e8d3a9;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/akstyle.css">
+</head>
+<body>
+<div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-red"
+  onclick="w3_close()">Close </button>
+  <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Read A Book</a>
+  <a href="4.html" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Set Goal</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Home</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
+</div>
+
+<div class="all">
+<div style="position: fixed; top: 5px; left:5px; ">
+  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
+ </div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner" >
+    <div class="flip-card-front" id="f1">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front" id="f2">
+      <p class="text1">COMPLAISANT</p>
+    </div>
+    <div class="flip-card-back">
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</script>
+<script type="text/javascript">
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+</html>

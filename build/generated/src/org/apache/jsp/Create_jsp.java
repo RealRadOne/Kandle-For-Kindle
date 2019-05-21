@@ -1,0 +1,275 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class Create_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html; charset=ISO-8859-1");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
+      out.write("<html>\n");
+      out.write("<head>\n");
+      out.write("<style>\n");
+      out.write(".bg-2 { \n");
+      out.write("    background-color: #000000; /* Dark Black */\n");
+      out.write("    color: #ffffff;\n");
+      out.write(" }\n");
+      out.write(".bg-3 { \n");
+      out.write("    background-color: #ffffff;\n");
+      out.write("    color: #555555;\n");
+      out.write("}\n");
+      out.write(".container-fluid {\n");
+      out.write("  padding-top: 70px;\n");
+      out.write("  padding-bottom: 70px;\n");
+      out.write("}\n");
+      out.write(".img-fluid{\n");
+      out.write("    max-width: 150px;\n");
+      out.write("    height: auto;\n");
+      out.write("}\n");
+      out.write(".card-container {\n");
+      out.write("    display: grid;\n");
+      out.write("    padding: 1rem;\n");
+      out.write("    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));\n");
+      out.write("    grid-gap: 1rem;\n");
+      out.write("}\n");
+      out.write(".card {\n");
+      out.write("    display: grid;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("table{\n");
+      out.write("        width: 100%;\n");
+      out.write("        margin: 20px 0;\n");
+      out.write("        border-collapse: collapse;\n");
+      out.write("    }\n");
+      out.write("table, th, td{\n");
+      out.write("        border: 1px solid #cdcdcd;\n");
+      out.write("    }\n");
+      out.write("table th, table td{\n");
+      out.write("        padding: 5px;\n");
+      out.write("        text-align: left;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("div.background {\n");
+      out.write("  background-image: url(\"Assets/quizzo.jpg\");\n");
+      out.write("  border: 2px solid black;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("div.transbox {\n");
+      out.write("  color: #ffffff;\n");
+      out.write("  background:transparent;\n");
+      out.write("  border: 1px solid black;\n");
+      out.write("  opacity: 0.6;\n");
+      out.write("  filter: alpha(opacity=60); /* For IE8 and earlier */\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("div.transbox p {\n");
+      out.write("  font-weight: bold;\n");
+      out.write("  color: #000000;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("</style>\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\n");
+      out.write("<title>KonnectCreate</title>\n");
+      out.write("<script src=\"//code.jquery.com/jquery.min.js\"></script>\n");
+      out.write("<script src='js/TableToJson.min.js'></script>\n");
+      out.write("<script src=\"https://code.jquery.com/jquery-1.12.4.min.js\">\n");
+      out.write("<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\" type=\"text/javascript\">\n");
+      out.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n");
+      out.write("<link rel=\"stylesheet\" href=\"css/akstyle.css\">\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n");
+      out.write("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n");
+      out.write("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n");
+      out.write("<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n");
+      out.write("\n");
+      out.write("<body>\n");
+      out.write("<script type=\"text/javascript\">\n");
+      out.write("  \n");
+      out.write("  function output() {\n");
+      out.write(" \n");
+      out.write("  var Question = document.getElementById(\"Question\").value;\n");
+      out.write("  var Option1 = document.getElementById(\"Option1\").value;\n");
+      out.write("  var Option2 = document.getElementById(\"Option2\").value;\n");
+      out.write("  var Option3 = document.getElementById(\"Option3\").value;\n");
+      out.write("  var Option4 = document.getElementById(\"Option4\").value;\n");
+      out.write("  var Ans     = document.getElementById(\"Ans\").value;\n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("  var table = document.getElementById(\"table\");\n");
+      out.write("  var row = table.insertRow(table).outerHTML = \n");
+      out.write("   \"<tr id='row'><td>\" + Question \n");
+      out.write("            + \"</td><td>\" + Option1 + \"</td><td>\" + Option2 \n");
+      out.write("            +\"</td><td>\" + Option3 + \"</td><td>\" + Option4 +\"</td><td>\"+Ans+\n");
+      out.write("            \"</td></tr>\";            \n");
+      out.write("};\n");
+      out.write("\n");
+      out.write("function submit() {\n");
+      out.write("  //Store HTML Table Values into Multidimensional Javascript Array Object\n");
+      out.write("  var TableData = new Array();\n");
+      out.write("  $('#table tr').each(function(row, tr) {\n");
+      out.write("    TableData[row] = {\n");
+      out.write("      \"Question\": $(tr).find('td:eq(0)').text(),\n");
+      out.write("      \"Option1\": $(tr).find('td:eq(1)').text(),\n");
+      out.write("      \"Option2\": $(tr).find('td:eq(2)').text(),\n");
+      out.write("      \"Option3\": $(tr).find('td:eq(3)').text(),\n");
+      out.write("      \"Option4\": $(tr).find('td:eq(4)').text()\n");
+      out.write("    }//tableData[row]\n");
+      out.write("  });\n");
+      out.write("  \n");
+      out.write("\n");
+      out.write("            \n");
+      out.write("  TableData.shift(); // first row will be empty - so remove\n");
+      out.write(" \n");
+      out.write("  var Data;\n");
+      out.write("  Data = JSON.stringify(TableData);\n");
+      out.write("  //alert(Data);\n");
+      out.write("  \n");
+      out.write("  $.ajax({\n");
+      out.write("    type: 'POST',\n");
+      out.write("    url: 'Quizprocess',\n");
+      out.write("    data: {\n");
+      out.write("    jsonData: JSON.stringify(TableData)\n");
+      out.write("    },\n");
+      out.write("    dataType: 'json',\n");
+      out.write("    success:function(jsonObj)\n");
+      out.write("    {\n");
+      out.write("                alert(jsonObj.message);\n");
+      out.write("                //$(\"#result\").value(jsonObj.message);\n");
+      out.write("                alert('Quiz Submitted');\n");
+      out.write("    },\n");
+      out.write("    error:function()\n");
+      out.write("    {\n");
+      out.write("               alert('error');\n");
+      out.write("    }\n");
+      out.write("  });  \n");
+      out.write("};\n");
+      out.write("\n");
+      out.write("   \n");
+      out.write("</script>\n");
+      out.write("</head>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<body>\n");
+      out.write("\n");
+      out.write("   <div class=\"container-fluid bg-2 text-center\">\n");
+      out.write("\n");
+      out.write("   <div class=\"row\">\n");
+      out.write("   </div>\n");
+      out.write("   <br><br>\n");
+      out.write("\n");
+      out.write("   </div>\n");
+      out.write("  \n");
+      out.write("   <div class=\"container-fluid bg-3 text-center\" style=\"background-color:#c7d2e2\">  \n");
+      out.write("     \n");
+      out.write("    <div class=\"row\">\n");
+      out.write("    <div class=\"col-sm-6\">\n");
+      out.write("     <div class=\"background\">\n");
+      out.write("     <div class=\"transbox\">\n");
+      out.write("      <div style=\"margin-top: 10px;\">\n");
+      out.write("      <table class=\"table table-striped projects\" id=\"table\">\n");
+      out.write("      <thead>\n");
+      out.write("      <tr>\n");
+      out.write("        <th>Question</th>\n");
+      out.write("        <th>Option1</th>\n");
+      out.write("        <th>Option2</th>\n");
+      out.write("        <th>Option3</th>\n");
+      out.write("        <th>Option4</th>\n");
+      out.write("        <th>Ans</th>\n");
+      out.write("        \n");
+      out.write("      </tr>\n");
+      out.write("    </thead>\n");
+      out.write("    <tbody>\n");
+      out.write("    </tbody>\n");
+      out.write("    </table>\n");
+      out.write("          <button type=\"button\" class=\"btn btn-primary btn-lg\" onclick=\"submit();\">SUBMIT</button>\n");
+      out.write("    </div>\n");
+      out.write("     </div>\n");
+      out.write("    </div>\n");
+      out.write("    </div>\n");
+      out.write("        \n");
+      out.write("   <div class=\"col-sm-6\">\n");
+      out.write("   <div class=\"background\">\n");
+      out.write("   <div class=\"transbox\">\n");
+      out.write("   <div>\n");
+      out.write("   <h5 align=\"left\">Question</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Question\" type=\"text\" id=\"Question\">\n");
+      out.write("   </div>\n");
+      out.write("   <div>\n");
+      out.write("   <h5 align=\"left\">Option1</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Option1\" type=\"text\" id=\"Option1\">\n");
+      out.write("   </div>\n");
+      out.write("   <div>\n");
+      out.write("       <h5 align=\"left\">Option2</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Option2\" type=\"text\" id=\"Option2\">\n");
+      out.write("   </div>\n");
+      out.write("    <div>\n");
+      out.write("       <h5 align=\"left\">Option3</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Option3\" type=\"text\" id=\"Option3\">\n");
+      out.write("   </div>\n");
+      out.write("    <div>\n");
+      out.write("       <h5 align=\"left\">Option4</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Option4\" type=\"text\" id=\"Option4\">\n");
+      out.write("   </div>\n");
+      out.write("       <h5 align=\"left\">Ans</h5>\n");
+      out.write("   <input class=\"w3-input w3-border w3-sand\" name=\"Ans\" type=\"text\" id=\"Ans\"><br><br>\n");
+      out.write("   <input type=\"button\" class=\"btn btn-primary btn-lg\" onclick=\"output();\" value=\"Next\"/>\n");
+      out.write("   </div>\n");
+      out.write("   </div>\n");
+      out.write("   </div>\n");
+      out.write("    </div>\n");
+      out.write("    </div>\n");
+      out.write("</body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
