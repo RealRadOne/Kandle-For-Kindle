@@ -1,0 +1,203 @@
+<%-- 
+    Document   : UIndex
+    Created on : May 26, 2019, 9:00:04 AM
+    Author     : Sakshi Sinha
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+.bg-2 
+{ 
+    background-color: #000000; /* Dark Black */
+    color: #ffffff;
+}
+.bg-3 
+{ 
+    background-color: #ffffff;
+    color: #555555;
+}
+.container-fluid 
+{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.img-fluid
+{
+    max-width: 150px;
+    height: auto;
+}
+.card-container 
+{
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1rem;
+}
+.card 
+{
+    display: grid;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/akstyle.css">
+  
+  <title>User Page</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+  <body>
+<script type="text/javascript">
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script>
+  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-red"
+  onclick="w3_close()">Close </button>
+  <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
+  <a href="CallGetWords" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
+  <div class="w3-dropdown-click">
+    <button class="w3-button w3-large w3-padding-16 w3-border w3-black" onclick="myDropFunc()">Goals <i class="fa fa-caret-down"></i></button>
+    <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+      <a href="SetGoalbb.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for books</a>
+      <a href="SetGoalba.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for authors</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for genres</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
+    </div>
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Account Settings</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
+</div>
+
+
+<div style="position: fixed; top: 5px; left:5px; ">
+  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
+ </div>
+ <!--div class="dropdown" style="float:right;">
+  <button class="dropbtn w3-right" ><img src="avatar.png" style="width: 40px; height: 40px"></button>
+  <div class="dropdown-content">
+  <a class="w3-border" href="#">Profile Settings</a>
+  <a class="w3-border" href="#">Bookmarks</a>
+  <a class="w3-border" href="#">Logout</a>
+  </div-->
+  <%
+            String Uname=
+   %>
+   <div class="container-fluid bg-2 text-center">
+
+   <div class="row">
+   <div class="col-sm-8">
+
+    <section class="card-container" style="margin-left: 100px;">
+ 
+    <article class="card" style="padding-right: 60px;">
+    	<figure class="card__thumbnail">
+        <center><img id="z1" src="Assets/learning.png"></center>
+        </figure>
+        <header class="card__title">
+            <h3>RadOne</h3>
+        </header>
+        <main class="card__description">
+           User Name
+        </main>
+    </article>
+
+   <article class="card" style="padding-right: 60px;">
+   	<figure class="card__thumbnail">
+        <center><img  id="z1" src="Assets/battery.png"></center>
+    </figure>
+        <header class="card__title">
+            <h3>0</h3>
+        </header>
+        <main class="card__description">
+           Kindle Points
+        </main>
+    </article>
+
+   <article class="card" style="padding-right: 60px;">
+   	<figure class="card__thumbnail">
+        <center><img id="z1" src="Assets/library.png"></center>
+    </figure>
+        <header class="card__title">
+            <h3>0</h3>
+        </header>
+        <main class="card__description">
+          Books Read
+        </main>
+    </article>
+
+    <article class="card" style="padding-right: 20px;">
+    <figure class="card__thumbnail">
+        <center><img id="z1" src="Assets/review.png"></center>
+    </figure>
+        <header class="card__title">
+            <h3>0</h3>
+        </header>
+        <main class="card__description">
+           User Level
+        </main>
+    </article>
+</section>
+<br><br>
+
+</div>
+
+   <div class="col-sm-4">
+   <img src="Assets/user.jpg" class="img-fluid img-circle" alt="User">
+   </div>
+   </div>
+   </div>
+   <div class="container-fluid bg-3 text-center" style="background-color: #c7d2e2">  
+       <center style=" margin-top: -50px; margin-bottom: 50px" ><h3 style="font-family:Comic Sans MS, cursive, sans-serif;  font-weight: bolder; font-size: 30px; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;">RECENT READS</h3></center>
+    <div class="row">
+    <div class="col-sm-3">
+    
+    <img src="Assets/logo.jpg" class="img-responsive" id="zoom" alt="Image">
+    
+    </div>
+    <div class="col-sm-3">
+    
+    <img src="Assets/logo.jpg" class="img-responsive" id="zoom" alt="Image">
+    </div>
+    
+
+    <div class="col-sm-3">
+   
+    <img src="Assets/logo.jpg" class="img-responsive" id="zoom" alt="Image">
+    
+    </div>
+    <div class="col-sm-3">
+    
+    <img src="Assets/logo.jpg" class="img-responsive" id="zoom" alt="Image">
+    </div>
+    </div>
+    </div>
+
+</body>
+
+  
+  </html>
+

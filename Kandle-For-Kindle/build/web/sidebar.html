@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="akstyle.css">
+<body>
+
+
+
+<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none; width:25%" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">&times;</button>
+  <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 " alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border">Read A Book</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border">My Vocabulary</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border">Set Goal</a>
+</div>
+
+<div>
+  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Animated Sidebar</h1>
+    <p>identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com.
+
+A website may be accessible via a public Internet Protocol (IP) network, such as the Internet, or a private local area network (LAN), by referencing a uniform resource locator (URL) that identifies the site.
+
+Websites can have many functions and can be used in various fashions; a website can be a personal website, a corporate website for a company, a government website, an organization website, etc. Websites are typically dedicated to a particular topic or purpose, ranging from entertainment and social networking to providing news and education. All publicly accessible websites collectively constitute the World Wide Web, while private websites, such as a company's website for its employees, are typically a part of an intranet.
+
+Web pages, which are the building blocks of websites, are documents, typically composed in plain text interspersed with formatting instructions of Hypertext Markup Language (HTML, XHTML). They may incorporate elements from other websites with suitable markup anchors. Web pages are accessed and transported with the Hypertext Transfer Protocol (HTTP), which may optionally employ encryption (HTTP Secure, HTTPS) to provide security and privacy for the user. The user's application, often a web browser, renders the page content according to its HTML markup instructions onto a display terminal.</p>
+  </div>
+</div>
+<div class="dropdown" style="float:right;">
+  <button class="dropbtn w3-right" ><img src="user.png" style="width: 40px; height: 40px"></button>
+  <div class="dropdown-content">
+  <a class="w3-border" href="#">Profile Settings</a>
+  <a class="w3-border" href="#">Bookmarks</a>
+  <a class="w3-border" href="#">Logout</a>
+  </div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+</script>
+     
+</body>
+</html> 
