@@ -1,5 +1,0 @@
-{"_id":{"$oid":"5c82befdbde79178cbc1ee74"},"UserID":"U0001","Level":"Beginner","KindlePoints":63.0}
-{"_id":{"$oid":"5c82befdbde79178cbc1ee75"},"UserID":"U0002","Level":"Beginner","KindlePoints":163.0}
-{"_id":{"$oid":"5c82befdbde79178cbc1ee76"},"UserID":"U0003","Level":"Intermediate","KindlePoints":603.0}
-{"_id":{"$oid":"5c82befdbde79178cbc1ee77"},"UserID":"U0004","Level":"Expert","KindlePoints":633.0}
-{"_id":{"$oid":"5c82beffbde79178cbc1ee78"},"UserID":"U0005","Level":"Beginner","KindlePoints":463.0}

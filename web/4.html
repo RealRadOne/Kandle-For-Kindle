@@ -5,6 +5,7 @@
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
+  
   background-color: black;
 }
 .all{
@@ -24,6 +25,7 @@ body {
   margin-right: 35px;
   margin-left: 70px;
 }
+
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -33,26 +35,29 @@ body {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+
 .flip-card-front, .flip-card-back {
-  text-align: center;
-  vertical-align: middle;
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
+
 .flip-card-front {
-  font-size: 120%;
+  font-size: 170%;
   font-weight: bold;
+ 
   color: black;
   z-index: 2;
   padding-top: 10px;
 }
+
 .flip-card-back {
-  font-size: 100%;
+  font-size: 130%;
   font-weight: lighter;
   background-color: #a7b0bc;
   color: black;
@@ -62,109 +67,6 @@ body {
 }
 .text1{
   margin-top: 9px;
-  word-wrap: break-word;
-  font-family: monospace;
-}
-.text1[data-len="16"]{
-  font-size: calc(2vw * 1);
-}
-.text1[data-len="15"]{
-  font-size: calc(2vw * 16/15);
-}
-.text1[data-len="14"]{
-  font-size: calc(2vw * 16/14);
-}
-.text1[data-len="13"]{
-  font-size: calc(2vw * 16/13);
-}
-.text1[data-len="12"]{
-  font-size: calc(2vw * 16/12);
-}
-.text1[data-len="11"]{
-  font-size: calc(2vw * 16/11);
-}
-.text1[data-len="10"]{
-  font-size: calc(2vw * 16/10);
-}
-.text1[data-len="9"]{
-  font-size: calc(2vw * 16/9);
-}
-.text1[data-len="8"]{
-  font-size: calc(2vw * 16/8);
-}
-.text1[data-len="7"]{
-  font-size: calc(2vw * 16/7);
-}
-.text1[data-len="6"]{
-  font-size: calc(2vw * 16/6);
-}
-.text1[data-len="5"]{
-  font-size: calc(2vw * 16/5);
-}
-.text1[data-len="4"]{
-  font-size: calc(2vw * 16/4);
-}
-.text1[data-len="3"]{
-  font-size: calc(2vw * 16/3);
-}
-.text1[data-len="2"]{
-  font-size: calc(2vw * 16/2);
-}
-.text1[data-len="1"]{
-  font-size: calc(2vw * 16);
-}
-.text2{
-  margin-top: 0.5px;
-  word-wrap: break-word;
-  font-family: monospace;
-}
-.text2[data-len="16"]{
-  font-size: calc(2vw * 1);
-}
-.text2[data-len="15"]{
-  font-size: calc(2vw * 16/15);
-}
-.text2[data-len="14"]{
-  font-size: calc(2vw * 16/14);
-}
-.text2[data-len="13"]{
-  font-size: calc(2vw * 16/13);
-}
-.text2[data-len="12"]{
-  font-size: calc(2vw * 16/12);
-}
-.text2[data-len="11"]{
-  font-size: calc(2vw * 16/11);
-}
-.text2[data-len="10"]{
-  font-size: calc(2vw * 16/10);
-}
-.text2[data-len="9"]{
-  font-size: calc(2vw * 16/9);
-}
-.text2[data-len="8"]{
-  font-size: calc(2vw * 16/8);
-}
-.text2[data-len="7"]{
-  font-size: calc(2vw * 16/7);
-}
-.text2[data-len="6"]{
-  font-size: calc(2vw * 16/6);
-}
-.text2[data-len="5"]{
-  font-size: calc(2vw * 16/5);
-}
-.text2[data-len="4"]{
-  font-size: calc(2vw * 16/4);
-}
-.text2[data-len="3"]{
-  font-size: calc(2vw * 16/3);
-}
-.text2[data-len="2"]{
-  font-size: calc(2vw * 16/2);
-}
-.text2[data-len="1"]{
-  font-size: calc(2vw * 16);
 }
 #f1{
    background-color: #c0cfdb;
@@ -172,6 +74,7 @@ body {
 #f2{
    background-color: #e8d3a9;
 }
+
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -196,160 +99,160 @@ body {
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah gdg </p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <<div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah gdg </p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah gdg </p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah gdg </p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah gdg </p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner" >
     <div class="flip-card-front" id="f1">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front" id="f2">
-      <p class="text1" data-len="">COMPLAISANT</p>
+      <p class="text1">COMPLAISANT</p>
     </div>
     <div class="flip-card-back">
-      <p class="text2" data-len="">Cheerfully obedient ahaha ahaha ahah</p>
+      <p class="text2">Cheerfully obedient ahaha ahaha ahah</p>
     </div>
   </div>
 </div>
@@ -363,18 +266,6 @@ body {
 }
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
-}
-var els = document.getElementsByClassName("text1"),
-  l = els.length;
-for (var i = 0; i < l; i++) {
-  els[i].dataset.len = els[i].firstChild.nodeValue.length;
-  console.log(els[i].dataset.len);
-}
-var els = document.getElementsByClassName("text2"),
-  l = els.length;
-for (var i = 0; i < l; i++) {
-  els[i].dataset.len = els[i].firstChild.nodeValue.length;
-  console.log(els[i].dataset.len);
 }
 </script>
 </html>
