@@ -8,18 +8,20 @@ import Connect.Connection;
 import Model.*;
 import Converter.*;
 import com.mongodb.BasicDBObjectBuilder;
+import org.bson.types.ObjectId;
+import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 /**
  *
  * @author Akanksha
  */
-public class GoalbaDAO implements GoalDAO 
-{
+public class GoalbaDAO implements GoalDAO {
     private DBCollection col;
 
 	public GoalbaDAO()
@@ -30,20 +32,38 @@ public class GoalbaDAO implements GoalDAO
         //Creating the DB Entry
         public Goal createGoal(Goal g) 
         {
-                GoalbyAuthor g1=(GoalbyAuthor) g;
+            GoalbyAuthor g1=(GoalbyAuthor) g;
+          //  g1.setStatus("Incomplete");
+            
 		DBObject doc = GoalbyAuthorConverter.toDBObject(g1);
 		this.col.insert(doc);
-		String id = (String) doc.get("GoalID");
-		g.setGoalId(id);
+		ObjectId id = (ObjectId) doc.get("_id");
+		g.setGoalId(id.toString());
 		return g;
 	}
         //Updating the Entry
         public void updateGoal(Goal g) 
         {
             GoalbyAuthor g1=(GoalbyAuthor) g;
-	    DBObject query = BasicDBObjectBuilder.start().append("GoalID", g.getGoalId()).get();
-            this.col.update(query, GoalbyAuthorConverter.toDBObject(g1));
+            //ObjectId id = ObjectId( g1.getGoalId());
+            System.out.println(g1.getStatus());
+		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(g1.getGoalId())).get();
+                DBObject data = this.col.findOne(query);
+                if(data!=null){
+                ObjectId id = (ObjectId) data.get("_id");
+                query = BasicDBObjectBuilder.start().append("_id", id).get();
+		this.col.update(query, GoalbyAuthorConverter.toDBObjectu(g1));}
 	} 
+        public Goal readGoal(Goal b) 
+       {
+		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(b.getGoalId())).get();
+		DBObject data = this.col.findOne(query);
+		Goal b1= GoalbyAuthorConverter.toGoal(data);
+                if( b1.getType()!=null && b1.getType().equals("AUTHOR"))
+                    return b1;
+                else
+                    return null;
+	}
         public List<Goal> readUserwise(String UserID)
         {
             List<Goal> data = new ArrayList<Goal>();
@@ -54,7 +74,9 @@ public class GoalbaDAO implements GoalDAO
                 {
 			DBObject doc = cursor.next();
 			Goal g= GoalbyAuthorConverter.toGoal(doc);
-			data.add(g);
+                        //if(g.getType().equalsIgnoreCase("AUTHOR"))
+                        if(g.getType()!=null && g.getStatus().equals("Incomplete"))
+                            data.add(g);
 		}
 		return data;
         }

@@ -14,68 +14,40 @@
         <servlet-class>Servlets.GoalController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AuthKonList</servlet-name>
-        <servlet-class>Servlets.AuthKonList</servlet-class>
+        <servlet-name>AddItems</servlet-name>
+        <servlet-class>Servlets.AddItems</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Konedit</servlet-name>
-        <servlet-class>Servlets.Konedit</servlet-class>
+        <servlet-name>AjaxHelper</servlet-name>
+        <servlet-class>Servlets.AjaxHelper</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Editprocess</servlet-name>
-        <servlet-class>Servlets.Editprocess</servlet-class>
+        <servlet-name>GoalViewer</servlet-name>
+        <servlet-class>Servlets.GoalViewer</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Enroll</servlet-name>
-        <servlet-class>Servlets.Enroll</servlet-class>
+        <servlet-name>CompleteGoal</servlet-name>
+        <servlet-class>Servlets.CompleteGoal</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>Unrlist</servlet-name>
-        <servlet-class>Servlets.Unrlist</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LeaderBoard</servlet-name>
-        <servlet-class>Servlets.LeaderBoard</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MainServ</servlet-name>
-        <servlet-class>Servlets.MainServ</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Addbook</servlet-name>
-        <url-pattern>/Addbook</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GoalController</servlet-name>
         <url-pattern>/GoalController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AuthKonList</servlet-name>
-        <url-pattern>/AuthKonList</url-pattern>
+        <servlet-name>AddItems</servlet-name>
+        <url-pattern>/AddItems</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Konedit</servlet-name>
-        <url-pattern>/Konedit</url-pattern>
+        <servlet-name>AjaxHelper</servlet-name>
+        <url-pattern>/AjaxHelper</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Editprocess</servlet-name>
-        <url-pattern>/Editprocess</url-pattern>
+        <servlet-name>GoalViewer</servlet-name>
+        <url-pattern>/GoalViewer</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Enroll</servlet-name>
-        <url-pattern>/Enroll</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Unrlist</servlet-name>
-        <url-pattern>/Unrlist</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LeaderBoard</servlet-name>
-        <url-pattern>/LeaderBoard</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MainServ</servlet-name>
-        <url-pattern>/MainServ</url-pattern>
+        <servlet-name>CompleteGoal</servlet-name>
+        <url-pattern>/CompleteGoal</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Signup.html</welcome-file>

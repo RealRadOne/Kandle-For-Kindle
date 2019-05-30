@@ -63,7 +63,8 @@ public class BookDAO
        {
 		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(b.getBookId())).get();
 		DBObject data = this.col.findOne(query);
-		return BookConverter.toBook(data);
+		Book b1= BookConverter.toBook(data);
+                return b1;
 	}
         public List<Book> GetBooks(String str) 
        {
@@ -79,6 +80,19 @@ public class BookDAO
 		}
 		return data;
 	}
+        public Book GetbookbyId(String id){
+            BasicDBObject query = new BasicDBObject();
+            query.put("_id",new ObjectId(id).get() );
+            Book d=new Book();
+            DBCursor cursor = col.find(query);
+		while (cursor.hasNext()) 
+                {
+			DBObject doc = cursor.next();
+			d= BookConverter.toBook(doc);
+			
+		}
+		return d;
+        }
         public Book GetthisBook(String str) 
        {
                 List<Book> data = new ArrayList<Book>();

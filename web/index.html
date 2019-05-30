@@ -49,21 +49,7 @@ and open the template in the editor.
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
- <script>
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "43b66ed0-45ee-407a-a683-b8f21c10d5fd",
-        autoResubscribe: true,
-        notifyButton: {
-          enable: true,
-        },
-      });
-      OneSignal.showNativePrompt();
-    });
-  });
-</script>
+  
 </head>
   <body>
 <script type="text/javascript">
@@ -96,10 +82,11 @@ function myDropFunc() {
       <a href="SetGoalbb.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for books</a>
       <a href="SetGoalba.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for authors</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for genres</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
+      <a href="GoalViewer" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
     </div>
   </div>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Account Settings</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">View Ongoing Konnects</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
 
@@ -201,7 +188,7 @@ function myDropFunc() {
     
     <img src="Assets/logo.jpg" class="img-responsive" id="zoom" alt="Image">
     </div>
-    <div class='onesignal-customlink-container'></div>
+   
     </div>
     </div>
 

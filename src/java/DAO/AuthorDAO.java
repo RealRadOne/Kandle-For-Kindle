@@ -1,15 +1,18 @@
 package DAO;
-import Model.Author;
+import Model.*;
 import Connect.*;
 import Converter.*;
 import com.mongodb.BasicDBObject;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Locale;
 import org.bson.types.ObjectId;
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import java.util.regex.*;
 /**
  *
  * @author Sakshi Sinha
@@ -22,6 +25,7 @@ public class AuthorDAO
         {
             Connection con=Connection.getConnection();
             this.col=con.mongo.getDB("Kandle").getCollection("Author");
+		//this.col = mongo.getDB("Kandle").getCollection("Author");
 	}
         //Creating the DB Entry
         public Author createAuthor(Author a) 
@@ -52,11 +56,40 @@ public class AuthorDAO
 		return data;
 	}
         //Deleting document
+        public List<Author> GetAuthors(String str) 
+       {
+                List<Author> data = new ArrayList<Author>();
+		BasicDBObject query = new BasicDBObject();
+		query.put("Name",Pattern.compile("^"+str));
+                DBCursor cursor = col.find(query);
+		while (cursor.hasNext()) 
+                {
+			DBObject doc = cursor.next();
+			Author d= AuthorConverter.toAuthor(doc);
+			data.add(d);
+		}
+		return data;
+	}
        public void deleteAuthor(Author a) 
        {
 		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(a.getId())).get();
 		this.col.remove(query);
        }
+       public Author GetthisAuthor(String str) 
+       {
+                List<Author> data = new ArrayList<Author>();
+		BasicDBObject query = new BasicDBObject();
+		query.put("Name",str);
+                Author d=new Author();
+                DBCursor cursor = col.find(query);
+		while (cursor.hasNext()) 
+                {
+			DBObject doc = cursor.next();
+			d= AuthorConverter.toAuthor(doc);
+			
+		}
+		return d;
+	}
        public int checkStatus(Author as)
        {
            DBObject query = new BasicDBObject();
@@ -80,11 +113,11 @@ public class AuthorDAO
        public Author findAuthor(String Author)
        {
            DBObject query=new BasicDBObject();
-           query.put("Name",Author);
+           query.put("AuthorID",Author);
            DBObject data=this.col.findOne(query);
-           Author ak=AuthorConverter.toAuthor(data);
-           return ak;
+           return AuthorConverter.toAuthor(data);
        }
+       
 }
 
 

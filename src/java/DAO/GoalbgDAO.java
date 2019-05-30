@@ -8,10 +8,13 @@ import Connect.Connection;
 import Model.*;
 import Converter.*;
 import com.mongodb.BasicDBObjectBuilder;
+import org.bson.types.ObjectId;
+import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 /**
@@ -32,17 +35,20 @@ public class GoalbgDAO implements GoalDAO{
             GoalbyGenre g1=(GoalbyGenre) g;
 		DBObject doc = GoalbyGenreConverter.toDBObject(g1);
 		this.col.insert(doc);
-		String id = (String) doc.get("GoalID");
-		g.setGoalId(id);
+		ObjectId id = (ObjectId) doc.get("_id");
+		g.setGoalId(id.toString());
 		return g;
 	}
         //Updating the Entry
         public void updateGoal(Goal g) 
         {
             GoalbyGenre g1=(GoalbyGenre) g;
-		DBObject query = BasicDBObjectBuilder.start().append("GoalID", g.getGoalId()).get();
+		DBObject query = BasicDBObjectBuilder.start().append("_id", g.getGoalId()).get();
 		this.col.update(query, GoalbyGenreConverter.toDBObject(g1));
 	} 
+        public Goal readGoal(Goal g){
+            return g;
+        }
         public List<Goal> readUserwise(String UserID)
         {
             List<Goal> data = new ArrayList<Goal>();

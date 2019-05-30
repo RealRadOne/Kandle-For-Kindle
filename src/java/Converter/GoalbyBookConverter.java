@@ -13,26 +13,44 @@ import org.bson.types.ObjectId;
  *
  * @author Akanksha
  */
-public class GoalbyBookConverter 
-{
-    public static DBObject toDBObject(GoalbyBook g) 
+public class GoalbyBookConverter {
+    public static DBObject toDBObjectu(GoalbyBook g) 
  {
 
-        BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
-	builder.append("GoalID",g.getGoalId());
+		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
+		//builder.append("_id",g.getGoalId());
         builder.append("UserID",g.getUserId());
         builder.append("Date",g.getDate());
         builder.append("BookID",g.getBookID());
+        builder.append("Type",g.getType());
+        builder.append("Status",g.getStatus());
+		return builder.get();
+ }
+    public static DBObject toDBObject(GoalbyBook g) 
+ {
+
+		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
+		builder.append("_id",g.getGoalId());
+        builder.append("UserID",g.getUserId());
+        builder.append("Date",g.getDate());
+        builder.append("BookID",g.getBookID());
+        builder.append("Type",g.getType());
+        builder.append("Status",g.getStatus());
 		return builder.get();
  }
  public static GoalbyBook toGoal(DBObject doc)throws NullPointerException
  {
 		GoalbyBook g= new GoalbyBook();
-                g.setUserId((String)doc.get("UserId"));
+                if(doc.get("Type").equals("BOOK")){
+                g.setUserId((String)doc.get("UserID"));
                 g.setDate((Date)doc.get("Date"));
                 g.setBookID((String)doc.get("BookID"));
-                g.setGoalId((String) doc.get("GoalID"));
+                g.setType((String)doc.get("Type"));
+                g.setStatus((String)doc.get("Status"));
+                ObjectId id = (ObjectId) doc.get("_id");
+		g.setGoalId(id.toString());
+                }
 		return g;
 
-}    
+	}    
 }

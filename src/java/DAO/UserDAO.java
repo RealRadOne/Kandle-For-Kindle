@@ -16,55 +16,55 @@ import com.mongodb.DBObject;
 public class UserDAO 
 {
   private DBCollection col;
-	public UserDAO()
+  public UserDAO()
         {
                 Connection con=Connection.getConnection();
-		this.col = con.mongo.getDB("Kandle").getCollection("User");
-	}
+    this.col = con.mongo.getDB("Kandle").getCollection("User");
+  }
         //Creating the DB Entry
         public User createUser(User u) 
         {
-		DBObject doc = UserConverter.toDBObject(u);
-		this.col.insert(doc);
-		String UserID = (String) doc.get("UserID");
-		u.setUserId(UserID);
-		return u;
-	}
+    DBObject doc = UserConverter.toDBObject(u);
+    this.col.insert(doc);
+    String UserID = (String) doc.get("UserID");
+    u.setUserId(UserID);
+    return u;
+  }
         //Updating the Entry
         public void updateUser(User u) 
         {
-		DBObject query = BasicDBObjectBuilder.start().append("UserID",u.getUserId()).get();
-		this.col.update(query, UserConverter.toDBObject(u));
-	}
+    DBObject query = BasicDBObjectBuilder.start().append("UserID",u.getUserId()).get();
+    this.col.update(query, UserConverter.toDBObject(u));
+  }
         //Reading all data from Document
         public List<User> readAllUser() 
         {
-		List<User> data = new ArrayList<User>();
-		DBCursor cursor = col.find();
-		while (cursor.hasNext()) {
-			DBObject doc = cursor.next();
-			User u = UserConverter.toUser(doc);
-			data.add(u);
-		}
-		return data;
-	}
+    List<User> data = new ArrayList<User>();
+    DBCursor cursor = col.find();
+    while (cursor.hasNext()) {
+      DBObject doc = cursor.next();
+      User u = UserConverter.toUser(doc);
+      data.add(u);
+    }
+    return data;
+  }
         //Deleting document
        public void deleteUser(String UserID) 
        {
-		DBObject query = BasicDBObjectBuilder.start().append("UserID",UserID).get();
-		this.col.remove(query);
-	}
-       public User readUser(String UserID) 
+    DBObject query = BasicDBObjectBuilder.start().append("UserID",UserID).get();
+    this.col.remove(query);
+  }
+       public User readUserById(String UserID) 
        {
-		DBObject query = BasicDBObjectBuilder.start().append("UserID",UserID).get();
-		DBObject data = this.col.findOne(query);
-		return UserConverter.toUser(data);
-	}
+    DBObject query = BasicDBObjectBuilder.start().append("UserID",UserID).get();
+    DBObject data = this.col.findOne(query);
+    return UserConverter.toUser(data);
+  }
         public int checkStatus(User u)
        {
            DBObject query = new BasicDBObject();
            query.put("UserID",u.getUserId());
-	   DBObject data = this.col.findOne(query);
+     DBObject data = this.col.findOne(query);
            try
            {
            if((String)data.get("UserID")!=null && ((String)data.get("Password")).equals(u.getPassword()))
@@ -80,38 +80,11 @@ public class UserDAO
            }
            return(0);
        }
-        //Finding Points by UserID
-       public int totPoints(String UserID)
+       public User readUser(User u) 
        {
-           QuizDAO qd=new QuizDAO();
-           int Qpoints=qd.UtotScore(UserID);
-           int Gpoints=0;
-           return(Qpoints+Gpoints);
-       }
-       
-       //Deciding level by KindlePoints
-       public String ULevel(String UserID)
-       {
-           String level=null;
-           int tot=totPoints(UserID);
-           if(tot<50)
-               level="Bronze";
-           if(tot>50 && tot<100)
-               level="Silver";
-           if(tot>100 && tot<200)
-               level="Gold";
-           if(tot>200)
-               level="Platinum";
-           return(level);   
-       }
-       
-       //Finding UserID by UserName
-       public String UFinder(String UserID)
-       {
-           DBObject query = new BasicDBObject();
-           query.put("UserID",UserID);
-           DBObject data = this.col.findOne(query);
-           User u=UserConverter.toUser(data);
-           return(u.getUserName());
-       }
+    DBObject query = BasicDBObjectBuilder.start().append("UserID", u.getUserId()).get();
+    DBObject data = this.col.findOne(query);
+    User u1=UserConverter.toUser(data);
+                return u1;
+  }
 }

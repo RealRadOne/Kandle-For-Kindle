@@ -5,27 +5,22 @@
  */
 package Servlets;
 
-import Model.*;
-import Converter.*;
-import DAO.*;
-import Utility.*;
-import com.mongodb.MongoClient;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import Interfaces.*;
+import Model.*;
+import Utility.*;
+import DAO.*;
 
 /**
  *
  * @author Akanksha
  */
-public class GoalController extends HttpServlet {
+public class CompleteGoal extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,44 +32,38 @@ public class GoalController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ParseException {
-        
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-         HttpSession session=request.getSession(false);
-        String type=request.getParameter("type");
-        System.out.println(type);
-        if(type.equalsIgnoreCase("BOOK")){
+        String q=request.getParameter("q");
+        Goal ga=new Goal();
+        ga.setGoalId(q);
+        GoalbaDAO dobj=new GoalbaDAO();
+        ga=dobj.readGoal(ga);
+        if(ga==null){
+            GoalbyBook gb=new GoalbyBook();
+            gb.setGoalId(q);
+            GoalbbDAO dbobj=new GoalbbDAO();
+            gb=(GoalbyBook)dbobj.readGoal(gb);
+            //GoalbyBook gb=(GoalbyBook)ga;
+            GoalbyBOOK obj=new GoalbyBOOK();
+            obj.CompleteGoal(gb);
+        }
+        else{
+            GoalbyAuthor gaa=(GoalbyAuthor)ga;
+             GoalbyAUTHOR obj=new GoalbyAUTHOR();
+            obj.CompleteGoal(ga);
             
-        String Values[] = request.getParameterValues("bookid"); 
-        String Dates[]=request.getParameterValues("d1");
-        String UserID=(String)session.getAttribute("userID");
-        GoalbyBOOK gbb=new GoalbyBOOK();
-        gbb.SetGoal(Values, Dates, "U0005");
         }
-        else if(type.equalsIgnoreCase("AUTHOR")){
-             String Values[] = request.getParameterValues("Authorid"); 
-        String Dates[]=request.getParameterValues("d1");
-        String UserID=(String)session.getAttribute("userID");
-        String num[]=request.getParameterValues("num");
-        for(int i=0;i<Values.length;i++){
-            Values[i]=Values[i]+" "+num[i];
-        }
-        GoalbyAUTHOR gba=new GoalbyAUTHOR();
-        gba.SetGoal(Values, Dates, "U0005");
-        }
-        
-        
-        
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GoalController</title>");            
+            out.println("<title>Servlet CompleteGoal</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet GoalController at  </h1>");
+            out.println("<h1>Servlet CompleteGoal at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -92,11 +81,7 @@ public class GoalController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ParseException ex) {
-            Logger.getLogger(GoalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -110,11 +95,7 @@ public class GoalController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ParseException ex) {
-            Logger.getLogger(GoalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

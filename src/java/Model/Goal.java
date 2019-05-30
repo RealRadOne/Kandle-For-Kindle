@@ -6,16 +6,42 @@
 package Model;
 import java.util.Date;
 
+
 /**
  *
- * @author Sakshi Sinha
+ * @author Akanksha Sinha
  */
 public class Goal 
 {
+
+    
     private Date Date;
     private String GoalID;
     private String UserID;
-    private String BookID;
+    private String Type;
+    private String Status;
+    
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String Type) {
+        this.Type = Type;
+    }
+
+    /*public Goal(Date Date, String GoalID, String UserID) {
+        this.Date = Date;
+        this.GoalID = GoalID;
+        this.UserID = UserID;
+    }*/
     
 public Date getDate()
 {
@@ -41,12 +67,5 @@ public void setUserId(String UserID)
 {
 		this.UserID = UserID;
 }
-public String getBookId() 
-{
-		return BookID;
-}
-public void setBookId(String BookID)
-{
-		this.BookID = BookID;
-}
+
 }

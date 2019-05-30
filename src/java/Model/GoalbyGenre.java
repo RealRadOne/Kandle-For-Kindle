@@ -4,11 +4,15 @@
  * and open the template in the editor.
  */
 package Model;
+import java.util.Date;
+import java.text.*;
+import java.time.*;
+import java.util.Calendar;
 /**
  *
  * @author Akanksha
  */
-   public class GoalbyGenre extends Goal {
+public class GoalbyGenre extends Goal {
     private String Genre;
     private int Num;
 

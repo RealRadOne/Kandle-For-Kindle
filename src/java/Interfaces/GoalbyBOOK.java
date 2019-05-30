@@ -7,17 +7,14 @@ package Interfaces;
 import Model.*;
 import Converter.*;
 import DAO.*;
-import Utility.*;
-import com.mongodb.MongoClient;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.*;
-import javax.servlet.http.*;
+
 /**
  *
  * @author Akanksha
@@ -33,6 +30,8 @@ public class GoalbyBOOK implements GoalUC {
                 g.setBookID(Values[i]);
                 Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(Dates[i]);
                 g.setDate(date1);
+                g.setType("BOOK");
+                g.setStatus("Incomplete");
                 GoalbbDAO gDAO = new GoalbbDAO();
                 gDAO.createGoal(g);
                 System.out.println("goal created");
@@ -41,5 +40,30 @@ public class GoalbyBOOK implements GoalUC {
             }
         }
         }
+    public List<Goal> ViewGoals(String userid){
+        GoalbbDAO gDAO=new GoalbbDAO();
+        List<Goal> data = new ArrayList<Goal>();
+        data=gDAO.readUserwise(userid);
+        return data;
+    }
+    public void CompleteGoal(Goal g){
+        GoalbyBook ga=(GoalbyBook)g;
+        System.out.println("Userid:"+ga.getUserId()+" , goal id"+ga.getGoalId());
+        User u=new User();
+        u.setUserId(ga.getUserId());
+        Book b=new Book();
+        b.setBookId(ga.getBookID());
+        BookDAO bobj=new BookDAO(); 
+        b=bobj.readBook(b);
+        UserDAO obj=new UserDAO();
+       // System.out.println("Userid:"+u.getUserId());
+        u=obj.readUser(u);
+        u.setKindlePoints(u.getKindlePoints()+b.getKindlePoints());
+        obj.updateUser(u);
+        ga.setStatus("Complete");
+        GoalbbDAO gobj=new GoalbbDAO();
+        gobj.updateGoal(ga);
+        System.out.println("Goal Completed");
+    }
     
 }

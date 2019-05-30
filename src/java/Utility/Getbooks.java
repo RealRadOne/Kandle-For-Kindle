@@ -37,6 +37,13 @@ public class Getbooks
                  return b;
         
     }
+    public static Book GetbookbyId(String id){
+        BookDAO vocDAO = new BookDAO();
+        Book b=new Book();
+        b.setBookId(id);
+                  b=vocDAO.readBook(b);
+                 return b;
+    }
  
 
 }

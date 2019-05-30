@@ -7,7 +7,10 @@
 <head>
  <style>
  body{
-  background-color: #37474F;
+  /*background-color: black;*/
+  background-image:url(Assets/goalbk.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
   /*overflow: scroll;*/
  }
 
@@ -44,7 +47,7 @@
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #19681d;
   border: none;
   border-radius: 15px;
   box-shadow: 0 0 1px 1px #263238;
@@ -58,7 +61,8 @@
   height:125px;
   text-align: center;
   font-family: arial;
-  background-color:#64d8cb;
+  background-color:rgba(178, 111, 96,0.7);
+  /*background-image: url(Assets/goalbk2.jpg);*/
   padding: 10px;
   margin: 10px;
     
@@ -73,15 +77,19 @@
   font-family:Comic Sans MS, cursive, sans-serif;
   font-weight: bolder;
   font-size: 30px;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  text-shadow: -1.5px 0 #a7b0bc, 0 1.5px #a7b0bc, 1.5px 0 #a7b0bc, 0 -1.5px #a7b0bc;
+  
+  
 }
 
 
 .card:hover{
     box-shadow: 0 4px 8px 0 rgba(14, 98, 140, 0.8);
     border: 0.2px solid #0e628c;
+    background-color:rgba(117, 133, 160,0.8);
 }
-.button:hover {box-shadow: 0 0 18px 3px #263238;}
+.button:hover {box-shadow: 0 0 18px 3px #263238;
+background-color: #29993a;}
 
 .button:active {
   background-color: #3e8e41;
@@ -146,7 +154,7 @@ form{
    width:100px;
    height:40px;
    right: 20px;
-   background: #d61b08;
+   background: #7a0402;
    border:none;
    margin-top: 65px;
    color:white;
@@ -155,7 +163,7 @@ form{
    
 }
 #close:hover{
-    background-color: #9b0f01;
+    background-color: #ad0401;
 }
 #timer{
      border:none;
@@ -173,6 +181,7 @@ form{
     height: 85px;
     float :left;
     margin:5px;
+    
 }
 .finals{
     
@@ -184,8 +193,8 @@ form{
     position: absolute;
     transition:all 0.05s linear;
     margin-left: 800px;
-    margin-top: -40px;
-    background-color: #1754b7;
+    margin-top: -30px;
+    background-color:#1c4770;
 }
 .finals:hover{
     transition:all 0.09s linear;
@@ -321,7 +330,14 @@ app.controller("myCtrl", function($scope,$http) {
             
         }).then(function(response) {
             console.log(response.data);
-            $scope.products.push(angular.fromJson(response.data));
+            if(response.data==="{No}")
+            {
+                alert("Goal limit reached");
+            }
+            else{
+                console.log("in else");
+                 $scope.products.push(angular.fromJson(response.data));
+            }
         }, function(response) {
             //fail case
             console.log(response);
@@ -355,7 +371,7 @@ app.controller("myCtrl", function($scope,$http) {
       <a href="SetGoalbb.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for books</a>
       <a href="SetGoalba.jsp" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for authors</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">Set Goal for genres</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
+      <a href="GoalViewer" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View your goals</a>
     </div>
   </div>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Account Settings</a>

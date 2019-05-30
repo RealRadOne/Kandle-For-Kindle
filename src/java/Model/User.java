@@ -7,10 +7,10 @@ public class User
 {
         private String UserName;
         private String UserID;
-	private String Level;
-	private Double KindlePoints;
+    private String Level;
+    private Double KindlePoints;
         private String Password;
-	private String Email;
+    private String Email;
         public String getUserName()
         {
             return UserName;
@@ -19,25 +19,25 @@ public class User
         {
             this.UserName=UserName;
         }
-	public String getUserId() {
-		return UserID;
-	}
-	public void setUserId(String UserID) {
-		this.UserID = UserID;
-	}
-	public String getLevel() {
-		return Level;
-	}
-	public void setLevel(String Level) 
+    public String getUserId() {
+        return UserID;
+    }
+    public void setUserId(String UserID) {
+        this.UserID = UserID;
+    }
+    public String getLevel() {
+        return Level;
+    }
+    public void setLevel(String Level) 
         {
-		this.Level = Level;
-	}
-	public Double getKindlePoints() {
-		return KindlePoints;
-	}
-	public void setKindlePoints(Double KindlePoints) {
-		this.KindlePoints = KindlePoints;
-	}  
+        this.Level = Level;
+    }
+    public Double getKindlePoints() {
+        return KindlePoints;
+    }
+    public void setKindlePoints(Double KindlePoints) {
+        this.KindlePoints = KindlePoints;
+    }  
         public String getPassword()
         {
             return Password;

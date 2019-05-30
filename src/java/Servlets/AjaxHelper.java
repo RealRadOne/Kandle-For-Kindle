@@ -37,10 +37,31 @@ public AjaxHelper(){
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String s=request.getParameter("q");
-        List<Book> l=new ArrayList<Book>();
-        l=Getbooks.GetBooks(s); 
-        request.getSession().setAttribute("Books", l);
-        response.sendRedirect("g.jsp");
+        //int a=getgoalsl.getnumgoals("U0005");
+        //request.getSession().setAttribute("Num", a);
+        String type=request.getParameter("type");
+        if(type.equalsIgnoreCase("BOOK"))
+        {
+            List<Book> l=new ArrayList<Book>();
+            l=Getbooks.GetBooks(s); 
+            request.getSession().setAttribute("Books", l);
+            response.sendRedirect("gbook.jsp");
+        }
+        if(type.equalsIgnoreCase("AUTHOR"))
+        {
+            List<Author> l=new ArrayList<Author>();
+            l=Getauthors.GetAuthors(s); 
+            request.getSession().setAttribute("Authors", l);
+            response.sendRedirect("gauthor.jsp");
+        }
+        if(type.equalsIgnoreCase("GENRE"))
+        {
+            List<Author> l=new ArrayList<Author>();
+            l=Getauthors.GetAuthors(s); 
+            request.getSession().setAttribute("Authors", l);
+            response.sendRedirect("ggenre.jsp");
+        }
+        
        
        // processRequest(request, response);
     }

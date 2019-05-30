@@ -10,7 +10,17 @@ package Model;
  * @author Akanksha
  */
 public class GoalbyBook extends Goal {
-private String BookID;
+    private String BookID;
+
+    /*public GoalbyBook(java.util.Date Date, String GoalID, String UserID,String BookID) {
+        super(Date, GoalID, UserID);
+        this.BookID=BookID;
+    }
+
+    public GoalbyBook() {
+        super();
+    }*/
+    
 
     public String getBookID() {
         return BookID;

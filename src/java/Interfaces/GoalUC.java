@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Interfaces;
+import Model.Goal;
+import java.util.List;
 
 /**
  *
@@ -11,5 +13,7 @@ package Interfaces;
  */
 public interface GoalUC {
     public void SetGoal(String [] values,String [] dates,String userid);
+    public List<Goal> ViewGoals(String userid);
+    public void CompleteGoal(Goal g);
     
 }

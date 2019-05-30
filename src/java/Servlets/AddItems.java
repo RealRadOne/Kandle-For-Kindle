@@ -22,7 +22,7 @@ import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
  *
  * @author Akanksha
  */
-public class Addbook extends HttpServlet {
+public class AddItems extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +38,22 @@ public class Addbook extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       // int a=(int)request.getSession().getAttribute("Num");
+        int a=getgoalsl.getnumgoals("U0005");
+        String objJSON="";
+        if(a<6){
         String s=request.getParameter("q");
+        String type=request.getParameter("type");
+        System.out.println(s);
         
-        Book b=Getbooks.Getthisbook(s);
-        String objJSON = new Gson().toJson(b);
+        if(type.equalsIgnoreCase("BOOK")){
+            Book b=Getbooks.Getthisbook(s);
+            objJSON = new Gson().toJson(b);
+        }
+        if(type.equalsIgnoreCase("AUTHOR")){
+            Author b=Getauthors.Getthisauthor(s);
+            objJSON = new Gson().toJson(b);
+        }}
         /*Book b=new Book();
 b.setName("Saranya");
 b.setKindlePoints(20);
@@ -50,7 +62,10 @@ b.setAuthor("AUGUTHA");*/
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             //out.print("{\"name\":\""+b.getName()+"\",\"points\":"+b.getKindlePoints()+"\"}");
+            if(a<6)
             out.print(objJSON);
+            else
+                out.print("{No}");
             
         }
          

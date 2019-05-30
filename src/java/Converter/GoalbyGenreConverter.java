@@ -17,8 +17,8 @@ public class GoalbyGenreConverter {
     public static DBObject toDBObject(GoalbyGenre g) 
  {
 
-	BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
-	builder.append("GoalID",g.getGoalId());
+		BasicDBObjectBuilder builder = BasicDBObjectBuilder.start();
+		builder.append("_id",g.getGoalId());
         builder.append("UserID",g.getUserId());
         builder.append("Date",g.getDate());
         builder.append("AuthorId",g.getGenre());
@@ -32,7 +32,8 @@ public class GoalbyGenreConverter {
                 g.setDate((Date)doc.get("Date"));
                 g.setGenre((String)doc.get("Genre"));
                 g.setNum((int)doc.get("Num"));
-		g.setGoalId((String)doc.get("GoalID"));
+                ObjectId id = (ObjectId) doc.get("_id");
+		g.setGoalId(id.toString());
 		return g;
 
 	}    
