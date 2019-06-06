@@ -17,6 +17,7 @@ public class Goal
     
     private Date Date;
     private String GoalID;
+    private String BookID;
     private String UserID;
     private String Type;
     private String Status;
@@ -58,6 +59,14 @@ public String getGoalId()
 public void setGoalId(String GoalID)
 {
 		this.GoalID = GoalID;
+}
+public String getBookId() 
+{
+		return BookID;
+}
+public void setBookId(String BookID)
+{
+		this.BookID = BookID;
 }
 public String getUserId() 
 {
