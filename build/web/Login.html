@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: black;
+}
+.bg {
+  background-image: url("BackGIF.gif");
+  height: 38vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.AuthorLogin {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 0;
+  position: absolute;
+  height: 60%;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 60%;
+  left: 27%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.UserLogin {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 0;
+  position: absolute;
+  height: 60%;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 60%;
+  left: 72%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.Label {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 4vw;
+  padding: 12px 20px;
+  color: white;
+}
+
+.label1 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 3vw;
+  margin: -5px 0;
+}
+input[type=text] {
+  font-size: 1.25vw;
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 20px;
+  margin: -30px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=password]:focus {
+  border: 3px solid #555;
+}
+input[type=password] {
+  font-size: 1.25vw;
+  font-family: monospace;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+input[type=button] {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font-family: monospace;
+  font-size: 20px;
+  padding: 15px 25px;
+  cursor: pointer;
+  margin: 25px 30px;
+  position: absolute;
+  border: outset;
+  top: 75%;
+  left: 70%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  background-color: #000000;
+}
+</style>
+<title>Login</title>
+<script  type="text/javascript">
+function ValidateAuthor(form)
+{
+	if (form.authorID.value && form.authorpassword.value)
+	{
+		form.action = "AuthorLogin";
+                form.submit();
+	}
+	else if (!form.authorID.value)
+	{
+		window.location = "UnsuccessfulLogin3.jsp";
+	}
+	else if (!form.authorpassword.value)
+	{
+		window.location = "UnsuccessfulLogin4.jsp";
+	}
+}
+function ValidateUser(form)
+{
+	if (form.userID.value && form.userpassword.value)
+	{
+		form.action = "UserLogin";
+                form.submit();
+	}
+	else if (!form.userID.value)
+	{
+		window.location = "UnsuccessfulLogin3.jsp";
+	}
+	else if (!form.userpassword.value)
+	{
+		window.location = "UnsuccessfulLogin4.jsp";
+	}
+}
+</script>
+</head>
+<body>
+<div class="Label">
+  <label for="Kandle">Kandle</label>
+</div>
+<div class="bg"> 
+<div class="AuthorLogin">
+  <form method="post">
+    <div class="label1">
+        <label for="Login">Author Log in </label><br><br><br>
+    </div>
+    <div class="Username">
+    	<input type="text" id="authorID" name="authorID" placeholder="Your username or email"><br><br>
+    </div>
+    <div class="Password">
+    	<input type="password" id="authorpassword" name="authorpassword" placeholder="Your password">
+    </div>
+    <div class="Submit">
+        <input type="button" value="Log In" onclick="ValidateAuthor(this.form)">
+    </div>
+  </form>
+</div>
+<div class="UserLogin">
+  <form method="post">
+    <div class="label1">
+        <label for="Login">User Log in </label><br><br><br>
+    </div>
+    <div class="Username">
+    	<input type="text" id="userID" name="userID" placeholder="Your username or email"><br><br>
+    </div>
+    <div class="Password">
+    	<input type="password" id="userpassword" name="userpassword" placeholder="Your password">
+    </div>
+    <div class="Submit">
+        <input type="button" value="Log In" onclick="ValidateUser(this.form)">
+    </div>
+  </form>
+</div>
+</div>
+</body>
+</html>

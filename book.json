@@ -1,0 +1,21 @@
+{"_id":{"$oid":"5c95fae93048aa65dcbe451b"},"Name":"Harry Potter and the philosopher's stone","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5c95fb4e3048aa65dcbe451c"},"Name":"Harry Potter and the chamber's secrets","KindlePoints":{"$numberInt":"54"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5c95fbbc3048aa65dcbe451d"},"Name":"Warlight","AuthorName":"Michael Ondaatje","KindlePoints":{"$numberInt":"65"}}
+{"_id":{"$oid":"5c95fc133048aa65dcbe451e"},"Name":"A Boy in Winter","AuthorName":"Rachel Seiffert","KindlePoints":{"$numberInt":"67"}}
+{"_id":{"$oid":"5c95fc8a3048aa65dcbe451f"},"Name":"The Chosen","AuthorName":"J.R. Ward","KindlePoints":{"$numberInt":"61"}}
+{"_id":{"$oid":"5c95fcde3048aa65dcbe4520"},"Name":"The Shadows","AuthorName":"J.R. Ward","KindlePoints":{"$numberInt":"87"}}
+{"_id":{"$oid":"5c95fd603048aa65dcbe4521"},"Name":"Silent Night","AuthorName":"Danielle Steel","KindlePoints":{"$numberInt":"71"}}
+{"_id":{"$oid":"5cfa33070f77001274d66cb8"},"Name":"Harry Potter and the Prisoner of Azkaban","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5cfa33920f77001274d66cb9"},"Name":"Harry Potter and the Goblet of Fire","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5cfa33c40f77001274d66cba"},"Name":"Harry Potter and the Order of the Phoenix","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5cfa34270f77001274d66cbb"},"Name":"Harry Potter and the Half-Blood Prince","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5cfa34dc0f77001274d66cbc"},"Name":"Harry Potter and the Deathly Hallows","KindlePoints":{"$numberInt":"56"},"AuthorName":"J K Rowling"}
+{"_id":{"$oid":"5cfa47610f77001274d66cbd"},"Name":"Sita- Warrior of Mithila","AuthorName":"Amish Tripathi","KindlePoints":{"$numberInt":"87"}}
+{"_id":{"$oid":"5cfa47f00f77001274d66cbe"},"Name":"The Secret of the Nagas","AuthorName":"Amish Tripathi","KindlePoints":{"$numberInt":"43"}}
+{"_id":{"$oid":"5cfa48150f77001274d66cbf"},"Name":"The Immortals of Meluha","AuthorName":"Amish Tripathi","KindlePoints":{"$numberInt":"87"}}
+{"_id":{"$oid":"5cfa48950f77001274d66cc1"},"Name":"The Oath of the Vayuputras","AuthorName":"Amish Tripathi","KindlePoints":{"$numberInt":"72"}}
+{"_id":{"$oid":"5cfa9be10f77001274d66cc2"},"Name":"Oliver Twist","AuthorName":"Charles Dickens'","KindlePoints":{"$numberInt":"43"}}
+{"_id":{"$oid":"5cfaa57b0f77001274d66cc3"},"Name":"The Invisible Man","AuthorName":"H. G. Wells","KindlePoints":{"$numberInt":"61"}}
+{"_id":{"$oid":"5cfaa5e50f77001274d66cc4"},"Name":"The Time Machine","AuthorName":"H. G. Wells","KindlePoints":{"$numberInt":"61"}}
+{"_id":{"$oid":"5cfaa7270f77001274d66cc5"},"Name":"The Alchemist","AuthorName":"Paulo Coelho","KindlePoints":{"$numberInt":"87"}}
+{"_id":{"$oid":"5cfaa9210f77001274d66cc6"},"Name":"Veronika Decides to Die","AuthorName":"Paulo Coelho","KindlePoints":{"$numberInt":"61"}}

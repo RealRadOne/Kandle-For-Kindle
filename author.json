@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5ccaca6480d0441a3866e72d"},"AuthorID":"123","Name":"J K Rowling"}
+{"_id":{"$oid":"5ccacd1e80d04422245959f8"},"AuthorID":"12323","Name":"Rachel Seiffert","Email":"abce123d@gmail.com","Password":"123as456abc"}
+{"_id":{"$oid":"5ccace8c80d044180ce4405d"},"AuthorID":"1233","Name":"J.R. Ward","Email":"abced@gmail.com","Password":"123456abc"}
+{"_id":{"$oid":"5ccace8c80d044180ce4405e"},"AuthorID":"123tt23","Name":"Michael Ondaatje","Email":"aabce123d@gmail.com","Password":"12tt3as456abc"}
