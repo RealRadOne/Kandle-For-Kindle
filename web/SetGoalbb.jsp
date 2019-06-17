@@ -394,7 +394,7 @@ app.controller("myCtrl", function($scope,$http) {
         <ul style="position:fixed" >
             <li  ng-repeat="x in products">
                 <div class="card">
-                    <img src="Assets/user.jpg" class="bimg">
+                    <img src="Assets/Book/{{x.Name}}.jpg" class="bimg">
                     <table class="cont">
                         <tr>
                             <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>

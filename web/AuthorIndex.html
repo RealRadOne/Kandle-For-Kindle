@@ -1,13 +1,12 @@
-<%-- 
-    Document   : AuthorIndex
-    Created on : May 6, 2019, 11:09:20 PM
-    Author     : Sakshi Sinha
---%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
 <head>
-<style>
+ <style>
 
 .bg-2 { 
     background-color: #000000; /* Dark Black */
@@ -46,54 +45,36 @@
   background-size: cover;
 }
 .left{dislpay:inline; float:left}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Author Index</title>
+  </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="css/akstyle.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <title>User Page</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
 </head>
-<body>
-    <script type="text/javascript">
-  function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-function myDropFunc() {
-  var x = document.getElementById("demoDrop");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-</script>
-<button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
+  <body>
+  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
    <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
   onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
-  <a href="AuthorIndex.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Home</a>
-  <a href="BasicQuiz.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Create Konnect</a>
-  <a href="AuthKonList" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Edit Konnects</a>
-  <a href="aUpdateProfilePicture.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Upload Profile Picture</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Launch A Book</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Create Konnect</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">View Konnects</a>
+  <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Account Settings</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
-</div>    
-   <%
-            String AuthName=(String)request.getSession().getAttribute("AuthName");
-            String AuthID=(String)request.getSession().getAttribute("AuthID");
-            Integer Konnects=(Integer)request.getSession().getAttribute("Konnects");
-            session.setAttribute("AuthName",AuthName);
-            session.setAttribute("AuthID",AuthID);
-   %>
+</div>
+ 
    <div class="container-fluid bg-2 text-center">
 
    <div class="row">
@@ -106,7 +87,7 @@ function myDropFunc() {
         <center><img id="z1" src="Assets/pen.png"></center>
         </figure>
         <header class="card__title">
-            <h3><%=AuthName%></h3>
+            <h3>RadOne</h3>
         </header>
         <main class="card__description">
            User Name
@@ -118,10 +99,10 @@ function myDropFunc() {
         <center><img  id="z1" src="Assets/drinks.png"></center>
     </figure>
         <header class="card__title">
-            <h3><%=Konnects%></h3>
+            <h3>0</h3>
         </header>
         <main class="card__description">
-           Konnects
+           Connects
         </main>
     </article>
 
@@ -130,10 +111,10 @@ function myDropFunc() {
         <center><img id="z1" src="Assets/teamwork.png"></center>
     </figure>
         <header class="card__title">
-            <h3><%=AuthID%></h3>
+            <h3>0</h3>
         </header>
         <main class="card__description">
-          User ID
+          Upcoming Meets
         </main>
     </article>
     <article class="card" style="padding-right: 20px;">
@@ -146,10 +127,10 @@ function myDropFunc() {
            
         </main>
     </article>
-    </section>
-    <br><br>
+</section>
+<br><br>
 
-   </div>
+</div>
 
    <div class="col-sm-4">
    <img src="Assets/user.jpg" class="img-fluid img-circle" alt="User">
@@ -171,7 +152,7 @@ function myDropFunc() {
             </p>
             <p class="text-left">Connect with your fans better with Amazon Connect</p>
             <div class="left"> 
-            <a href="BasicQuiz.jsp" class="btn btn-primary btn-lg">ENTER</a>
+            <a href="BasicQuiz.html" class="btn btn-primary btn-lg">ENTER</a>
             </div>
             </div>
             </div>
@@ -182,7 +163,28 @@ function myDropFunc() {
           </div>
           </div>
          </div>
-         </section>
-    </div>
-    </body>
-</html>
+</section>
+
+  
+   </div>
+   </body>
+  <script type="text/javascript">
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script>
+   </html>

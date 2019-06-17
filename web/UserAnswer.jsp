@@ -42,10 +42,10 @@
                 margin-top: 100px;
                 margin-bottom: 100px;
                 position: relative;
-                //height: 1400px;
+               
                 width: 800px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                //top: 55%;
+                
                 left: 50%;
                 -ms-transform: translate(-50%, 0%);
                 transform: translate(-50%, 0%);
@@ -63,7 +63,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-                //user-select: none;
+                
             }
             .Result {
                 display: block;
@@ -79,7 +79,7 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 left: 27%;
-                //user-select: none;
+                
             }
             .o {
                 display: block;
@@ -94,7 +94,7 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 border-radius: 50%;
-                //user-select: none;
+               
             }
             .o input {
                 position: absolute;

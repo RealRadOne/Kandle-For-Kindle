@@ -1,29 +1,3 @@
-<%-- 
-    Document   : ViewGoals
-    Created on : 6 May, 2019, 9:59:49 PM
-    Author     : Akanksha
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Model.*" %>
-<%
-List<String>alist=new ArrayList<String>();
-alist=(List<String>)session.getAttribute("Author");
-List<Book>blist=new ArrayList<Book>();
-blist=(List<Book>)session.getAttribute("Book");
-List<Integer> adays=new ArrayList<Integer>();
-adays=(List<Integer>)session.getAttribute("adays");
-List<Integer> bdays=new ArrayList<Integer>();
-bdays=(List<Integer>)session.getAttribute("bdays");
-List<String> gid=new ArrayList<String>();
-gid=(List<String>)session.getAttribute("gid");
-List<String> bid=new ArrayList<String>();
-bid=(List<String>)session.getAttribute("bid");
-
-%>
-<!DOCTYPE html>
 <html>
     <head>
 	<title>View Goals</title>
@@ -34,6 +8,7 @@ body{
   background-repeat: no-repeat;
   background-size: 100%;  /*overflow: scroll;*/
   background-attachment: fixed;
+
  }
 .card {
   box-shadow: 0 4px 8px 0 rgba(72, 80, 84, 0.2);
@@ -46,6 +21,7 @@ body{
   padding: 10px;
   margin-bottom: 30px;
   margin-left: 150px;
+  z-index: 9999;
     
 }
 .card:hover{
@@ -83,7 +59,13 @@ body{
   background-color: rgba(56, 57, 58,0.5);
   margin-left: 120px;
   padding: 20px;
+  z-index: 1;
   overflow-y: auto;
+    -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
  
  /* overflow: scroll;*/
 }
@@ -117,8 +99,8 @@ table,td,tr{
     margin-top: 13px;
 }
 .timg{
-
-
+width: 105px;
+height: 105px;
 float :right;
 margin-top:-105px;
     
@@ -141,59 +123,41 @@ margin-top:-105px;
   font-size: 30px;
   text-shadow: -1.5px 0 #034c05, 0 1.5px #034c05, 1.5px 0 #034c05, 0 -1.5px #034c05;
 }
+::-webkit-scrollbar {
+  width: 20px;
+}
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a6cfdb; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #749ca8; 
+}
 .time{
-margin-left: 200px;
-}
-#close{
-   border-radius: 5px;
-   width:100px;
-   height:40px;
-   margin-left: 180px;
-   margin-top: -70px;
-   background: #26a50d;
-   border:none;
-   color:white;
-   position: absolute;
-   font-size: 20px;
-   
-}
-#close:hover{
-    background-color: #1a8405;
+margin-left: 240px;
 }
 </style>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script>
-    function fun(x)
-{
-    //alert(x);
-    //alert("yes i m called");
- if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp=new XMLHttpRequest();
-  } else { // code for IE6, IE5
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
-        alert("Goal is completed");
-     window.location.href = "http://localhost:8080/Final/GoalViewer";
-    }
-  }
- 
-  xmlhttp.open("GET","CompleteGoal?q="+x,true);
-  xmlhttp.send();
-  
-}
-</script>
-<body>
-<div class="top-head">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 <body>
 <div class="top-head">
  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
-  <h1 class="title">MY GOALS </h1>
+  <h1 class="title">SET GOAL </h1>
   <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
   onclick="w3_close()">Close </button>
@@ -213,107 +177,87 @@ margin-left: 200px;
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
 </div>
-</div>
+
 
   <div class="cc">
-      <%
-          int i=0;
-          for(i=0;i<alist.size();i++){
-              String []g;
-              g=alist.get(i).split(",");
-              if(adays.get(i)<=10){
-                  %>
     <div class="card">
-     <img src="Assets/DP/<%=g[0]%>.jpg" class="bimg">
+     <img src="Assets/user.jpg" class="bimg">
                     <table class="cont">
                         <tr>
-                            <td align="left" class="head1">Author Name:</td> <td align="left"><%=g[0]%></td>
+                            <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>
                         </tr>
                         <tr>
-                            <td align="left" class="head1">Num of Books:</td> <td align="left"><%=g[1]%></td>
-                        </tr>
-                        
-                    </table>
-    <div class="time">
-      <p class="btime"><%=adays.get(i)%> Days to End</p>
-      <Button id="close" class="bimg" onclick="fun('<%=gid.get(i)%>')">Complete</Button>
-    </div>
-    </div>
-<% }
-else{
-%>
-<div class="card">
-     <img src="Assets/DP/<%=g[0]%>.jpg" class="bimg">
-                    <table class="cont">
-                        <tr>
-                            <td align="left" class="head1">Author Name:</td> <td align="left"><%=g[0] %></td>
+                            <td align="left" class="head1">Book Author:</td> <td align="left">{{x.author}}</td>
                         </tr>
                         <tr>
-                            <td align="left" class="head1">Num of Books:</td> <td align="left"><%=g[1] %></td>
-                        </tr>
-                        
-                    </table>
-    <div class="time">
-      <p class="atime"><%=adays.get(i)%> Days to End</p>
-      <Button id="close" class="bimg" onclick="fun('<%=gid.get(i)%>')">Complete</Button>
-    </div>
-    </div>
-<%
-}
-          }
- for(i=0;i<blist.size();i++){
-              Book b=new Book();
-              b=(Book)blist.get(i);
-               System.out.println(b.getAuthor()+","+b.getName());
-              if(bdays.get(i)<=10){         
-%>
-<div class="card">
-     <img src="Assets/Book/<%=b.getName()%>.jpg" class="bimg">
-                    <table class="cont">
-                        <tr>
-                            <td align="left" class="head1">Book Name:</td> <td align="left"><%=b.getName()%></td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="head1">Book Author:</td> <td align="left"><%=b.getAuthor()%></td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="head1">Book Points:</td> <td  align="left"><%=b.getKindlePoints()%></td>
+                            <td align="left" class="head1">Book Points:</td> <td  align="left">{{x.KindlePoints}}</td>
                         </tr>
                     </table>
     <div class="time">
-      <p class="btime"><%=bdays.get(i)%> Days to End</p>
-      <Button id="close" class="bimg" onclick="fun('<%=bid.get(i)%>')">Complete</Button>
+      <p class="btime">9 Days to End</p>
+      <img src="Assets/time.gif" class="timg" >
     </div>
 
     
     </div>
-      <%
-          }
-else{
-%>
-<div class="card">
-     <img src="Assets/Book/<%=b.getName()%>.jpg" class="bimg">
+    <div class="card">
+     <img src="Assets/user.jpg" class="bimg">
                     <table class="cont">
                         <tr>
-                            <td align="left" class="head1">Book Name:</td> <td align="left"><%=b.getName()%></td>
+                            <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>
                         </tr>
                         <tr>
-                            <td align="left" class="head1">Book Author:</td> <td align="left"><%=b.getAuthor()%></td>
+                            <td align="left" class="head1">Book Author:</td> <td align="left">{{x.author}}</td>
                         </tr>
                         <tr>
-                            <td align="left" class="head1">Book Points:</td> <td  align="left"><%=b.getKindlePoints()%></td>
+                            <td align="left" class="head1">Book Points:</td> <td  align="left">{{x.KindlePoints}}</td>
                         </tr>
                     </table>
     <div class="time">
-      <p class="atime"><%=bdays.get(i)%> Days to End</p>
-      <Button id="close" onclick="fun('<%=bid.get(i)%>')">Complete</Button>
+      <p class="btime">9 Days to End</p>
+      <img src="Assets/time.gif" class="timg" >
     </div>
-</div>
-      <%
-}
-}
-          %>
+
     
+    </div><div class="card">
+     <img src="Assets/user.jpg" class="bimg">
+                    <table class="cont">
+                        <tr>
+                            <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="head1">Book Author:</td> <td align="left">{{x.author}}</td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="head1">Book Points:</td> <td  align="left">{{x.KindlePoints}}</td>
+                        </tr>
+                    </table>
+    <div class="time">
+      <p class="btime">9 Days to End</p>
+      <img src="Assets/time.gif" class="timg" >
+    </div>
+
+    
+    </div><div class="card">
+     <img src="Assets/user.jpg" class="bimg">
+                    <table class="cont">
+                        <tr>
+                            <td align="left" class="head1">Book Name:</td> <td align="left">{{x.Name}}</td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="head1">Book Author:</td> <td align="left">{{x.author}}</td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="head1">Book Points:</td> <td  align="left">{{x.KindlePoints}}</td>
+                        </tr>
+                    </table>
+    <div class="time">
+      <p class="btime">9 Days to End</p>
+      <img src="Assets/time.gif" class="timg" >
+    </div>
+
+    
+    </div>
     
   </div>
 </body>

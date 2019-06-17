@@ -48,7 +48,7 @@ body {
 }
 input[type=submit] {
   text-align: center;
-  //display: inline-block;
+  
   position: relative;
   font-family: Comic Sans MS, cursive, sans-serif;
   font-size: 17px;
@@ -65,7 +65,7 @@ input[type=submit] {
 a {
   font-family: Comic Sans MS, cursive, sans-serif;
   font-size: 17px;
-  //display: inline-block;
+  
   background-color: black;
   color: white;
   margin: -40px 25px;
