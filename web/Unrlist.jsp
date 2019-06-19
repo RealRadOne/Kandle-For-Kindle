@@ -248,6 +248,27 @@ p {
        </div>
    </div>
    <%
+     }
+     if(days<0)
+     {
+   %>
+   
+   <div class="case-study study1">
+        <figure>
+		<img class="case-study__img" src="Assets/Quiz.png" />
+	</figure>
+       <div class="case-study__overlay">
+  	<h2 class="case-study__title"><%=QID%></h2>
+        <h2 class="case-study__title"><%=QName%></h2>
+       <form name="sender" method="GET" action="LeaderBoard"> 
+       <input type="hidden" name="QuizID" value=<%=QID%>>
+       <input type="hidden" name="QuizName" value=<%=QName%>>
+       <a class="case-study__link"><input type="submit" class="btn btn-primary" value="View LeaderBoard"></a>
+       </form>
+       </div>
+   </div>
+   
+   <%
    }
    %>
    

@@ -73,6 +73,17 @@ function myDropFunc() {
     x.previousElementSibling.className.replace(" w3-green", "");
   }
 }
+  function myDropFunc2() {
+  var x = document.getElementById("demoDrop2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
 </script>
  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
@@ -89,7 +100,14 @@ function myDropFunc() {
     </div>
   </div>
   <a href="UpdateProfilePicture.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Upload Profile Picture</a>
-  <a href="KonnectList" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">View Ongoing Konnects</a>
+  <div class="w3-dropdown-click">
+  <button class="w3-button w3-large w3-padding-16 w3-border w3-black" onclick="myDropFunc2()">Konnects <i class="fa fa-caret-down"></i></button>
+  <div id="demoDrop2" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+      <a href="KonnectList" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Ongoing Konnects</a>
+      <a href="Unrlist" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Enrolled Konnects</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View LeaderBoard</a>
+    </div>
+  </div>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
 

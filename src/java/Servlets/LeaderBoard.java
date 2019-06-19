@@ -27,8 +27,10 @@ public class LeaderBoard extends HttpServlet
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter(); 
         out.println("<h1>Konnect List</h1>");  
+        String QID     =request.getParameter("QuizID");
+        String QName   =request.getParameter("QuizName");
         QuizDAO qDAO=new QuizDAO();
-        List<Quiz> board=qDAO.SortByUsers("GEN1001");
+        List<Quiz> board=qDAO.SortByUsers(QID);
         request.setAttribute("LeaderBoard",board);
         RequestDispatcher rd=request.getRequestDispatcher("LeaderBoard.jsp");
         rd.forward(request, response); 

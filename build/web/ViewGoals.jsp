@@ -224,7 +224,7 @@ margin-left: 200px;
               if(adays.get(i)<=10){
                   %>
     <div class="card">
-     <img src="Assets/user.jpg" class="bimg">
+     <img src="Assets/DP/<%=g[0]%>.jpg" class="bimg">
                     <table class="cont">
                         <tr>
                             <td align="left" class="head1">Author Name:</td> <td align="left"><%=g[0]%></td>
@@ -243,7 +243,7 @@ margin-left: 200px;
 else{
 %>
 <div class="card">
-     <img src="Assets/user.jpg" class="bimg">
+     <img src="Assets/DP/<%=g[0]%>.jpg" class="bimg">
                     <table class="cont">
                         <tr>
                             <td align="left" class="head1">Author Name:</td> <td align="left"><%=g[0] %></td>
@@ -268,7 +268,7 @@ else{
               if(bdays.get(i)<=10){         
 %>
 <div class="card">
-     <img src="Assets/user.jpg" class="bimg">
+     <img src="Assets/Book/<%=b.getName()%>.jpg" class="bimg">
                     <table class="cont">
                         <tr>
                             <td align="left" class="head1">Book Name:</td> <td align="left"><%=b.getName()%></td>
@@ -292,7 +292,7 @@ else{
 else{
 %>
 <div class="card">
-     <img src="Assets/user.jpg" class="bimg">
+     <img src="Assets/Book/<%=b.getName()%>.jpg" class="bimg">
                     <table class="cont">
                         <tr>
                             <td align="left" class="head1">Book Name:</td> <td align="left"><%=b.getName()%></td>

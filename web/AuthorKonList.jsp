@@ -6,7 +6,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Model.Quiz"%>
 <%@page import="java.util.*"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <html>
+<head>
 <style>
 body{
   background-color: #37474F;
@@ -42,7 +45,6 @@ body{
 }
 
 </style>
- <head>
         <link rel="stylesheet" href="css/akstyle.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -50,6 +52,7 @@ body{
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <title>List</title>
  </head>
+ <body background="Assets/leaderbak.jpg">
  <script type="text/javascript">
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
@@ -69,7 +72,6 @@ function myDropFunc() {
   }
 }
 </script>
-    <body>
     <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
    <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
@@ -81,25 +83,42 @@ function myDropFunc() {
   <a href="aUpdateProfilePicture.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Upload Profile Picture</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>
-   <div class="container-fluid bg-2 text-center">
-
-   <div class="row">
+    <div class="container-fluid bg-2 text-center">
        <div class="row">
            <div class="col-sm-12">
-                 <h4 class="text-left" style=" font-family: 'Open Sans', sans-serif;font-weight: 900;font-size: 20px;">
-                 Ongoing Connects
+               <h4 class="text-left" style=" font-family: 'Open Sans', sans-serif;font-weight: 900;font-size: 20px;">
+               <h1 class="ml10">
+                     <span class="letters">Ongoing Konnects</span>
+                     </span>
+                     </h1>
                  </h4>
            </div>
        </div>
-   <br><br>  
+   </div>
+       <br><br>
         <%
             ArrayList<Quiz>qsk=(ArrayList<Quiz>)request.getAttribute("Konnects");
         %>
    <%
    for(Quiz qrk:qsk)
-   {String QID=qrk.getQuizID();
-    String QName=qrk.getQuizName();
+   {
+   String QID=qrk.getQuizID();
+   String QName=qrk.getQuizName();
+   SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+   String today=myFormat.format(new Date());
+   String due=qrk.getDate();
+   int days=0;
+	       Date dateBefore = myFormat.parse(today);
+	       Date dateAfter = myFormat.parse(due);
+	       long difference = dateAfter.getTime() - dateBefore.getTime();
+	       float daysBetween = (difference / (1000*60*60*24));
+               days=(int)daysBetween;
    %>
+   
+   <%
+   if(days>0)
+   {
+   %> 
     <div class="col-sm-12">
 
       <section class="card-container" style="margin-left: 100px;"> 
@@ -111,7 +130,7 @@ function myDropFunc() {
        <p class="card-text"><%=QName%></p> 
       <input type="hidden" id="QName" name="QName" value=<%=QName%>>
       <input type="hidden" id="QID" name="QID" value=<%=QID%>>
-      <input type="Submit" class="btn btn-primary" value="Ëdit">
+      <input type="Submit" class="btn btn-primary" value="Edit">
       </div>
        <div class="col-sm-4">
        <img src="Assets/Quiz.png" class="img-fluid img-circle" alt="User">
@@ -122,9 +141,41 @@ function myDropFunc() {
       </section>
       </div>
    <%
+     }
+     if(days<0)
+     {
+   %>
+   
+    <div class="col-sm-12">
+
+      <section class="card-container" style="margin-left: 100px;"> 
+      <article class="card" style="padding-right: 60px;">
+       <div class="row">
+      <form action="LeaderBoard" method="get">
+      <div class="col-sm-8">
+       <h4 class="card-title"><%=QID%></h4>
+       <p class="card-text"><%=QName%></p> 
+      <input type="hidden" id="QuizName" name="QuizName" value=<%=QName%>>
+      <input type="hidden" id="QuizID" name="QuizID" value=<%=QID%>>
+      <input type="Submit" class="btn btn-primary" value="View LeaderBoard">
+      </div>
+       <div class="col-sm-4">
+       <img src="Assets/Quiz.png" class="img-fluid img-circle" alt="User">
+       </div>
+      </form>
+      </div>
+      </article>
+      </section>
+      </div>
+   
+   <%
    }
    %>
+   
    </div>
+   <%
+   }
+   %>
    </div>
    
     </body>

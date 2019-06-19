@@ -90,19 +90,19 @@ public class AuthorDAO
        public int checkStatus(Author as)
        {
            DBObject query = new BasicDBObject();
-           query.put("userName",as.getName());
+           query.put("AuthorID",as.getAuthorID());
 	   DBObject data = this.col.findOne(query);
            try
            {
-           if((String)data.get("authorName")!=null && ((String)data.get("password")).equals((String)data.get("password")))
+           if((String)data.get("AuthorID")!=null && ((String)data.get("Password")).equals((String)data.get("Password")))
            {System.out.println("Name and password match");return(1);}
-           if((String)data.get("userName")==null)
-           {System.out.println("User Does Not exist");return(-1);}
+           if((String)data.get("AuthorID")==null)
+           {System.out.println("Author Does Not exist");return(-1);}
            }
            catch(NullPointerException e)
            {
               System.out.println(e);
-              System.out.println("User does not exist");
+              System.out.println("Author does not exist");
               return(-1);
            }
            return(0);

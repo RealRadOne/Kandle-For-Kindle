@@ -36,19 +36,19 @@
             }
             .Time {
                 border-radius: 5px;
-                //background-color: #FFFFFF; 
+                 
                 font-size: 18px;
                 font-family: Comic Sans MS, cursive, sans-serif;
                 font-weight: bold;
                 padding: 20px;
-                //display: inline;
+                
                 margin-top: 40px;
-                //margin-bottom: 100px;
+               
                 position: relative;
-                //height: 1400px;
+                
                 width: 400px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                //top: 55%;
+               
                 left: 50%;
                 text-align: center;
                 -ms-transform: translate(-50%, 0%);
@@ -60,12 +60,12 @@
                 background-color: #FFFFFF; 
                 padding: 20px;
                 margin-top: 30px;
-                //margin-bottom: 100px;
+               
                 position: relative;
-                //height: 1400px;
+                
                 width: 800px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                //top: 55%;
+               
                 left: 50%;
                 -ms-transform: translate(-50%, 0%);
                 transform: translate(-50%, 0%);
@@ -83,7 +83,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-                //user-select: none;
+               
             }
             .o {
                 display: block;
@@ -97,7 +97,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-                //user-select: none;
+               
             }
             .o input {
                 position: absolute;
