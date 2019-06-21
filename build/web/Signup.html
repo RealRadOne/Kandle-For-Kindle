@@ -6,8 +6,8 @@ body {
   background-color: black;
 }
 .bg {
-  background-image: url("BackGIF.gif");
-  height: 38vw; 
+  background-image: url("Assets/fireplace3.jpg");
+  height: 540px; 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,38 +16,44 @@ body {
   border-radius: 5px;
   background-color: #FFFFFF; 
   padding: 20px;
-  
+  margin: 20px 0;
   position: absolute;
-  height: 70%;
-  width: 30%;
+  height: 440px;
+  width: 400px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   top: 55%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background: rgba(255,255,255, 0.3);
+}
+.Signup:hover {
+  background: rgba(255,255,255, 0.7);
 }
 .Label {
-  font-weight: bold;
-  font-family: monospace;
-  font-size: 4vw;
+  font-weight: bolder;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size: 30px;
+  text-shadow: -2px 0 #424242, 0 2px #424242, 2px 0 #424242, 0 -2px #424242;
   padding: 12px 20px;
   color: white;
+  text-align: center;
 }
 .label1 {
-  font-family: monospace;
+  font-family: Comic Sans MS, cursive, sans-serif;
   text-align: center;
-  font-size: 3vw;
-  
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 0 20px;
 }
 .Text {
   margin: -70px 0;
 }
 input[type=text] {
-  font-size: 1.25vw;
-  font-family: monospace;
+  font-size: 15px;
+  font-family: Comic Sans MS, cursive, sans-serif;
   width: 100%;
-  padding: 12px 20px;
-  margin: -5px 0 -5px 0; 
+  padding: 9px 20px;
   box-sizing: border-box;
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
@@ -58,11 +64,11 @@ input[type=password]:focus {
   border: 3px solid #555;
 }
 input[type=password] {
-  font-size: 1.25vw;
-  font-family: monospace;
+  font-size: 15px;
+  font-family: Comic Sans MS, cursive, sans-serif;
   width: 100%;
-  padding: 12px 20px;
-  margin: -15px 0;
+  padding: 9px 20px;
+  //margin: -15px 0;
   box-sizing: border-box;
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
@@ -76,11 +82,11 @@ input[type=button] {
   text-align: center;
   display: inline-block;
   position: relative;
-  font-family: monospace;
-  font-size: 20px;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size: 14px;
   padding: 15px 25px;
   cursor: pointer;
-  margin: -40px 340px;
+  margin: -28px 340px;
   position: absolute;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -89,13 +95,13 @@ input[type=button] {
   border: outset;
 }
 a {
-  font-family: monospace;
-  font-size: 18px;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size: 14px;
   display: inline-block;
   background-color: black;
   color: white;
-  margin: 10px 0;
-  padding: 15px 15px;
+  margin: 2px 5px;
+  padding: 15px 25px;
   text-align: center;
   border: outset;
   text-decoration: none;
@@ -104,13 +110,15 @@ a {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 7px;
   cursor: pointer;
-  font-size: 1.4vw;
+  font-size: 15px;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-weight: bold;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  
+  //user-select: none;
 }
 .choice input {
   position: absolute;
@@ -207,14 +215,14 @@ function AddUser(form)
     	<input type="text" id="emailID" name="emailID" placeholder="Your email"><br><br>
     </div>
     <div class="Choice">
-	<label class="choice">Author
-  	    <input type="radio" name="choice" id="author" value="Author" checked>
-  	    <span class="checkmark"></span>
- 	</label>
 	<label class="choice">User
-  	    <input type="radio" name="choice" id="user" value="User"><br><br>
+            <input type="radio" name="choice" id="user" value="User" checked><br>
   	    <span class="checkmark"></span>
 	</label>
+        <label class="choice">Author
+            <input type="radio" name="choice" id="author" value="Author"><br><br>
+  	    <span class="checkmark"></span>
+ 	</label>
     </div>
     <div class="Password">
     	<input type="password" id="password" name="password" placeholder="Your password"><br><br>
