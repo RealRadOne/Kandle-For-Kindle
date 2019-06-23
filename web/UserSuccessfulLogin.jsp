@@ -30,7 +30,7 @@
         <script type = "text/javascript">
             <!--
                 function Redirect() {
-                  window.location = "MainServ";
+                    window.location = "UIndex.jsp";
                 }            
                 setTimeout('Redirect()', 3000);
             //-->
