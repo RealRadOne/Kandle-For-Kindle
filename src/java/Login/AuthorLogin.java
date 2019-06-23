@@ -18,7 +18,6 @@ public class AuthorLogin extends HttpServlet
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
     {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
         String un = request.getParameter("authorID");
         String pwd = request.getParameter("authorpassword");
         AuthorDAO authorDAO = new AuthorDAO();
@@ -28,8 +27,9 @@ public class AuthorLogin extends HttpServlet
         int status=authorDAO.checkStatus(author);
         if (status==1)
         {
-            HttpSession session = request.getSession(true);
-            session.setAttribute("user", un);
+            Author fin=authorDAO.findByID(un);
+            request.getSession().setAttribute("Name",fin.getName());
+            request.getSession().setAttribute("AuthorID",un);
             response.sendRedirect("AuthorSuccessfulLogin.jsp"); 
         } 
         else if (status==-1)

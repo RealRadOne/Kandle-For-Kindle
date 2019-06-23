@@ -12,34 +12,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.*;
-import Converter.*;
-import DAO.*;
 import Utility.*;
 import com.google.gson.Gson;
-//import com.google.gson.Gson;
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 /**
  *
  * @author Akanksha
  */
-public class AddItems extends HttpServlet {
+public class AddItems extends HttpServlet 
+{
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       // int a=(int)request.getSession().getAttribute("Num");
-        int a=getgoalsl.getnumgoals("U0005");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+    {
+        String UserID=(String)request.getSession().getAttribute("UserID");
+        int a=getgoalsl.getnumgoals(UserID);
         String objJSON="";
         if(a<6){
         String s=request.getParameter("q");
@@ -54,14 +41,10 @@ public class AddItems extends HttpServlet {
             Author b=Getauthors.Getthisauthor(s);
             objJSON = new Gson().toJson(b);
         }}
-        /*Book b=new Book();
-b.setName("Saranya");
-b.setKindlePoints(20);
-b.setAuthor("AUGUTHA");*/
-        //request.getSession().setAttribute("book",b);
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            //out.print("{\"name\":\""+b.getName()+"\",\"points\":"+b.getKindlePoints()+"\"}");
+       
+        try (PrintWriter out = response.getWriter()) 
+        {
+ 
             if(a<6)
             out.print(objJSON);
             else
@@ -71,25 +54,12 @@ b.setAuthor("AUGUTHA");*/
          
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        doGet(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";

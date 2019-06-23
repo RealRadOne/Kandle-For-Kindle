@@ -47,18 +47,7 @@ body{
   font-size: 4em;
 }
 </style>
- <head>
-        <link rel="stylesheet" href="css/akstyle.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <title>List</title>
- </head>
- 
-</script>
-   <body background="Assets/leaderbak.jpg">
-   <script type="text/javascript">
+<script type="text/javascript">
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
 }
@@ -75,6 +64,7 @@ function myDropFunc() {
     x.previousElementSibling.className = 
     x.previousElementSibling.className.replace(" w3-green", "");
   }
+}
   function myDropFunc2() {
   var x = document.getElementById("demoDrop2");
   if (x.className.indexOf("w3-show") == -1) {
@@ -87,11 +77,20 @@ function myDropFunc() {
   }
 }
 </script>
+ <head>
+        <link rel="stylesheet" href="css/akstyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
+        <title>List</title>
+ </head>
+ <body background="Assets/leaderbak.jpg">
  <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
   onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
-  <a href="UIndex.jpg" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Home</a>
   <a href="CallGetWords" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">My Vocabulary</a>
   <div class="w3-dropdown-click">
     <button class="w3-button w3-large w3-padding-16 w3-border w3-black" onclick="myDropFunc()">Goals <i class="fa fa-caret-down"></i></button>
@@ -106,8 +105,8 @@ function myDropFunc() {
   <div class="w3-dropdown-click">
   <button class="w3-button w3-large w3-padding-16 w3-border w3-black" onclick="myDropFunc2()">Konnects <i class="fa fa-caret-down"></i></button>
   <div id="demoDrop2" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
-      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Ongoing Konnects</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Enrolled Konnects</a>
+      <a href="KonnectList" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Ongoing Konnects</a>
+      <a href="Unrlist" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View Enrolled Konnects</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-border w3-black">View LeaderBoard</a>
     </div>
   </div>
@@ -118,6 +117,7 @@ function myDropFunc() {
 <div style="position: fixed; top: 5px; left:5px; ">
   <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
  </div>
+
     <div class="container-fluid bg-2 text-center">
        <div class="row">
            <div class="col-sm-12">
@@ -130,6 +130,7 @@ function myDropFunc() {
            </div>
        </div>
    </div>
+       <br><br>
        <br><br>
         <%
             session.setAttribute("UserID","U0001");
@@ -171,5 +172,5 @@ function myDropFunc() {
    <%
    }
    %>   
-    </body>
+</body>
 </html>

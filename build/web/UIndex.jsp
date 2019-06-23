@@ -117,10 +117,12 @@ function myDropFunc() {
  </div>
  
   <%
-            String Uname=(String)request.getSession().getAttribute("UName");
+            String Uname=(String)request.getSession().getAttribute("Name");
             String UID=(String)request.getSession().getAttribute("UserID");
             Double Points=(Double)request.getSession().getAttribute("Points");
             String Level=(String)request.getSession().getAttribute("Level");
+            request.getSession().setAttribute("Name",Uname);
+            request.getSession().setAttribute("UID",UID);
    %>
    <div class="container-fluid bg-2 text-center">
 

@@ -21,6 +21,7 @@ public class AuthorTester {
        AuthorDAO adao=new AuthorDAO();
        adao.createAuthor(a);
        Author am=adao.findAuthor("RadOne");
+       int nums=adao.totKonnects("U0001");
        System.out.println(am.getAuthorID());
     }
 }

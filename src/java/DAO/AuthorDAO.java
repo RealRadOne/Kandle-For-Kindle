@@ -125,6 +125,13 @@ public class AuthorDAO
            }
            return(count);
        }
+       public Author findByID(String AuthorID)
+       {
+        DBObject query=new BasicDBObject();
+        query.put("AuthorID",AuthorID);
+        DBObject data=this.col.findOne(query);
+        return AuthorConverter.toAuthor(data);  
+       }
 }
 
 

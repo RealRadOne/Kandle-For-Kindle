@@ -84,6 +84,18 @@
         <servlet-name>Unrlist</servlet-name>
         <servlet-class>Servlets.Unrlist</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizProcess</servlet-name>
+        <servlet-class>Servlets.QuizProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Quizprocess</servlet-name>
+        <servlet-class>Servlets.Quizprocess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditRedirect</servlet-name>
+        <servlet-class>Servlets.EditRedirect</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GoalController</servlet-name>
         <url-pattern>/GoalController</url-pattern>
@@ -191,6 +203,18 @@
     <servlet-mapping>
         <servlet-name>Unrlist</servlet-name>
         <url-pattern>/Unrlist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizProcess</servlet-name>
+        <url-pattern>/QuizProcess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Quizprocess</servlet-name>
+        <url-pattern>/Quizprocess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditRedirect</servlet-name>
+        <url-pattern>/EditRedirect</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Signup.html</welcome-file>

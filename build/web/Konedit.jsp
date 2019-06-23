@@ -62,15 +62,6 @@ body{
   font-size: 4em;
 }
 </style>
-       <link rel="stylesheet" href="css/akstyle.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js"></script>
-        
-        <title>List</title>
-</head>
 <script type="text/javascript">
   function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
@@ -90,11 +81,18 @@ function myDropFunc() {
   }
 }
 </script>
+       <link rel="stylesheet" href="css/akstyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">       
+        <title>List</title>
+</head>
 <body background="Assets/leaderbak.jpg">
 <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()" style="float:left;">&#9776;</button>
-   <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
-  <button class="w3-bar-item w3-button w3-large w3-red"
-  onclick="w3_close()">Close </button>
+ <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none;top:0px; width:25%" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-red" onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
   <a href="AuthorIndex.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Home</a>
   <a href="BasicQuiz.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Create Konnect</a>
@@ -118,6 +116,7 @@ function myDropFunc() {
         <%
             ArrayList<Question>qsk=(ArrayList<Question>)request.getAttribute("Questions");
             String QID=(String)request.getAttribute("QuizID");
+            //request.setAttribute("QID",QID);
         %>
    <%
    for(Question qrk:qsk)

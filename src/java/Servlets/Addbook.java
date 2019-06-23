@@ -12,34 +12,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.*;
-import Converter.*;
-import DAO.*;
 import Utility.*;
 import com.google.gson.Gson;
-//import com.google.gson.Gson;
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 /**
  *
  * @author Akanksha
  */
-public class Addbook extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
+public class Addbook extends HttpServlet { 
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException 
+    {
         String s=request.getParameter("q");
-        
         Book b=Getbooks.Getthisbook(s);
         String objJSON = new Gson().toJson(b);
         /*Book b=new Book();

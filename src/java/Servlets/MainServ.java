@@ -19,15 +19,20 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
 { 
     response.setContentType("text/html");
     //UName And UserID will be taken from session in final deployment
-    request.getSession().setAttribute("UName","RadOne");
-    request.getSession().setAttribute("UserID","U0001");
+    String UserID=(String)request.getSession().getAttribute("user");
+    String Pass=(String)request.getSession().getAttribute("pwd");
+    if(UserID==null)
+    { response.sendRedirect("Signup.html");}
+    else
+    {
     double Points;
     String Level;
     User u=new User();
-    u.setUserId("RadOne");
-    u.setUserName("U0001");
+    u.setUserId(UserID);
+    u.setPassword(Pass);
     UserDAO ud=new UserDAO();
     int status=ud.checkStatus(u);
+    User us=ud.readUserById(UserID);
     if(status!=1)
     {
         Points=0.0;
@@ -38,12 +43,15 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
     }
     else
     {
-       Points=ud.totPoints("RadOne");
-       Level=ud.ULevel("RadOne"); 
+       Points=ud.totPoints(UserID);
+       Level=ud.ULevel(UserID); 
     }
+    request.getSession().setAttribute("Name",us.getUserName());
+    request.getSession().setAttribute("UserID",UserID);
     request.getSession().setAttribute("Points",Points);
     request.getSession().setAttribute("Level",Level);
     RequestDispatcher rd=request.getRequestDispatcher("UIndex.jsp");
     rd.forward(request, response); 
+    }
 }
 }

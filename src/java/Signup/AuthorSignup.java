@@ -19,12 +19,10 @@ public class AuthorSignup extends HttpServlet
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException
     {
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
         String un = request.getParameter("userID");
         String name = request.getParameter("name");
         String email = request.getParameter("emailID");
         String pwd = request.getParameter("password");
-        MongoClient mongo = new MongoClient("localhost", 27017);
         Author author=new Author();
         author.setAuthorID(un);
         author.setName(name);

@@ -34,14 +34,14 @@ public class QuestionDAO
         {
 		DBObject doc = QuestionConverter.toDBObject(q);
 		this.col.insert(doc);
-		ObjectId id = (ObjectId) doc.get("_id");
-		q.setQuestionID(id.toString());
+		String id = (String) doc.get("QuestionID");
+		q.setQuestionID(id);
 		return q;
 	}
         //Updating the Entry
         public void updateQuestion(Question q) 
         {
-		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(q.getQuestionID())).get();
+		DBObject query = BasicDBObjectBuilder.start().append("QuestionID",q.getQuestionID()).get();
 		this.col.update(query, QuestionConverter.toDBObject(q));
 	}
         //Reading all data from Document
@@ -59,7 +59,7 @@ public class QuestionDAO
         //Deleting document
        public void deleteQuestion(Question q) 
        {
-		DBObject query = BasicDBObjectBuilder.start().append("_id", new ObjectId(q.getQuestionID())).get();
+		DBObject query = BasicDBObjectBuilder.start().append("QuestionID",q.getQuestionID()).get();
 		this.col.remove(query);
        }
        public Question fetchQuestion(String Question)

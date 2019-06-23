@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sakshi Sinha
  */
-public class Konedit extends HttpServlet 
+public class EditRedirect extends HttpServlet 
 {
    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 {  
@@ -27,7 +27,8 @@ public class Konedit extends HttpServlet
         PrintWriter out=response.getWriter(); 
         out.println("<h1>Konnect List</h1>");  
         QuestionDAO qDAO=new QuestionDAO();
-        String QID=request.getParameter("QID");
+        String QID=(String)request.getSession().getAttribute("QID");
+        System.out.println(QID);
         List<Question> qlist=qDAO.QuesByQuiz(QID);
         request.setAttribute("QuizID",QID);
         request.setAttribute("Questions",qlist);

@@ -126,7 +126,7 @@ function myDropFunc() {
 </div>    
     <%
         List<String>data=new ArrayList<String>();
-        //String QID=(String)session.getAttribute("QuizID");
+        String QID=(String)session.getAttribute("QuizID");
         data= (ArrayList<String>)session.getAttribute("QDat");
         String Ques=data.get(0);
         String Op1=data.get(1);
@@ -135,6 +135,8 @@ function myDropFunc() {
         String Op4=data.get(4);
         //String Ans=data.get(5);
         session.setAttribute("Question",Ques);
+        request.getSession().setAttribute("QID",QID);
+        request.setAttribute("QID",QID);
         //request.setAttribute("Question",Ques);
     %>
 <div class="bg">
@@ -156,7 +158,7 @@ function myDropFunc() {
        <label for="Option4">Option4</label>
        <%=Op4%><input type="text" class="form-control" id="Option4" name="Option4">
        </div>
-       <a href="Konedit" class="btn btn-primary btn-lg">Back</a>
+       <a href="EditRedirect" class="btn btn-primary btn-lg">Back</a>
        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
       </form>
 </div>

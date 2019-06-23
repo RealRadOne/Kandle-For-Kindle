@@ -25,13 +25,21 @@ public class Unrlist extends HttpServlet
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 {  
+        String UID=(String)request.getSession().getAttribute("UID");
+        if(UID==null)
+        {
+            response.sendRedirect("Login.html");
+        }
+        else
+        {
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter(); 
         out.println("<h1>Konnect List</h1>");  
         QuizDAO qDAO=new QuizDAO();
-        List<Quiz> qlist=qDAO.findByUser("U0001");
+        List<Quiz> qlist=qDAO.findByUser(UID);
         request.setAttribute("Konnects",qlist);
         RequestDispatcher rd=request.getRequestDispatcher("Unrlist.jsp");
-        rd.forward(request, response); 
+        rd.forward(request, response);
+        }
 }    
 }

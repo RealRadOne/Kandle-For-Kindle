@@ -23,6 +23,7 @@ public class Editprocess extends HttpServlet
     {
     
     String Ques    = (String)request.getSession(false).getAttribute("Question");
+    String QID     = (String)request.getAttribute("QID");
     String Option1 = request.getParameter("Option1");
     String Option2 = request.getParameter("Option2"); 
     String Option3 = request.getParameter("Option3");
@@ -44,7 +45,8 @@ public class Editprocess extends HttpServlet
         out.print("</table>");   
         out.close();  
     */
-    RequestDispatcher view = request.getRequestDispatcher("/Konedit");
+    request.setAttribute("QID",QID);
+    RequestDispatcher view = request.getRequestDispatcher("/EditRedirect");
     view.forward(request, response);
              
 }

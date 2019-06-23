@@ -28,8 +28,9 @@ public class UserLogin extends HttpServlet
         int status=userDAO.checkStatus(user);
         if (status==1)
         {
-            HttpSession session = request.getSession(true);
-            session.setAttribute("user", un);
+            System.out.println(un+"**"+pwd);
+            request.getSession().setAttribute("user", un);
+            request.getSession().setAttribute("pwd", pwd);
             response.sendRedirect("UserSuccessfulLogin.jsp");
         } 
         else if (status==-1)

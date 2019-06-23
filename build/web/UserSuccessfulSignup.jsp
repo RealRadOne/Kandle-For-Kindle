@@ -38,6 +38,12 @@
     </head>
     <body>
 	<div>
+         <%
+        String name=(String)request.getSession().getAttribute("Name");
+        String un=(String)request.getSession().getAttribute("UserID");
+        request.getSession().setAttribute("Name",name);
+        request.getSession().setAttribute("UserID",un);
+         %>
 		<img src='Assets/BackgroundUnsuccessfulLogin.png' class='background'>
         	<div class='Success'>
             		<img src='Assets/SuccessSignup.png'class='image'>

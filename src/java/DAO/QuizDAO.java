@@ -34,7 +34,6 @@ public class QuizDAO
 	}
         public Quiz FindQuiz(String QuizID)
         {
-            List<Quiz> data = new ArrayList<Quiz>();
             BasicDBObject query = new BasicDBObject();
             query.put("QuizID",QuizID);
             DBObject doc=col.findOne(query);

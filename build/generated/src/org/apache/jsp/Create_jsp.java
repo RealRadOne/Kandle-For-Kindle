@@ -149,6 +149,36 @@ public final class Create_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<body>\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
+      out.write("  function w3_open() {\r\n");
+      out.write("    document.getElementById(\"mySidebar\").style.display = \"block\";\r\n");
+      out.write("}\r\n");
+      out.write("function w3_close() {\r\n");
+      out.write("    document.getElementById(\"mySidebar\").style.display = \"none\";\r\n");
+      out.write("}\r\n");
+      out.write("function myDropFunc() {\r\n");
+      out.write("  var x = document.getElementById(\"demoDrop\");\r\n");
+      out.write("  if (x.className.indexOf(\"w3-show\") == -1) {\r\n");
+      out.write("    x.className += \" w3-show\";\r\n");
+      out.write("    x.previousElementSibling.className += \" w3-green\";\r\n");
+      out.write("  } else { \r\n");
+      out.write("    x.className = x.className.replace(\" w3-show\", \"\");\r\n");
+      out.write("    x.previousElementSibling.className = \r\n");
+      out.write("    x.previousElementSibling.className.replace(\" w3-green\", \"\");\r\n");
+      out.write("  }\r\n");
+      out.write("}\r\n");
+      out.write("</script>\r\n");
+      out.write("<button class=\"w3-button w3-black w3-xxlarge\" onclick=\"w3_open()\" style=\"float:left;\">&#9776;</button>\r\n");
+      out.write("   <div class=\"w3-sidebar w3-bar-block w3-black w3-animate-left\" style=\"display:none;top:0px; width:25%\" id=\"mySidebar\">\r\n");
+      out.write("  <button class=\"w3-bar-item w3-button w3-large w3-red\"\r\n");
+      out.write("  onclick=\"w3_close()\">Close </button>\r\n");
+      out.write("  <img  src=\"images.jpg\" class=\"w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black\" alt=\"book\" style=\"width:100%; height: 40%; padding-right: 10px; padding-left: 10px;\">\r\n");
+      out.write("  <a href=\"AuthorIndex.jsp\" class=\"w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black\">Home</a>\r\n");
+      out.write("  <a href=\"BasicQuiz.jsp\" class=\"w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black\">Create Konnect</a>\r\n");
+      out.write("  <a href=\"AuthKonList\" class=\"w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black\">Edit Konnects</a>\r\n");
+      out.write("  <a href=\"aUpdateProfilePicture.jsp\" class=\"w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black\">Upload Profile Picture</a>\r\n");
+      out.write("  <a href=\"#\" class=\"w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black\">Logout</a>\r\n");
+      out.write("</div>    \r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
       out.write("  \r\n");
       out.write("  function output() {\r\n");
       out.write(" \r\n");
@@ -182,7 +212,7 @@ public final class Create_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  });\r\n");
       out.write("  \r\n");
       out.write("            \r\n");
-      out.write("  TableData.shift(); // first row will be empty - so remove\r\n");
+      out.write("  //TableData.shift(); // first row will be empty - so remove\r\n");
       out.write(" \r\n");
       out.write("  var Data;\r\n");
       out.write("  Data = JSON.stringify(TableData);\r\n");
@@ -200,6 +230,8 @@ public final class Create_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                alert(jsonObj.message);\r\n");
       out.write("                //$(\"#result\").value(jsonObj.message);\r\n");
       out.write("                alert('Quiz Submitted');\r\n");
+      out.write("                 var successUrl = \"AuthMainServ\"; // might be a good idea to return this URL in the successful AJAX call\r\n");
+      out.write("                 window.location.href = successUrl; \r\n");
       out.write("    },\r\n");
       out.write("    error:function()\r\n");
       out.write("    {\r\n");
@@ -212,6 +244,8 @@ public final class Create_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\r\n");
  
     String QuizName=(String)request.getSession().getAttribute("QuizName");
+    String QuizID=(String)request.getSession().getAttribute("QuizID");
+    request.getSession().setAttribute("QuizID",QuizID);
 
       out.write("\r\n");
       out.write("\r\n");

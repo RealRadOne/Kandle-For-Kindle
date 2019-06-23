@@ -38,8 +38,7 @@ public class QuestionConverter
                 q.setOption2((String)doc.get("Option2"));
                 q.setOption3((String)doc.get("Option3"));
                 q.setOption4((String)doc.get("Option4"));
-                ObjectId id = (ObjectId) doc.get("_id");
-		q.setQuestionID(id.toString());
+                q.setQuestionID((String)doc.get("QuestionID"));
 		return q;
 
 	}

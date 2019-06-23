@@ -26,8 +26,8 @@ public class UserSignup extends HttpServlet
         int status=userDAO.checkStatus(user);
         if (status==-1)
         {
-            userDAO.createUser(user);
-            response.sendRedirect("UserSuccessfulSignup.jsp");
+        userDAO.createUser(user);
+        response.sendRedirect("UserSuccessfulSignup.jsp");
         }
         else
         {

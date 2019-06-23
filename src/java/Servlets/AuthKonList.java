@@ -27,8 +27,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter(); 
         out.println("<h1>Konnect List</h1>");  
+        String AuthID=(String)request.getSession().getAttribute("AuthName");
         QuizDAO qDAO=new QuizDAO();
-        List<Quiz> qlist=qDAO.findByAuthor("RadOne");
+        List<Quiz> qlist=qDAO.findByAuthor(AuthID);
         request.setAttribute("Konnects",qlist);
         RequestDispatcher rd=request.getRequestDispatcher("AuthorKonList.jsp");
         rd.forward(request, response); 

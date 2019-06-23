@@ -18,12 +18,21 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
 { 
     response.setContentType("text/html");
     //UName And UserID will be taken from session in final deployment
-    request.getSession().setAttribute("AuthName","RadOne");
-    request.getSession().setAttribute("AuthID","U0001");
+    String AuthorID=(String)request.getSession().getAttribute("AuthorID");
+    String Name=(String)request.getSession().getAttribute("Name");
+    if(AuthorID==null)
+    {
+        response.sendRedirect("Signup.html");
+    }
+    else
+    {
+    request.getSession().setAttribute("AuthName",Name);
+    request.getSession().setAttribute("AuthID",AuthorID);
     AuthorDAO ausa=new AuthorDAO();
-    int kona=ausa.totKonnects("U0001");
+    int kona=ausa.totKonnects(Name);
     request.getSession().setAttribute("Konnects", kona);
     RequestDispatcher rd=request.getRequestDispatcher("AuthorIndex.jsp");
     rd.forward(request, response); 
+    }
 }
 }

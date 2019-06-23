@@ -91,13 +91,21 @@ public class UserDAO
   }
         public double totPoints(String UserID)
       {
+          double Points=0.0;
+          try
+          {
           QuizDAO qm=new QuizDAO();
           double Qpoints=qm.UtotScore(UserID);
           DBObject query = new BasicDBObject();
           query.put("UserID",UserID);
           DBObject data = this.col.findOne(query);
           User u=UserConverter.toUser(data);
-          double Points=Qpoints+u.getKindlePoints();
+          Points=Qpoints+u.getKindlePoints();
+          }
+          catch(Exception e)
+          {
+              System.out.println("");
+          }
           return(Points);
       }
       public String ULevel(String UserID)

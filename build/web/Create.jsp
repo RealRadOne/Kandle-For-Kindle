@@ -146,14 +146,16 @@ function myDropFunc() {
   var Option3 = document.getElementById("Option3").value;
   var Option4 = document.getElementById("Option4").value;
   var Ans     = document.getElementById("Ans").value;
-  
+  var frm = document.getElementsByName('basic')[0];
   
   var table = document.getElementById("table");
   var row = table.insertRow(table).outerHTML = 
    "<tr id='row'><td>" + Question 
             + "</td><td>" + Option1 + "</td><td>" + Option2 
             +"</td><td>" + Option3 + "</td><td>" + Option4 +"</td><td>"+Ans+
-            "</td></tr>";            
+            "</td></tr>";   
+ frm.reset();  // Reset all form data
+ return false;
 };
 function submit() {
   //Store HTML Table Values into Multidimensional Javascript Array Object
@@ -170,7 +172,7 @@ function submit() {
   });
   
             
-  TableData.shift(); // first row will be empty - so remove
+  //TableData.shift(); // first row will be empty - so remove
  
   var Data;
   Data = JSON.stringify(TableData);
@@ -188,6 +190,8 @@ function submit() {
                 alert(jsonObj.message);
                 //$("#result").value(jsonObj.message);
                 alert('Quiz Submitted');
+                 var successUrl = "AuthMainServ"; // might be a good idea to return this URL in the successful AJAX call
+                 window.location.href = successUrl; 
     },
     error:function()
     {
@@ -200,6 +204,8 @@ function submit() {
 </head>
 <% 
     String QuizName=(String)request.getSession().getAttribute("QuizName");
+    String QuizID=(String)request.getSession().getAttribute("QuizID");
+    request.getSession().setAttribute("QuizID",QuizID);
 %>
 
 <body>
@@ -250,6 +256,7 @@ function submit() {
    <div class="col-sm-6">
    <div class="background">
    <div class="transbox">
+   <form name="basic">
    <div>
    <h5 align="left">Question</h5>
    <input class="w3-input w3-border w3-sand" name="Question" type="text" id="Question">
@@ -273,6 +280,7 @@ function submit() {
        <h5 align="left">Ans</h5>
    <input class="w3-input w3-border w3-sand" name="Ans" type="text" id="Ans"><br><br>
    <input type="button" class="btn btn-primary btn-lg" onclick="output();" value="Next"/>
+   </form>
    </div>
    </div>
    </div>

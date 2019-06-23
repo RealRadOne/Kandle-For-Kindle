@@ -31,12 +31,14 @@ public class BasicSubmit extends HttpServlet
      q.setQuizID(QuizID);
      q.setAuthorID(AuthID);
      q.setQuizName(QuizName);
+     q.setBookID(BookName);
      q.setDate(Date);
      QuizDAO qd=new QuizDAO();
      qd.createQuiz(q);
      request.getSession().setAttribute("AuthName",AuthName);
      request.getSession().setAttribute("AuthID",AuthID);
      request.getSession().setAttribute("QuizName",QuizName);
+       request.getSession().setAttribute("QuizID",QuizID);
      RequestDispatcher rd=request.getRequestDispatcher("Create.jsp");
      rd.forward(request, response); 
     }

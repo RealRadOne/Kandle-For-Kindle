@@ -27,32 +27,35 @@ public class Quizprocess extends HttpServlet {
      protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
     {
     String myResponse = request.getParameter("jsonData");
-    String QuizID=(String)request.getSession().getAttribute("QuizName");
+    String QuizID=(String)request.getSession().getAttribute("QuizID");
     response.setContentType("application/json");
     PrintWriter out = response.getWriter();
     JSONObject obj=new JSONObject();
     QuizDAO qd=new QuizDAO();
     Quiz q=qd.FindQuiz(QuizID);
+    QuestionDAO qsk=new QuestionDAO();
     //For creating a new Quiz
     ArrayList<String>al=new ArrayList();
     //Creating a question and sending values to DB
     try
     {
        JSONArray jArray=new JSONArray(myResponse);
+       System.out.println(jArray);
        for(int i=0;i<jArray.length()+2;i++)
        {
            Question qs=new Question();
            qs.setQuizID(q.getQuizID());
+           String QuestionID=q.getQuizID()+i;
            JSONObject jobj=jArray.getJSONObject(i);
            String Question=jobj.getString("Question");
            qs.setQuestion(Question);
+           qs.setQuestionID(QuestionID);
            qs.setOption1(jobj.getString("Option1"));
            qs.setOption2(jobj.getString("Option2"));
            qs.setOption3(jobj.getString("Option3"));
            qs.setOption4(jobj.getString("Option4"));
            //String ans=jobj.getString("Ans");
            qs.setAns(jobj.getString("Ans"));
-           QuestionDAO qsk=new QuestionDAO();
            qsk.createQuestion(qs);
            al.add(Question);
        }
