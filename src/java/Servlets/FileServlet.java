@@ -39,6 +39,7 @@ public class FileServlet extends HttpServlet {
       // Check that we have a file upload request
       isMultipart = ServletFileUpload.isMultipartContent(request);
       response.setContentType("text/html");
+      String userID=(String)request.getSession().getAttribute("UID");
       java.io.PrintWriter out = response.getWriter( );
    
       if( !isMultipart ) {
@@ -89,9 +90,9 @@ public class FileServlet extends HttpServlet {
                String contentType = fi.getContentType();
                boolean isInMemory = fi.isInMemory();
                long sizeInBytes = fi.getSize();
-            
+               
                // Write the file
-               fileName="akanksha.jpg";
+               fileName=userID+".jpg";
                System.out.println(fileName);
                if( fileName.lastIndexOf("\\") >= 0 ) {
                   file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
@@ -104,7 +105,7 @@ public class FileServlet extends HttpServlet {
          }
          System.out.println("</body>");
          System.out.println("</html>");
-         response.sendRedirect("UIndex.jsp");
+         response.sendRedirect("MainServ");
          
          } catch(Exception ex) {
             System.out.println(ex);

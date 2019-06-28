@@ -25,7 +25,7 @@ public class AddItems extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
     {
-        String UserID=(String)request.getSession().getAttribute("UserID");
+        String UserID=(String)request.getSession().getAttribute("UID");
         int a=getgoalsl.getnumgoals(UserID);
         String objJSON="";
         if(a<6){

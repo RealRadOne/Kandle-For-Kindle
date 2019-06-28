@@ -13,7 +13,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-         C:\Users\Sakshi Sinha\Documents\NetBeansProjects\Final\web\Assets\DP\
+         C:\Users\Sakshi Sinha\Documents\NetBeansProjects\ServBak\Final\web\Assets\DP\
       </param-value>
     </context-param>
     <servlet>

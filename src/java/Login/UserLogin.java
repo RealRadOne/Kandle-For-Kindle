@@ -1,16 +1,12 @@
 package Login;
 import java.io.IOException;
 import java.io.PrintWriter;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
 import DAO.*;
-import Model.*;
-import javax.servlet.RequestDispatcher;
+import Model.User;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 public class UserLogin extends HttpServlet
 {
     private static final long serialVersionUID = 1L;

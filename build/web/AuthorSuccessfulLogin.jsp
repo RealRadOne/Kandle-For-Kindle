@@ -30,7 +30,7 @@
         <script type = "text/javascript">
             <!--
                 function Redirect() {
-                    window.location = "AuthorIndex.html";
+                    window.location = "AuthMainServ";
                 }            
                 setTimeout('Redirect()', 3000);
             //-->

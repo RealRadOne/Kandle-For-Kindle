@@ -94,7 +94,7 @@ public class AuthorDAO
 	   DBObject data = this.col.findOne(query);
            try
            {
-           if((String)data.get("AuthorID")!=null && ((String)data.get("Password")).equals((String)data.get("Password")))
+           if((String)data.get("AuthorID")!=null && ((String)data.get("Password")).equals(as.getPassword()))
            {System.out.println("Name and password match");return(1);}
            if((String)data.get("AuthorID")==null)
            {System.out.println("Author Does Not exist");return(-1);}
@@ -107,12 +107,25 @@ public class AuthorDAO
            }
            return(0);
        }
-       public Author findAuthor(String Author)
+       public Author findAuthor(String AuthorID)
        {
+           Author as=new Author();
+           String AuthName="bfg";
+           String AuthID="abs";
+           try
+           {
            DBObject query=new BasicDBObject();
-           query.put("Name",Author);
+           query.put("AuthorID",AuthorID);
            DBObject data=this.col.findOne(query);
-           return AuthorConverter.toAuthor(data);
+           as=AuthorConverter.toAuthor(data);
+           AuthName=as.getName();
+           AuthID=as.getAuthorID();
+           }
+           catch(Exception e)
+           {
+               System.out.println(AuthName+"**"+AuthID);
+           }
+           return(as);
        }
        public int totKonnects(String AuthorID)
        {

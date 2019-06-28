@@ -44,23 +44,24 @@ public class GoalController extends HttpServlet {
         String type=request.getParameter("type");
         System.out.println(type);
         if(type.equalsIgnoreCase("BOOK")){
-            
+        
+                
         String Values[] = request.getParameterValues("bookid"); 
         String Dates[]=request.getParameterValues("d1");
-        String UserID=(String)session.getAttribute("userID");
+        String userID=(String)session.getAttribute("UID");
         GoalbyBOOK gbb=new GoalbyBOOK();
-        gbb.SetGoal(Values, Dates, "U0005");
+        gbb.SetGoal(Values, Dates, userID);
         }
         else if(type.equalsIgnoreCase("AUTHOR")){
              String Values[] = request.getParameterValues("Authorid"); 
         String Dates[]=request.getParameterValues("d1");
-        String UserID=(String)session.getAttribute("userID");
+        String userID=(String)session.getAttribute("UID");
         String num[]=request.getParameterValues("num");
         for(int i=0;i<Values.length;i++){
             Values[i]=Values[i]+" "+num[i];
         }
         GoalbyAUTHOR gba=new GoalbyAUTHOR();
-        gba.SetGoal(Values, Dates, "U0005");
+        gba.SetGoal(Values, Dates, userID);
         }
         
         

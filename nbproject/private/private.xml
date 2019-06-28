@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/java/Model/Book.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>37</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/Signup.html</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/Login.html</file>
+        </group>
     </open-files>
 </project-private>

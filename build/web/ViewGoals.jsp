@@ -81,7 +81,7 @@ body{
   width:1100px;
   margin-top: 90px;
   background-color: rgba(56, 57, 58,0.5);
-  margin-left: 120px;
+  margin-left: 20px;
   padding: 20px;
   overflow-y: auto;
  

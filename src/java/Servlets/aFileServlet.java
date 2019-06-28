@@ -34,6 +34,7 @@ public class aFileServlet extends HttpServlet {
       throws ServletException, java.io.IOException {
    
       // Check that we have a file upload request
+       String AuthID=(String)request.getSession().getAttribute("AuthID");
       isMultipart = ServletFileUpload.isMultipartContent(request);
       response.setContentType("text/html");
       java.io.PrintWriter out = response.getWriter( );
@@ -88,7 +89,7 @@ public class aFileServlet extends HttpServlet {
                long sizeInBytes = fi.getSize();
             
                // Write the file
-               fileName="akanksha.jpg";
+               fileName=AuthID+".jpg";
                System.out.println(fileName);
                if( fileName.lastIndexOf("\\") >= 0 ) {
                   file = new File( filePath + fileName.substring( fileName.lastIndexOf("\\"))) ;
@@ -101,7 +102,7 @@ public class aFileServlet extends HttpServlet {
          }
          System.out.println("</body>");
          System.out.println("</html>");
-         response.sendRedirect("AuthorIndex.jsp");
+         response.sendRedirect("AuthMainServ");
          
          } catch(Exception ex) {
             System.out.println(ex);

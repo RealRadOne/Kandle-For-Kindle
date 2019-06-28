@@ -25,7 +25,7 @@ public class BookConverter
 		Book b= new Book();
                 b.setAuthor((String)doc.get("AuthorName"));
 		b.setName((String) doc.get("Name"));
-		b.setKindlePoints((double) doc.get("KindlePoints"));
+		b.setKindlePoints((Double) doc.get("KindlePoints"));
 		ObjectId id = (ObjectId) doc.get("_id");
 		b.setBookId(id.toString());
 		return b;

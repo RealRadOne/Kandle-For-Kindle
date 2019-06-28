@@ -41,7 +41,7 @@ private String author;
 	public double getKindlePoints() {
 		return KindlePoints;
 	}
-	public void setKindlePoints(double KindlePoints) {
+	public void setKindlePoints(Double KindlePoints) {
 		this.KindlePoints = KindlePoints;
 	}   
 }

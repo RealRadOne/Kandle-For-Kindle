@@ -15,7 +15,7 @@ public class BookTester
  {
 Book b=new Book();
 b.setName("Tester");
-b.setKindlePoints(200);
+b.setKindlePoints(200.00);
 b.setAuthor("Tester20");
 BookDAO bocDAO = new BookDAO();
    //Create

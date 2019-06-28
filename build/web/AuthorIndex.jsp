@@ -152,7 +152,7 @@ function myDropFunc() {
    </div>
 
    <div class="col-sm-4">
-   <img src="Assets/user.jpg" class="img-fluid img-circle" alt="User">
+       <img src="Assets/DP/<%=AuthID%>.jpg" class="img-fluid img-circle" alt="User">
    </div>
    </div>
    </div>

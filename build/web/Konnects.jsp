@@ -79,6 +79,7 @@ function myDropFunc() {
 </script>
  <head>
         <link rel="stylesheet" href="css/akstyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -87,7 +88,7 @@ function myDropFunc() {
         <title>List</title>
  </head>
  <body background="Assets/leaderbak.jpg">
- <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; width:25%" id="mySidebar">
+ <div class="w3-sidebar w3-bar-block w3-black w3-animate-left" style="display:none; z-index:200; width:25%" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-red"
   onclick="w3_close()">Close </button>
   <img  src="images.jpg" class="w3-bar-item w3-button w3-xlarge w3-padding-16 w3-black" alt="book" style="width:100%; height: 40%; padding-right: 10px; padding-left: 10px;">
@@ -114,7 +115,7 @@ function myDropFunc() {
 </div>
 
 
-<div style="position: fixed; top: 5px; left:5px; ">
+<div style="position: fixed; top: 5px; left:5px; z-index:1000px; ">
   <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
  </div>
 

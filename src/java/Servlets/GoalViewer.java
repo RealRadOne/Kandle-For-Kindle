@@ -38,7 +38,8 @@ public class GoalViewer extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         GoalbyAUTHOR g1=new GoalbyAUTHOR();
-        List<Goal> temp=g1.ViewGoals("U0005");
+         String UserID=(String)request.getSession().getAttribute("UID");
+        List<Goal> temp=g1.ViewGoals(UserID);
         List<String> gba=new ArrayList<String>();
         Date current=new Date();
         List<Integer> daysa=new ArrayList<Integer>();
@@ -51,6 +52,7 @@ public class GoalViewer extends HttpServlet {
              long day=diff/(1000*60*60*24);
              daysa.add(Integer.parseInt(String.valueOf(day)));
              AuthorDAO ado=new AuthorDAO();
+             System.out.println(tmp.getAuthorId());
              idgs.add(tmp.getGoalId());
              gba.add((ado.findAuthor(tmp.getAuthorId())).getName()+","+tmp.getNum());
         }}
@@ -58,7 +60,7 @@ public class GoalViewer extends HttpServlet {
         request.getSession().setAttribute("adays", daysa);
         request.getSession().setAttribute("gid", idgs);
         GoalbyBOOK g2=new GoalbyBOOK();
-        List<Goal> temp2=g2.ViewGoals("U0005");
+        List<Goal> temp2=g2.ViewGoals(UserID);
         
         List<Book> gbb=new ArrayList<Book>();
         List<Integer> daysb=new ArrayList<Integer>();
