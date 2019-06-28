@@ -66,15 +66,13 @@ public class QuizDAO
             Author aura=auko.findAuthor(Autho);
             return(aura);
         }
-        public List<Quiz> findByAuthor(String AuthName)
+        public List<Quiz> findByAuthor(String AuthID)
         {
-            AuthorDAO ask=new AuthorDAO();
             List<Quiz> result=new ArrayList<Quiz>();
             try
             {
-            Author ak=ask.findAuthor(AuthName);
-            DBObject query=new BasicDBObject();
-            query.put("AuthorID",ak.getAuthorID());
+            BasicDBObject query = new BasicDBObject();
+            query.put("AuthorID",AuthID);
             DBCursor cursor = col.find(query);
             while(cursor.hasNext())
             {

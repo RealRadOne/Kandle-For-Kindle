@@ -22,6 +22,8 @@ public class UserSignup extends HttpServlet
         user.setUserName(name);
         user.setEmail(email);
         user.setPassword(pwd);
+        user.setKindlePoints(0.0);
+        user.setLevel("Bronze");
         UserDAO userDAO=new UserDAO();
         int status=userDAO.checkStatus(user);
         if (status==-1)

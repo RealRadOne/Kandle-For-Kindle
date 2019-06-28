@@ -12,8 +12,22 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/Signup.html</file>
-            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/Login.html</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/BasicQuiz.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/ShowResult.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/UIndex.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Signup/UserSignup.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/AuthorIndex.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Signup/AuthorSignup.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/ViewGoals.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/UserQuiz.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Servlets/BasicSubmit.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/UserAnswer.jsp</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Servlets/Quizprocess.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Servlets/AuthKonList.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Servlets/SubmitCall.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/src/java/Servlets/MainServ.java</file>
+            <file>file:/C:/Users/Sakshi%20Sinha/Documents/NetBeansProjects/ServBak/Final/web/SetGoalbb.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -96,6 +96,10 @@
         <servlet-name>EditRedirect</servlet-name>
         <servlet-class>Servlets.EditRedirect</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubmitCall</servlet-name>
+        <servlet-class>Servlets.SubmitCall</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GoalController</servlet-name>
         <url-pattern>/GoalController</url-pattern>
@@ -215,6 +219,10 @@
     <servlet-mapping>
         <servlet-name>EditRedirect</servlet-name>
         <url-pattern>/EditRedirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitCall</servlet-name>
+        <url-pattern>/SubmitCall</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Signup.html</welcome-file>

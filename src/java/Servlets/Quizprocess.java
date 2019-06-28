@@ -33,6 +33,7 @@ public class Quizprocess extends HttpServlet {
     JSONObject obj=new JSONObject();
     QuizDAO qd=new QuizDAO();
     Quiz q=qd.FindQuiz(QuizID);
+    q.setMinute(6);
     QuestionDAO qsk=new QuestionDAO();
     //For creating a new Quiz
     ArrayList<String>al=new ArrayList();
@@ -43,21 +44,23 @@ public class Quizprocess extends HttpServlet {
        System.out.println(jArray);
        for(int i=0;i<jArray.length()+2;i++)
        {
+           JSONObject jobj=jArray.getJSONObject(i);
+           String Question=jobj.getString("Question");
+           if(Question!=null)
+           {
            Question qs=new Question();
            qs.setQuizID(q.getQuizID());
            String QuestionID=q.getQuizID()+i;
-           JSONObject jobj=jArray.getJSONObject(i);
-           String Question=jobj.getString("Question");
            qs.setQuestion(Question);
            qs.setQuestionID(QuestionID);
            qs.setOption1(jobj.getString("Option1"));
            qs.setOption2(jobj.getString("Option2"));
            qs.setOption3(jobj.getString("Option3"));
            qs.setOption4(jobj.getString("Option4"));
-           //String ans=jobj.getString("Ans");
-           qs.setAns(jobj.getString("Ans"));
+           qs.setAns("0"+(jobj.getString("Ans"))+"0");
            qsk.createQuestion(qs);
            al.add(Question);
+           }
        }
     }
     catch(Exception e)

@@ -29,7 +29,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
     request.getSession().setAttribute("AuthName",Name);
     request.getSession().setAttribute("AuthID",AuthorID);
     AuthorDAO ausa=new AuthorDAO();
-    int kona=ausa.totKonnects(Name);
+    int kona=ausa.totKonnects(AuthorID);
     request.getSession().setAttribute("Konnects", kona);
     RequestDispatcher rd=request.getRequestDispatcher("AuthorIndex.jsp");
     rd.forward(request, response); 

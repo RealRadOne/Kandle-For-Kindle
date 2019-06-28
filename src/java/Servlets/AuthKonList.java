@@ -27,7 +27,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)th
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter(); 
         out.println("<h1>Konnect List</h1>");  
-        String AuthID=(String)request.getSession().getAttribute("AuthName");
+        String AuthID=(String)request.getSession().getAttribute("AuthID");
         QuizDAO qDAO=new QuizDAO();
         List<Quiz> qlist=qDAO.findByAuthor(AuthID);
         request.setAttribute("Konnects",qlist);
