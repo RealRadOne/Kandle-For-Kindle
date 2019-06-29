@@ -7,7 +7,6 @@ package Servlets;
 import Model.Quiz;
 import DAO.QuizDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,12 +22,20 @@ public class Enroll extends HttpServlet
     public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException 
   {
-     String UID     = (String)request.getSession(false).getAttribute("UserID");
+     String UID     = (String)request.getSession().getAttribute("UserID");
      String QID     =request.getParameter("QuizID");
      String QName   =request.getParameter("QuizName");
      QuizDAO qDAO=new QuizDAO();
      Quiz qr=qDAO.FindQuiz(QID);
-     qr.setUserID(UID);
+     Quiz q=new Quiz();
+     q.setAuthorID(qr.getAuthorID());
+     q.setBookID(qr.getBookID());
+     q.setUserID(UID);
+     q.setDate(qr.getDate());
+     q.setQuizID(QID);
+     q.setQuizName(QName);
+     q.setMinute(qr.getMinute());
+     qDAO.createQuiz(q);
      qDAO.updateQuiz(qr);
      /*
        PrintWriter out=response.getWriter();  

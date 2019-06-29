@@ -27,7 +27,7 @@
 .img-fluid
 {
     max-width: 150px;
-    height: auto;
+    max-height:200px;
 }
 .card-container 
 {

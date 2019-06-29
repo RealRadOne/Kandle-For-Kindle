@@ -36,19 +36,19 @@
             }
             .Time {
                 border-radius: 5px;
-                 
+                //background-color: #FFFFFF; 
                 font-size: 18px;
                 font-family: Comic Sans MS, cursive, sans-serif;
                 font-weight: bold;
                 padding: 20px;
-                
+                //display: inline;
                 margin-top: 40px;
-               
+                //margin-bottom: 100px;
                 position: relative;
-                
+                //height: 1400px;
                 width: 400px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-               
+                //top: 55%;
                 left: 50%;
                 text-align: center;
                 -ms-transform: translate(-50%, 0%);
@@ -60,12 +60,12 @@
                 background-color: #FFFFFF; 
                 padding: 20px;
                 margin-top: 30px;
-               
+                //margin-bottom: 100px;
                 position: relative;
-                
+                //height: 1400px;
                 width: 800px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-               
+                //top: 55%;
                 left: 50%;
                 -ms-transform: translate(-50%, 0%);
                 transform: translate(-50%, 0%);
@@ -83,7 +83,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-               
+                //user-select: none;
             }
             .o {
                 display: block;
@@ -97,7 +97,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-               
+                //user-select: none;
             }
             .o input {
                 position: absolute;
@@ -197,30 +197,30 @@
             var sec=parseInt(sessionStorage.getItem("second"));
             var min=parseInt(sessionStorage.getItem("minute"));
             var hour=parseInt(sessionStorage.getItem("hour"));
-            function button1()
+            function button1(form)
             {
-                var a=document.getElementsByClassName('Answer');
+                var a=document.getElementsByClassName("Answer");
                 a[0].value="1";
                 form.action="ButtonClick";
                 form.submit();
             }
-            function button2()
+            function button2(form)
             {
-                var a=document.getElementsByClassName('Answer');
+                var a=document.getElementsByClassName("Answer");
                 a[0].value="2";
                 form.action="ButtonClick";
                 form.submit();
             }
-            function button3()
+            function button3(form)
             {
-                var a=document.getElementsByClassName('Answer');
+                var a=document.getElementsByClassName("Answer");
                 a[0].value="3";
                 form.action="ButtonClick";
                 form.submit();
             }
-            function button4()
+            function button4(form)
             {
-                var a=document.getElementsByClassName('Answer');
+                var a=document.getElementsByClassName("Answer");
                 a[0].value="4";
                 form.action="ButtonClick";
                 form.submit();
@@ -238,9 +238,10 @@
                     form.submit();
                 }
             }
-            function back()
+            function back(form)
             {
-                window.location.href="InBetweenBackCall";
+                form.action="InBetweenBackCall";
+                form.submit();
             }
         </script>
     </head>
@@ -259,25 +260,24 @@
                         </div>
                         <div class="options">
                             <label class="o"><label class="option1"></label>
-                                <input type="button" name="choice" class="Option1">
-                                <input type="radio" name="choice" class="Option1" value="Option1">
+                                <input type="radio" name="choice" class="Option1" value="Option1" onclick="button1(this.form)">
                                 <span class="oc"></span>
                             </label>
                             <label class="o"><label class="option2"></label>
-                                <input type="radio" name="choice" class="Option2" value="Option2">
+                                <input type="radio" name="choice" class="Option2" value="Option2" onclick="button2(this.form)">
                                 <span class="oc"></span>
                             </label>
                             <label class="o"><label class="option3"></label>
-                                <input type="radio" name="choice" class="Option3" value="Option3">
+                                <input type="radio" name="choice" class="Option3" value="Option3" onclick="button3(this.form)">
                                 <span class="oc"></span>
                             </label>
                             <label class="o"><label class="option4"></label>
-                                <input type="radio" name="choice" class="Option4" value="Option4">
+                                <input type="radio" name="choice" class="Option4" value="Option4" onclick="button4(this.form)">
                                 <span class="oc"></span>
                             </label>
                         </div><br><br><br><br>
                 <div>
-                    <button type="button" class="Back" value="Back" onclick="back()">Back</button>
+                    <button type="button" class="Back" value="Back" onclick="back(this.form)">Back</button>
                 </div>
                 <div>
                     <input type="button" class="Next" value="" onclick="next(this.form)">
@@ -322,7 +322,6 @@
         var a=<%=Integer.parseInt(request.getSession().getAttribute(request.getSession().getAttribute("iterator").toString()+"useranswer").toString())%>;
         if (a===1)
         {
-            //change background of button
             var x=document.getElementsByClassName("Option1");
             x[0].checked = true;
         }

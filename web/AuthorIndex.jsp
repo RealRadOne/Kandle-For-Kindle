@@ -87,6 +87,9 @@ function myDropFunc() {
   <a href="aUpdateProfilePicture.jsp" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Upload Profile Picture</a>
   <a href="#" class="w3-bar-item w3-button w3-large w3-padding-16 w3-border w3-black">Logout</a>
 </div>    
+<div style="position: fixed; top: 5px; left:5px; ">
+  <button class="w3-button w3-black w3-xxlarge" onclick="w3_open()">&#9776;</button>
+ </div>
    <%
             String AuthName=(String)request.getSession().getAttribute("AuthName");
             String AuthID=(String)request.getSession().getAttribute("AuthID");

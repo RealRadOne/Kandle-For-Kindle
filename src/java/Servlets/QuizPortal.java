@@ -5,6 +5,7 @@ import DAO.QuestionDAO;
 import DAO.QuizDAO;
 import Model.Question;
 import Model.Quiz;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,12 +21,14 @@ public class QuizPortal extends HttpServlet {
      String QID     =request.getParameter("QuizID");
      //String QName   =request.getParameter("QuizName");
         response.setContentType("text/html");
-        //String quizid = "GEN1001";
+        //String QID = "GEN1001";
         QuestionDAO q=new QuestionDAO();
-        List<Question> l=q.QuesByQuiz(QID);
+        List<Question> l=new ArrayList<Question>();
         Question q1=new Question();
+        l=q.QuesByQuiz(QID);
+        Quiz q2=new Quiz();
         QuizDAO q3=new QuizDAO();
-        Quiz q2=q3.FindQuiz(QID);
+        q2=q3.FindQuiz(QID);
         request.getSession().setAttribute("iterator", 1);
         request.getSession().setAttribute("size", l.size());
         request.getSession().setAttribute("attemptedno", 0);
@@ -33,7 +36,6 @@ public class QuizPortal extends HttpServlet {
         request.getSession().setAttribute("hour",q2.getHour());
         request.getSession().setAttribute("minute",q2.getMinute());
         request.getSession().setAttribute("second",q2.getSecond());
-        System.out.println("SIZE OF LIST IS "+l.size());
         for (int i=0;i<l.size();i++)
         {
             q1=l.get(i);

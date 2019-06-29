@@ -49,14 +49,19 @@ public class QuizDAO
         
         public List<Quiz> readAllQuiz()
         {
-            
 		List<Quiz> data = new ArrayList<Quiz>();
 		DBCursor cursor = col.find();
-		while (cursor.hasNext()) {
+                HashSet<String>ans=new HashSet<>();
+		while (cursor.hasNext()) 
+                {
 			DBObject doc = cursor.next();
 			Quiz q= QuizConverter.toQuiz(doc);
-			data.add(q);
+			ans.add(q.getQuizID());
 		}
+                for(String ID:ans)
+                {
+                    data.add(FindQuiz(ID));
+                }
 		return data;
         }
         public Author FetchAuthor(Quiz q)
@@ -74,12 +79,17 @@ public class QuizDAO
             BasicDBObject query = new BasicDBObject();
             query.put("AuthorID",AuthID);
             DBCursor cursor = col.find(query);
-            while(cursor.hasNext())
-            {
-               DBObject doc = cursor.next();
-	       Quiz q= QuizConverter.toQuiz(doc);
-	       result.add(q);
-            }
+             HashSet<String>ans=new HashSet<>();
+		while (cursor.hasNext()) 
+                {
+			DBObject doc = cursor.next();
+			Quiz q= QuizConverter.toQuiz(doc);
+			ans.add(q.getQuizID());
+		}
+                for(String ID:ans)
+                {
+                    result.add(FindQuiz(ID));
+                }
             }
             catch(Exception e)
             {

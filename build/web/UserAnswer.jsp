@@ -42,10 +42,10 @@
                 margin-top: 100px;
                 margin-bottom: 100px;
                 position: relative;
-               
+                //height: 1400px;
                 width: 800px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                
+                //top: 55%;
                 left: 50%;
                 -ms-transform: translate(-50%, 0%);
                 transform: translate(-50%, 0%);
@@ -63,7 +63,7 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-                
+                //user-select: none;
             }
             .Result {
                 display: block;
@@ -78,8 +78,8 @@
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
-                left: 27%;
-                
+                left: 37%;
+                //user-select: none;
             }
             .o {
                 display: block;
@@ -94,7 +94,7 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 border-radius: 50%;
-               
+                //user-select: none;
             }
             .o input {
                 position: absolute;
@@ -273,21 +273,7 @@
             x[0].disabled = false;
         }
         var a=<%=Integer.parseInt(request.getSession().getAttribute(request.getSession().getAttribute("iterator").toString()+"useranswer").toString())%>;
-        <%
-            String a3=request.getSession().getAttribute(request.getSession().getAttribute("iterator").toString()+"answer").toString();
-            int b2;
-            String a5;
-            if (!a3.equals("0"))
-            {
-                a5=a3.substring(1,a3.length()-1);
-                b2=Integer.valueOf(a5);
-            }
-            else
-            {
-                b2=0;
-            }
-        %>
-        var b=<%=b2%>;
+        var b=<%=Integer.parseInt(request.getSession().getAttribute(request.getSession().getAttribute("iterator").toString()+"answer").toString())%>;
         if (a===0 && b===1)
         {
             var x=document.getElementsByClassName("Option1");
@@ -380,7 +366,7 @@
             var x=document.getElementsByClassName("option1");
             x[0].style.color = "red";
             var x=document.getElementsByClassName("Option2");
-            x[0].style.backgroundColor="green";
+            x[0].style.color="green";
             x[0].checked = true;
             var x=document.getElementsByClassName("option2");
             x[0].style.color = "green";

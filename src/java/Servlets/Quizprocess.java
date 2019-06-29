@@ -57,7 +57,7 @@ public class Quizprocess extends HttpServlet {
            qs.setOption2(jobj.getString("Option2"));
            qs.setOption3(jobj.getString("Option3"));
            qs.setOption4(jobj.getString("Option4"));
-           qs.setAns("0"+(jobj.getString("Ans"))+"0");
+           qs.setAns(jobj.getString("Ans"));
            qsk.createQuestion(qs);
            al.add(Question);
            }

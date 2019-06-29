@@ -134,8 +134,11 @@ function myDropFunc() {
        <br><br>
        <br><br>
         <%
-            session.setAttribute("UserID","U0001");
-            ArrayList<Quiz>qsk=(ArrayList<Quiz>)request.getAttribute("Konnects");
+         String Uname=(String)request.getSession().getAttribute("Name");
+         String UID=(String)request.getSession().getAttribute("UID");
+         ArrayList<Quiz>qsk=(ArrayList<Quiz>)request.getAttribute("Konnects");
+        request.getSession().setAttribute("Name",Uname);
+        request.getSession().setAttribute("UID",UID);
         %>
    <%
    for(Quiz qrk:qsk)

@@ -57,7 +57,7 @@ public class AuthorDAO
        {
                 List<Author> data = new ArrayList<Author>();
 		BasicDBObject query = new BasicDBObject();
-		query.put("Name",Pattern.compile("^"+str));
+		query.put("Name",Pattern.compile(("^"+str),Pattern.CASE_INSENSITIVE));
                 DBCursor cursor = col.find(query);
 		while (cursor.hasNext()) 
                 {

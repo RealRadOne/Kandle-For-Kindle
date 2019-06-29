@@ -81,6 +81,7 @@ public class QuestionDAO
                 {
 			DBObject doc = cursor.next();
 			d= QuestionConverter.toQuestion(doc);
+                        if(d.getQuestion()!=null && d.getAns()!=null)
                         data.add(d);
 		}
 		return data;
